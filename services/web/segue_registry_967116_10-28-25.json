@@ -1,0 +1,33 @@
+{
+  "generated": "2025-10-27T21:49:23Z",
+  "segues": [
+    {
+      "source": "enhancement_engine",
+      "target": "classify_oriel_data",
+      "mode": "chain",
+      "method": "serial_flow",
+      "created": "2025-10-27T21:49:23Z"
+    },
+    {
+      "source": "classify_oriel_data",
+      "target": "flatted",
+      "mode": "chain",
+      "method": "serial_flow",
+      "created": "2025-10-27T21:49:23Z"
+    }
+  ],
+  "segue_shards": [
+    {
+      "type": "transform",
+      "behavior": "normalize",
+      "smoothing": "smooth",
+      "created": "2025-10-27T21:49:23Z"
+    },
+    {
+      "type": "transform",
+      "behavior": "normalize",
+      "smoothing": "smooth",
+      "created": "2025-10-27T21:49:23Z"
+    }
+  ]
+}

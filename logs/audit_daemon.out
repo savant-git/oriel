@@ -1,0 +1,5 @@
+nohup: ignoring input
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/audit_guard.py", line 7, in <module>
+    from rich.console import Console
+ModuleNotFoundError: No module named 'rich'

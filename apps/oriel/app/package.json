@@ -1,0 +1,76 @@
+{
+  "name": "oriel-desktop",
+  "version": "1.0.0",
+  "description": "Oriel – Savant System simulation and AI instrument.",
+  "author": "Viscera Systems",
+  "homepage": "https://viscera.systems/oriel",
+  "type": "module",
+  "private": false,
+  "main": "build-compiled/main.js",
+
+  "scripts": {
+    "start": "xvfb-run -a ./node_modules/.bin/electron --disable-gpu --no-sandbox --disable-dev-shm-usage --disable-extensions --no-zygote --disable-software-rasterizer .",
+    "prebuild": "tsc",
+    "build": "electron-builder",
+    "dist:linux": "npm run prebuild && electron-builder --linux",
+    "dist:mac": "npm run prebuild && electron-builder --mac",
+    "dist:win": "npm run prebuild && electron-builder --win"
+  },
+
+  "build": {
+    "appId": "com.viscera.oriel",
+    "productName": "Oriel",
+    "files": [
+      "**/*",
+      "!node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!**/node_modules/.bin",
+      "!**/*.map"
+    ],
+    "extraMetadata": {
+      "main": "build-compiled/main.js"
+    },
+    "asar": true,
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "category": "Science",
+      "maintainer": "Viscera Systems",
+      "icon": "build/icons",
+      "desktop": {
+        "Name": "Oriel",
+        "Comment": "Savant System simulation and AI instrument.",
+        "Terminal": false,
+        "Type": "Application",
+        "Categories": "Science;Education;AI;"
+      }
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icons/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.education",
+      "icon": "build/icons/icon.icns"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "savant-git",
+        "repo": "oriel",
+        "releaseType": "draft"
+      }
+    ]
+  },
+
+  "devDependencies": {
+    "electron": "29.0.0",
+    "electron-builder": "^24.0.0",
+    "electron-updater": "^6.1.0",
+    "typescript": "^5.3.0",
+    "ts-node": "^10.9.2"
+  }
+}

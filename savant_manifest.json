@@ -1,0 +1,40 @@
+{
+  "savant": {
+    "version": "1.0.0",
+    "last_updated": "2025-11-05T00:00:00Z"
+  },
+
+  "apps": {
+    "oriel": {
+      "path": "./apps/oriel",
+      "entry": "./apps/oriel/core/oriel_kernel.ts",
+      "version": "0.1.0",
+      "description": "Narrative simulation engine built on the shard–truss–pane fractal.",
+      "auto_load": true
+    },
+    "shattercore": {
+      "path": "./apps/shattercore",
+      "entry": "./apps/shattercore/core/shatter_kernel.ts",
+      "version": "0.0.0",
+      "auto_load": false
+    },
+    "logo_studio": {
+      "path": "./apps/logo_studio",
+      "entry": "./apps/logo_studio/core/logo_kernel.ts",
+      "version": "0.0.0",
+      "auto_load": false
+    },
+    "mayorgate": {
+      "path": "./apps/mayorgate",
+      "entry": "./apps/mayorgate/core/mayor_kernel.ts",
+      "version": "0.0.0",
+      "auto_load": false
+    }
+  },
+
+  "archive_policy": {
+    "pattern": "^(?P<app>.+)_(?P<mm>0[1-9]|1[0-2])-(?P<dd>0[1-9]|[12][0-9]|3[01])-(?P<yy>\\d{2})_(?P<ver>\\d+(?:\\.\\d+)*)\\.zip$",
+    "destination": "./archives",
+    "retain_versions": 10
+  }
+}

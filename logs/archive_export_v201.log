@@ -1,0 +1,23 @@
+[2025-11-01T09:46:22.039243+00:00] 🧠 Starting Savant Archive-Export v201 diagnostics...
+[2025-11-01T09:46:22.365308+00:00] ✅ Imports loaded successfully.
+[2025-11-01T09:46:26.711737+00:00] ✅ Parsed conversations.json (592 conversations)
+[2025-11-01T09:46:26.717026+00:00] ✅ Diagnostic HTML written → /data/data/com.termux/files/home/savant/chat_logs/chat_diagnostic_test.html
+[2025-11-01T09:46:26.717240+00:00] 🏁 Savant Archive-Export v201 finished successfully.
+[2025-11-01T13:21:14.186937+00:00] 🧠 Starting Savant Archive-Export v201 diagnostics...
+[2025-11-01T13:21:15.128345+00:00] ✅ Imports loaded successfully.
+[2025-11-01T13:21:19.837564+00:00] ✅ Parsed conversations.json (592 conversations)
+[2025-11-01T13:21:19.841969+00:00] ✅ Diagnostic HTML written → /data/data/com.termux/files/home/savant/chat_logs/chat_diagnostic_test.html
+[2025-11-01T13:21:19.842191+00:00] 🏁 Savant Archive-Export v201 finished successfully.
+[2025-11-01T13:21:25.337902+00:00] 🧠 Starting Savant Archive-Export v201 diagnostics...
+[2025-11-01T13:21:25.984922+00:00] ✅ Imports loaded successfully.
+[2025-11-01T13:21:30.287774+00:00] ✅ Parsed conversations.json (592 conversations)
+[2025-11-01T13:21:30.291431+00:00] ✅ Diagnostic HTML written → /data/data/com.termux/files/home/savant/chat_logs/chat_diagnostic_test.html
+[2025-11-01T13:21:30.291645+00:00] 🏁 Savant Archive-Export v201 finished successfully.
+[2025-11-01T14:35:59.958306+00:00] 🧠 Starting Savant Archive-Export v201 diagnostics...
+[2025-11-01T14:36:00.862726+00:00] ✅ Imports loaded successfully.
+[2025-11-01T14:36:00.935866+00:00] ❌ conversations.json not found at /storage/emulated/0/Download/conversations.json
+[2025-11-01T14:38:34.430235+00:00] 🧠 Starting Savant Archive-Export v201 diagnostics...
+[2025-11-01T14:38:35.193905+00:00] ✅ Imports loaded successfully.
+[2025-11-01T14:38:39.532336+00:00] ✅ Parsed conversations.json (590 conversations)
+[2025-11-01T14:38:39.538578+00:00] ✅ Diagnostic HTML written → /data/data/com.termux/files/home/savant/chat_logs/chat_diagnostic_test.html
+[2025-11-01T14:38:39.538759+00:00] 🏁 Savant Archive-Export v201 finished successfully.

@@ -1,0 +1,22 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# 🧠 Savant Daemon Controller
+case "$1" in
+  start)
+    nohup python3 ~/savant/core/command_registry.py >/dev/null 2>&1 &
+    echo "✅ Savant Core Daemon started."
+    ;;
+  stop)
+    pkill -f command_registry.py && echo "🛑 Savant Core Daemon stopped."
+    ;;
+  restart)
+    pkill -f command_registry.py
+    nohup python3 ~/savant/core/command_registry.py >/dev/null 2>&1 &
+    echo "🔁 Savant Core Daemon restarted."
+    ;;
+  status)
+    pgrep -af command_registry.py || echo "⚠️  No Savant Core Daemon running."
+    ;;
+  *)
+    echo "Usage: savantd {start|stop|restart|status}"
+    ;;
+esac

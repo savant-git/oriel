@@ -1,0 +1,8 @@
+[2025-11-01T00:45:55-04:00] ⚙️  Phase-0: Shell-only emergency cleaner (runs even at 0 bytes)…
+[2025-11-01T00:45:56-04:00] 📊  Free space after shell purge:  KB
+[2025-11-01T00:45:56-04:00] ❌  Disk critically full; Python stage skipped.
+[2025-11-01T00:45:56-04:00] 🏁  Savant Clean v20 complete.
+[2025-11-01T00:50:16-04:00] ⚙️  Phase-0: Bare-metal full cleanup (pure shell, OOM-safe)…
+[2025-11-01T00:50:17-04:00] 📊  Free space after purge: 38433072 KB
+[2025-11-01T00:50:17-04:00] 📊  Final free space: 38433072 KB
+[2025-11-01T00:50:17-04:00] ✅  Savant Clean v21 finished (no Python phase executed).

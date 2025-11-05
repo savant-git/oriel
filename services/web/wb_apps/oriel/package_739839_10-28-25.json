@@ -1,0 +1,93 @@
+{
+  "name": "oriel-engine",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "oriel: A symbiotic AI-human creativity engine for transforming imagination into structured, intelligent creative systems.",
+  "author": "oriel Collective <contact@oriel.ai>",
+  "license": "MIT",
+  "homepage": "https://github.com/oriel-collective/oriel",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oriel-collective/oriel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oriel-collective/oriel/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "keywords": [
+    "ai",
+    "creativity-engine",
+    "generative-ai",
+    "react",
+    "threejs",
+    "zustand",
+    "simulation",
+    "world-building",
+    "nin-inspired"
+  ],
+  "scripts": {
+    "dev": "vite --host",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "lint": "eslint . --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,json,css,md}\"",
+    "type-check": "tsc --noEmit",
+    "validate": "npm run lint && npm run type-check && npm run test",
+    "predev": "bash scripts/html_self_heal.sh",
+    "prebuild": "bash scripts/self_heal.sh",
+    "monitor": "bash scripts/oriel_monitor.sh",
+    "optimize": "bash scripts/iterate_oriel.mjs Auto",
+    "daemon": "bash scripts/oriel_daemon.sh",
+    "daemon_extended": "bash scripts/oriel_daemon.sh",
+    "report": "node scripts/report_summary.mjs",
+    "dashboard": "node scripts/oriel_dashboard.mjs"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.2.10",
+    "@langchain/openai": "^0.2.1",
+    "@react-three/drei": "^9.108.3",
+    "@react-three/fiber": "^8.16.8",
+    "@tensorflow/tfjs": "^4.20.0",
+    "chokidar": "^4.0.3",
+    "classnames": "^2.5.1",
+    "express": "^5.1.0",
+    "framer-motion": "^11.18.2",
+    "framer-motion-3d": "^11.3.8",
+    "gsap": "^3.12.5",
+    "langchain": "^0.2.10",
+    "leva": "^0.9.35",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.166.1",
+    "uuid": "^10.0.0",
+    "zustand": "^4.5.7"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.0.0",
+    "@types/node": "^20.14.10",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/three": "^0.166.0",
+    "@types/uuid": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.16.1",
+    "@typescript-eslint/parser": "^7.16.1",
+    "@vitejs/plugin-react": "^4.7.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "jsdom": "^24.1.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.9.3",
+    "vite": "^5.4.21",
+    "vite-plugin-glsl": "^1.5.4",
+    "vitest": "^2.0.3"
+  }
+}

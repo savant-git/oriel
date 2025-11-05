@@ -1,0 +1,3 @@
+[2025-11-01T05:31:57.956802+00:00] ❌ S3 validation failed: Unable to locate credentials
+[2025-11-01T05:33:17.131674+00:00] ✅ Connected to S3 — Buckets: ['savant-ai-cluster']
+[2025-11-01T05:33:17.132009+00:00] ✅ Bucket savant-ai-cluster is accessible and ready.

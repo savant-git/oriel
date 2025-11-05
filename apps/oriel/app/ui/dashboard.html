@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Oriel Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🜹 Oriel — Savant System</h1>
+    <div id="controls">
+      <button id="pause">Pause</button>
+      <button id="resume">Resume</button>
+      <label>Rate <input id="rate" type="number" min="1" max="120" value="30"> Hz</label>
+    </div>
+  </header>
+
+  <main>
+    <canvas id="viz" width="1000" height="500"></canvas>
+    <pre id="log"></pre>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "mode": "diagnostic",
+  "delete_scope": "~/savant/tmp",
+  "protect": [
+    "context/context_ledger.json",
+    "services/scripts",
+    "services/web",
+    "services/utils",
+    "logs",
+    "context"
+  ]
+}

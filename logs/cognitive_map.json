@@ -1,0 +1,642 @@
+[
+  {
+    "file": "services/__init__.py",
+    "tokens": 53,
+    "hash": "15a31bca"
+  },
+  {
+    "file": "services/scripts/__init__.py",
+    "tokens": 53,
+    "hash": "7ff288d8"
+  },
+  {
+    "file": "services/api/main.py",
+    "tokens": 223,
+    "hash": "dd390f23"
+  },
+  {
+    "file": "services/api/monitor_api_743569_10-28-25.py",
+    "tokens": 256,
+    "hash": "25f1b4b7"
+  },
+  {
+    "file": "services/realtime/ai_tuning_daemon.py",
+    "tokens": 205,
+    "hash": "719e9438"
+  },
+  {
+    "file": "services/utils/cleanup_engine.py",
+    "tokens": 554,
+    "hash": "c9468de0"
+  },
+  {
+    "file": "services/utils/quality_enforcer.py",
+    "tokens": 251,
+    "hash": "98ed68ca"
+  },
+  {
+    "file": "services/utils/personality_quality_bridge.py",
+    "tokens": 336,
+    "hash": "2c8d221b"
+  },
+  {
+    "file": "services/utils/system_integrity_service.py",
+    "tokens": 383,
+    "hash": "2f10b2d4"
+  },
+  {
+    "file": "services/utils/restore_from_quarantine.py",
+    "tokens": 140,
+    "hash": "18583908"
+  },
+  {
+    "file": "services/utils/ledger_secure.py",
+    "tokens": 114,
+    "hash": "4881f817"
+  },
+  {
+    "file": "services/utils/time_utils.py",
+    "tokens": 86,
+    "hash": "93a6cb04"
+  },
+  {
+    "file": "services/utils/reflex_daemon.py",
+    "tokens": 275,
+    "hash": "05e84ea3"
+  },
+  {
+    "file": "services/utils/reflex_cloudbridge.py",
+    "tokens": 317,
+    "hash": "a9c1cc11"
+  },
+  {
+    "file": "services/shard_registry/shard_registry.py",
+    "tokens": 165,
+    "hash": "4efb8316"
+  },
+  {
+    "file": "services/federation/federation_daemon.py",
+    "tokens": 237,
+    "hash": "88759b0f"
+  },
+  {
+    "file": "services/federation/ledger_replica_daemon.py",
+    "tokens": 333,
+    "hash": "4933480b"
+  },
+  {
+    "file": "services/federation/inference_broker.py",
+    "tokens": 121,
+    "hash": "a79f5e79"
+  },
+  {
+    "file": "services/ai_core/quantum_graph_engine.py",
+    "tokens": 222,
+    "hash": "a8815cec"
+  },
+  {
+    "file": "services/ai_core/trust_consensus.py",
+    "tokens": 161,
+    "hash": "f6e485ec"
+  },
+  {
+    "file": "services/ai_core/event_bridge.py",
+    "tokens": 94,
+    "hash": "c4523724"
+  },
+  {
+    "file": "services/event_bus/event_bus_core.py",
+    "tokens": 270,
+    "hash": "6bd88d53"
+  },
+  {
+    "file": "services/scripts/ledger_engine/ledger_watchdog.py",
+    "tokens": 243,
+    "hash": "dc479523"
+  },
+  {
+    "file": "services/scripts/cloud_engine/test_s3_connection.py",
+    "tokens": 319,
+    "hash": "88bb501d"
+  },
+  {
+    "file": "services/scripts/cloud_engine/cloud_sync_daemon.py",
+    "tokens": 275,
+    "hash": "96b36495"
+  },
+  {
+    "file": "services/scripts/cloud_engine/cloud_sync.py",
+    "tokens": 273,
+    "hash": "4c65da87"
+  },
+  {
+    "file": "services/scripts/cloud_engine/cloud_uplink.py",
+    "tokens": 372,
+    "hash": "db94189b"
+  },
+  {
+    "file": "services/scripts/rule_engine/rule_guard.py",
+    "tokens": 105,
+    "hash": "eac1f10b"
+  },
+  {
+    "file": "services/scripts/rule_engine/enforcer.py",
+    "tokens": 384,
+    "hash": "62f6e3ee"
+  },
+  {
+    "file": "services/scripts/rule_engine/__init__.py",
+    "tokens": 69,
+    "hash": "e694862d"
+  },
+  {
+    "file": "services/scripts/telemetry/telemetry_daemon.py",
+    "tokens": 109,
+    "hash": "3ff28a02"
+  },
+  {
+    "file": "services/scripts/telemetry/export_manifest.py",
+    "tokens": 80,
+    "hash": "38938dde"
+  },
+  {
+    "file": "services/scripts/task_engine/task_engine.py",
+    "tokens": 141,
+    "hash": "db6f5578"
+  },
+  {
+    "file": "services/scripts/ai_core/ai_core.py",
+    "tokens": 391,
+    "hash": "8bf67c16"
+  },
+  {
+    "file": "services/scripts/ai_core/abi_core.py",
+    "tokens": 335,
+    "hash": "d8dfced2"
+  },
+  {
+    "file": "services/scripts/ai_core/ai_gateway.py",
+    "tokens": 184,
+    "hash": "f3f97986"
+  },
+  {
+    "file": "services/scripts/ai_core/ws_bridge.py",
+    "tokens": 107,
+    "hash": "9d3008d2"
+  },
+  {
+    "file": "services/scripts/ai_core/self_optimizer.py",
+    "tokens": 105,
+    "hash": "01e66cb5"
+  },
+  {
+    "file": "services/scripts/ai_core/ai_core_gateway.py",
+    "tokens": 309,
+    "hash": "14876738"
+  },
+  {
+    "file": "services/scripts/ai_core/personality_engine.py",
+    "tokens": 159,
+    "hash": "bf4a97e4"
+  },
+  {
+    "file": "services/scripts/ai_core/openai_gateway.py",
+    "tokens": 344,
+    "hash": "41b7b587"
+  },
+  {
+    "file": "services/scripts/fractal_core/fractal_core.py",
+    "tokens": 107,
+    "hash": "11e582fa"
+  },
+  {
+    "file": "services/scripts/automation_engine/dashboard_watchdog.py",
+    "tokens": 94,
+    "hash": "eaa912aa"
+  },
+  {
+    "file": "services/scripts/guardian/immutable_guard.py",
+    "tokens": 166,
+    "hash": "b4f9cb5d"
+  },
+  {
+    "file": "services/scripts/guardian/comment_injector.py",
+    "tokens": 154,
+    "hash": "bc5253bf"
+  },
+  {
+    "file": "services/scripts/version_engine/version_daemon.py",
+    "tokens": 187,
+    "hash": "c47bfe42"
+  },
+  {
+    "file": "services/scripts/version_engine/savant_version_v2.py",
+    "tokens": 312,
+    "hash": "52fb5b7a"
+  },
+  {
+    "file": "services/scripts/version_engine/version_engine.py",
+    "tokens": 269,
+    "hash": "d8f8349f"
+  },
+  {
+    "file": "services/scripts/version_engine/full_version_syntax.py",
+    "tokens": 84,
+    "hash": "f22ca6e6"
+  },
+  {
+    "file": "services/scripts/version_engine/triadic_version_engine.py",
+    "tokens": 193,
+    "hash": "593a7a3a"
+  },
+  {
+    "file": "services/scripts/research_engine/research_core.py",
+    "tokens": 131,
+    "hash": "7040c74c"
+  },
+  {
+    "file": "services/scripts/context_engine/context_ledger.py",
+    "tokens": 510,
+    "hash": "881e239d"
+  },
+  {
+    "file": "services/scripts/context_engine/context_sync.py",
+    "tokens": 98,
+    "hash": "aa29cc52"
+  },
+  {
+    "file": "services/scripts/fractal_visualization/visualizer.py",
+    "tokens": 169,
+    "hash": "a6505652"
+  },
+  {
+    "file": "services/scripts/system_core/command_header.py",
+    "tokens": 117,
+    "hash": "c06c9e6e"
+  },
+  {
+    "file": "services/scripts/system_core/style_injector.py",
+    "tokens": 219,
+    "hash": "24a1e6e9"
+  },
+  {
+    "file": "services/scripts/ai_memory/memory_engine.py",
+    "tokens": 124,
+    "hash": "c61b5b6e"
+  },
+  {
+    "file": "services/scripts/fractal_archive/archive.py",
+    "tokens": 107,
+    "hash": "de521582"
+  },
+  {
+    "file": "services/scripts/shard_engine/shard_compiler.py",
+    "tokens": 358,
+    "hash": "393f87c6"
+  },
+  {
+    "file": "services/scripts/shard_engine/live_indexer.py",
+    "tokens": 146,
+    "hash": "e1c5c90d"
+  },
+  {
+    "file": "services/scripts/shard_engine/cross_linker.py",
+    "tokens": 106,
+    "hash": "17b92877"
+  },
+  {
+    "file": "services/scripts/shard_engine/semantic_search.py",
+    "tokens": 122,
+    "hash": "e204db77"
+  },
+  {
+    "file": "services/scripts/shard_engine/shard_mutator.py",
+    "tokens": 102,
+    "hash": "26810567"
+  },
+  {
+    "file": "services/scripts/shard_engine/phase_26.py",
+    "tokens": 80,
+    "hash": "183748b4"
+  },
+  {
+    "file": "services/scripts/shard_engine/phase_27.py",
+    "tokens": 80,
+    "hash": "c420edfb"
+  },
+  {
+    "file": "services/scripts/shard_engine/phase_28.py",
+    "tokens": 80,
+    "hash": "0f51d7d5"
+  },
+  {
+    "file": "services/scripts/shard_engine/phase_29.py",
+    "tokens": 80,
+    "hash": "87a95d39"
+  },
+  {
+    "file": "services/scripts/shard_engine/phase_30.py",
+    "tokens": 80,
+    "hash": "96c01807"
+  },
+  {
+    "file": "services/scripts/visual_engine/log_parser.py",
+    "tokens": 95,
+    "hash": "f94b054f"
+  },
+  {
+    "file": "services/scripts/dependency_audit/quality_gate.py",
+    "tokens": 170,
+    "hash": "74e90881"
+  },
+  {
+    "file": "services/scripts/personality_engine/governor.py",
+    "tokens": 121,
+    "hash": "040c1e94"
+  },
+  {
+    "file": "services/scripts/personality_engine/__init__.py",
+    "tokens": 53,
+    "hash": "80fabf09"
+  },
+  {
+    "file": "services/scripts/snippet_engine/snippet_manager.py",
+    "tokens": 138,
+    "hash": "a971fc44"
+  },
+  {
+    "file": "services/scripts/reflex_core/reflex_integration.py",
+    "tokens": 145,
+    "hash": "bac9fb52"
+  },
+  {
+    "file": "services/scripts/command_bus/command_bus.py",
+    "tokens": 167,
+    "hash": "403514a4"
+  },
+  {
+    "file": "services/scripts/enhancement_engine/enhancement_core.py",
+    "tokens": 159,
+    "hash": "f47cea3e"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/clean_complete.py",
+    "tokens": 694,
+    "hash": "2d3759d0"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/log_audit.py",
+    "tokens": 238,
+    "hash": "852e827d"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/verify_enhancements.py",
+    "tokens": 152,
+    "hash": "a40f44d1"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/ai_link_adapter.py",
+    "tokens": 176,
+    "hash": "923015c3"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/cluster_supervisor.py",
+    "tokens": 191,
+    "hash": "4218440d"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/env_loader.py",
+    "tokens": 106,
+    "hash": "a20e4f34"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/intelligence_loop.py",
+    "tokens": 315,
+    "hash": "24317500"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/auto_learning_supervisor.py",
+    "tokens": 228,
+    "hash": "9f419ab4"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/deep_compact.py",
+    "tokens": 350,
+    "hash": "29951556"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/export_cluster.py",
+    "tokens": 639,
+    "hash": "f2c45e7d"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/knowledge_synthesis_cluster.py",
+    "tokens": 328,
+    "hash": "6f4fc6f1"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/compact_shards.py",
+    "tokens": 505,
+    "hash": "d0a8efb9"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/cloud_recover.py",
+    "tokens": 197,
+    "hash": "37df02ea"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/migration_check_cluster.py",
+    "tokens": 321,
+    "hash": "7f945129"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/integration_cycle.py",
+    "tokens": 338,
+    "hash": "05a22317"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/github_link_cluster.py",
+    "tokens": 270,
+    "hash": "a839b821"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/github_force_push.py",
+    "tokens": 99,
+    "hash": "0388009d"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/bootstrap_cluster.py",
+    "tokens": 451,
+    "hash": "1d17828f"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/shard_tools.py",
+    "tokens": 477,
+    "hash": "d93a2049"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/curriculum_seeder.py",
+    "tokens": 763,
+    "hash": "7b08429e"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/cloud_uplink.py",
+    "tokens": 168,
+    "hash": "a1b488d4"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/savant_help.py",
+    "tokens": 320,
+    "hash": "674b7e54"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/autonomous_knowledge_cluster.py",
+    "tokens": 592,
+    "hash": "b4afe703"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/chat_log_ingestor.py",
+    "tokens": 181,
+    "hash": "33236665"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/export_cluster_v3.py",
+    "tokens": 142,
+    "hash": "69566249"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/documentation_engine.py",
+    "tokens": 299,
+    "hash": "7f311cb1"
+  },
+  {
+    "file": "services/scripts/intelligence_cluster/docsynth_daemon.py",
+    "tokens": 409,
+    "hash": "c6fba0f9"
+  },
+  {
+    "file": "services/scripts/personality_engine/deep_research/research_core.py",
+    "tokens": 158,
+    "hash": "3fbb9d73"
+  },
+  {
+    "file": "services/scripts/personality_engine/deep_research/__init__.py",
+    "tokens": 56,
+    "hash": "c7ccb85a"
+  },
+  {
+    "file": "services/scripts/personality_engine/decision_core/decision_core.py",
+    "tokens": 98,
+    "hash": "3a40c100"
+  },
+  {
+    "file": "services/scripts/personality_engine/decision_core/__init__.py",
+    "tokens": 56,
+    "hash": "3d0624b4"
+  },
+  {
+    "file": "services/scripts/personality_engine/augment_core/augment_core.py",
+    "tokens": 145,
+    "hash": "e99316a5"
+  },
+  {
+    "file": "services/scripts/personality_engine/augment_core/__init__.py",
+    "tokens": 56,
+    "hash": "43e8ab38"
+  },
+  {
+    "file": "services/scripts/personality_engine/reflex_core/reflex_core.py",
+    "tokens": 94,
+    "hash": "78aef5aa"
+  },
+  {
+    "file": "services/scripts/personality_engine/reflex_core/__init__.py",
+    "tokens": 56,
+    "hash": "1728f13c"
+  },
+  {
+    "file": "services/scripts/personality_engine/governor_core/governor.py",
+    "tokens": 348,
+    "hash": "6dae50f8"
+  },
+  {
+    "file": "services/scripts/personality_engine/governor_core/__init__.py",
+    "tokens": 56,
+    "hash": "0fc96826"
+  },
+  {
+    "file": "services/scripts/personality_engine/governor_core/governor_bridge_hook.py",
+    "tokens": 64,
+    "hash": "62909a43"
+  },
+  {
+    "file": "services/scripts/personality_engine/governor_core/personality_core.py",
+    "tokens": 119,
+    "hash": "074f8183"
+  },
+  {
+    "file": "services/scripts/personality_engine/enhancement_engine/enhancement_core.py",
+    "tokens": 311,
+    "hash": "9f06b338"
+  },
+  {
+    "file": "services/web/dashboard/dashboard_api.py",
+    "tokens": 357,
+    "hash": "901febe6"
+  },
+  {
+    "file": "services/web/dashboard/dashboard_openapi.py",
+    "tokens": 1283,
+    "hash": "95920bcb"
+  },
+  {
+    "file": "services/web/dashboard/reflex_patch.py",
+    "tokens": 205,
+    "hash": "165bd6ff"
+  },
+  {
+    "file": "services/web/dashboard/dashboard_openapi_patch.py",
+    "tokens": 183,
+    "hash": "f29b71c7"
+  },
+  {
+    "file": "services/web/dashboard/dashboard_openapi_patch_federated.py",
+    "tokens": 98,
+    "hash": "2ef2a961"
+  },
+  {
+    "file": "services/web/dashboard/dashboard_openapi_patch_visual.py",
+    "tokens": 104,
+    "hash": "ee5a822f"
+  },
+  {
+    "file": "services/web/dashboard/dashboard_openapi_patch_events.py",
+    "tokens": 105,
+    "hash": "0bf0df58"
+  },
+  {
+    "file": "services/web/wb_api/main.py",
+    "tokens": 105,
+    "hash": "107b34f6"
+  },
+  {
+    "file": "services/web/wb_scripts/enhancement_engine/enhancement_engine_785342_10-28-25.py",
+    "tokens": 195,
+    "hash": "25c67bfc"
+  },
+  {
+    "file": "services/web/wb_apps/oriel/scripts/classify_oriel_data_591149_10-28-25.py",
+    "tokens": 704,
+    "hash": "7bd3c4c5"
+  },
+  {
+    "file": "services/web/dashboard/federation_ui/graph_visualizer.py",
+    "tokens": 155,
+    "hash": "7baa9466"
+  },
+  {
+    "file": "services/web/wb_tools/soundboard/server_673914_10-28-25.py",
+    "tokens": 96,
+    "hash": "5c71699d"
+  }
+]

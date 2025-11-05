@@ -1,0 +1,13 @@
+nohup: ignoring input
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/self_diagnostic.py", line 5, in <module>
+    import subprocess, time, psutil, os
+ModuleNotFoundError: No module named 'psutil'
+nohup: ignoring input
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/self_diagnostic.py", line 5, in <module>
+    import subprocess, time, psutil, os
+ModuleNotFoundError: No module named 'psutil'
+nohup: ignoring input
+nohup: ignoring input
+nohup: ignoring input

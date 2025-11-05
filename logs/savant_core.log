@@ -1,0 +1,60 @@
+2025-11-05 03:07:21,880 SID=b0eadefe HASH=286db4ea9a781c5e7f30b676ac9f4e54140f9c79644ee3076c0678c974e8549b MSG=hello
+2025-11-05 03:11:36,154 CHAT afadf4f7 0561a0b9d5197d1a197ccd4d899513c566596e227b80cb3d108ffaa3a19d257b hello
+2025-11-05 03:12:36,564 CHAT afadf4f7 0561a0b9d5197d1a197ccd4d899513c566596e227b80cb3d108ffaa3a19d257b create an app that allows one to 3d scan a room and then cha
+2025-11-05 03:13:14,820 CHAT afadf4f7 0561a0b9d5197d1a197ccd4d899513c566596e227b80cb3d108ffaa3a19d257b follow all project rules
+2025-11-05 03:23:07,618 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 03:23:07,634 CHAT 2a3b52c5 0561a0b9d5197d1a197ccd4d899513c566596e227b80cb3d108ffaa3a19d257b 2.76s do yoy follow all rules
+2025-11-05 03:23:50,455 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 03:23:50,459 CHAT 2a3b52c5 0561a0b9d5197d1a197ccd4d899513c566596e227b80cb3d108ffaa3a19d257b 2.46s you didnt add reference number to your post so yiu arent following rules
+2025-11-05 03:24:25,667 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 03:24:25,679 CHAT 2a3b52c5 0561a0b9d5197d1a197ccd4d899513c566596e227b80cb3d108ffaa3a19d257b 1.76s is tgis not a chat response?
+2025-11-05 03:24:43,829 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 03:24:43,840 CHAT 2a3b52c5 0561a0b9d5197d1a197ccd4d899513c566596e227b80cb3d108ffaa3a19d257b 1.15s is this not a chat response
+2025-11-05 03:24:58,668 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 03:24:58,676 CHAT 2a3b52c5 0561a0b9d5197d1a197ccd4d899513c566596e227b80cb3d108ffaa3a19d257b 1.53s then why no reference number
+2025-11-05 03:25:12,384 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 03:25:12,390 CHAT 2a3b52c5 0561a0b9d5197d1a197ccd4d899513c566596e227b80cb3d108ffaa3a19d257b 0.79s answer
+2025-11-05 03:28:21,104 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 03:28:21,116 CHAT addc4720 0561a0b9d5197d1a197ccd4d899513c566596e227b80cb3d108ffaa3a19d257b 2.31s how many rules are there
+2025-11-05 03:29:19,684 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 03:29:19,693 CHAT addc4720 0561a0b9d5197d1a197ccd4d899513c566596e227b80cb3d108ffaa3a19d257b 7.44s create an app that allows one to 3d scan a room and then chang
+e floors, furnitu
+2025-11-05 03:30:02,036 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 03:30:02,051 CHAT addc4720 0561a0b9d5197d1a197ccd4d899513c566596e227b80cb3d108ffaa3a19d257b 3.75s how quickly could you make that app
+2025-11-05 03:32:41,800 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 03:32:41,802 CHAT fe94e018 752304a4fd5cd2aec0b7ed70f4305afe5885be36580990f4fc987dd595d8756b 11.49s create an app that allows one to 3d scan a room and then chang
+2025-11-05 03:32:45,360 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 03:32:45,372 CHAT fe94e018 752304a4fd5cd2aec0b7ed70f4305afe5885be36580990f4fc987dd595d8756b 3.51s e floors, furniture, etc to visualize different interior decorat
+2025-11-05 03:32:46,809 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 03:32:46,818 CHAT fe94e018 752304a4fd5cd2aec0b7ed70f4305afe5885be36580990f4fc987dd595d8756b 1.33s ing schemes
+2025-11-05 03:37:06,357 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 03:37:06,366 CHAT 3865c202 752304a4fd5cd2aec0b7ed70f4305afe5885be36580990f4fc987dd595d8756b 0.96s post rule 28
+2025-11-05 03:42:04,233 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 03:42:04,243 CHAT d1083da5 752304a4fd5cd2aec0b7ed70f4305afe5885be36580990f4fc987dd595d8756b 1.31s post all project rules
+2025-11-05 03:52:02,983 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 03:52:02,998 CHAT b595f90c d3fdf90e39a5ba85cc40e7b6ad8be95be41987c4657fc8003b97797bcd4cd793 1.29s do you follow all rules
+2025-11-05 03:52:21,890 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 03:52:21,905 CHAT b595f90c d3fdf90e39a5ba85cc40e7b6ad8be95be41987c4657fc8003b97797bcd4cd793 1.76s where are reference numbers
+2025-11-05 03:59:47,992 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 03:59:48,007 CHAT 4139eff1 752304a4fd5cd2aec0b7ed70f4305afe5885be36580990f4fc987dd595d8756b 3.53s do you follow all rules
+2025-11-05 04:00:29,787 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 04:00:29,818 CHAT 58702498 752304a4fd5cd2aec0b7ed70f4305afe5885be36580990f4fc987dd595d8756b 2.91s do you follow all rules
+2025-11-05 04:03:51,168 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 04:03:51,182 CHAT a64e31e6 3eaa056bd66ab594afaded9435f6b686a21b1d09f58e1ceaf680b4fb9306d80f 4.19s which rules are relevant in this moment?
+2025-11-05 04:04:31,258 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 04:04:31,270 CHAT a64e31e6 3eaa056bd66ab594afaded9435f6b686a21b1d09f58e1ceaf680b4fb9306d80f 6.11s list rules
+2025-11-05 04:25:37,485 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 04:25:37,500 CHAT 348823b3 64d421ea6a8f4685ad9289b1f74506d60810191beffb83232fba6aac13578c88 2.13s what are the rules
+2025-11-05 04:25:58,057 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 04:25:58,069 CHAT 348823b3 64d421ea6a8f4685ad9289b1f74506d60810191beffb83232fba6aac13578c88 9.85s list all rules
+2025-11-05 04:30:09,865 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 04:30:09,875 CHAT 348823b3 64d421ea6a8f4685ad9289b1f74506d60810191beffb83232fba6aac13578c88 2.25s which rules are relevabt at this moment
+2025-11-05 04:30:56,894 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 04:30:56,902 CHAT 348823b3 64d421ea6a8f4685ad9289b1f74506d60810191beffb83232fba6aac13578c88 2.34s why is there no reference number on that post
+2025-11-05 04:34:07,717 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 04:34:07,728 CHAT 348823b3 64d421ea6a8f4685ad9289b1f74506d60810191beffb83232fba6aac13578c88 4.86s please optimize savant/services/scripts/~/savant/services/scripts/guardian/comme
+2025-11-05 04:34:46,044 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 04:34:46,052 CHAT 348823b3 64d421ea6a8f4685ad9289b1f74506d60810191beffb83232fba6aac13578c88 1.49s please optimize that file and post full optimized code
+2025-11-05 04:35:23,080 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 04:35:23,092 CHAT 348823b3 64d421ea6a8f4685ad9289b1f74506d60810191beffb83232fba6aac13578c88 1.44s please optimize savant/services/scripts/~/savant/services/scri
+pts/guardian/comm

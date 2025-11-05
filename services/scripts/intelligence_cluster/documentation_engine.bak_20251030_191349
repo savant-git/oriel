@@ -1,0 +1,88 @@
+#!/usr/bin/env python3
+"""
+Savant Documentation Engine (SDE v1.0)
+--------------------------------------
+Autonomously generates deep documentation (≈2500 words per module)
+and inserts concise header comments.
+
+Features:
+  • Scans all Savant service scripts.
+  • Creates unique long-form README files in /savant/docs.
+  • Adds Savant-style doc headers (technical + poetic clarity).
+  • Uses OpenAI API defined in .env.
+"""
+import os, re, textwrap, json, openai
+from datetime import datetime, timezone
+from pathlib import Path
+from dotenv import load_dotenv
+
+ROOT = Path.home() / "savant"
+DOCS = ROOT / "docs"
+LOG = ROOT / "logs" / "doc_engine.log"
+load_dotenv(ROOT / ".env")
+
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+def log(msg:str):
+    LOG.parent.mkdir(parents=True, exist_ok=True)
+    with open(LOG,"a") as f:
+        f.write(f"[{datetime.now(timezone.utc).isoformat()}] {msg}\n")
+
+def generate_readme(script_path: Path):
+    name = script_path.name
+    text = script_path.read_text(errors="ignore")
+    prompt = f"""You are Savant, a hyper-technical documentation system.
+Write a 2500-word README explaining the file {name} in full detail.
+Describe:
+ - its role within Savant’s modular ecosystem,
+ - each class and function’s purpose,
+ - design philosophy,
+ - error handling,
+ - relationships to other modules,
+ - and internal flow.
+
+Maintain the 'Savant Technical Style': clarity, precision,
+minimal poetry but lyrical rhythm."""
+    try:
+        resp = openai.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[{"role":"user","content":prompt}],
+            temperature=0.4,
+        )
+        content = resp.choices[0].message.content.strip()
+        out_file = DOCS / f"{name}_doc.md"
+        DOCS.mkdir(parents=True, exist_ok=True)
+        out_file.write_text(content, encoding="utf-8")
+        log(f"✅ Generated README for {name}")
+    except Exception as e:
+        log(f"❌ Failed to generate {name}: {e}")
+
+def inject_header(script_path: Path):
+    """Insert a Savant-style doc header if absent."""
+    text = script_path.read_text(errors="ignore")
+    if "# ===" in text:  # already documented
+        return
+    header = textwrap.dedent(f"""\
+    # ===============================================================
+    # {script_path.name}
+    # Purpose: Auto-generated Savant documentation header.
+    # Behavior: See {script_path.name}_doc.md for extended analysis.
+    # Notes: Created {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+    # ===============================================================
+
+    """)
+    script_path.write_text(header + text, encoding="utf-8")
+
+def main():
+    count = 0
+    for p in (ROOT/"services").rglob("*.py"):
+        if "__init__" in p.name: 
+            continue
+        inject_header(p)
+        generate_readme(p)
+        count += 1
+    print(f"✅ Processed {count} modules.")
+    log(f"Completed {count} modules.")
+
+if __name__ == "__main__":
+    main()

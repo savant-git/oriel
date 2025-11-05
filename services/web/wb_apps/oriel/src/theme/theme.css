@@ -1,0 +1,36 @@
+/* ===============================================
+   oriel THEME — clean, bold, minimal foundation
+   =============================================== */
+:root {
+  --bg: #0d0d0d;
+  --fg: #f0f0f0;
+  --accent: #7c3aed;
+  --panel: #161616;
+  --radius: 12px;
+  --font: 'Inter', sans-serif;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  overflow-x: hidden;
+}
+.panel {
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: 1rem 1.5rem;
+  margin: 1rem;
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+}
+button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+button:hover { background: #9966ff; }

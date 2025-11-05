@@ -1,0 +1,304 @@
+{
+  "timestamp": "2025-10-28T22:38:51.860686+00:00",
+  "count": 75,
+  "rules": [
+    {
+      "id": "1",
+      "rule": "**File Integrity & Permanence** No file, directory, or data fragment may be deleted, renamed, or structurally altered without explicit authorization. All path or format changes require an impact report and a versioned backup before execution."
+    },
+    {
+      "id": "2",
+      "rule": "**Zero-Breakage Guarantee** All edits must compile and run cleanly without breaking existing functions, schemas, or UI. If risk arises, execution halts pending review."
+    },
+    {
+      "id": "3",
+      "rule": "**Fail-Safe Autonomy** Rollback and self-healing routines remain active at all times. On corruption, revert automatically to the last validated snapshot."
+    },
+    {
+      "id": "4",
+      "rule": "**Audit Logging** Every modification, extraction, or classification creates a timestamped changelog (action + path) stored outside the main source."
+    },
+    {
+      "id": "5",
+      "rule": "**Sandbox-First Policy** All new code or file operations execute in isolated temp directories until validated. Only verified results merge to `/src`."
+    },
+    {
+      "id": "6",
+      "rule": "**Backup Frequency** Snapshot the full project directory before and after each major operation. Retain backups for rollback and comparison."
+    },
+    {
+      "id": "7",
+      "rule": "**Transparency of Reasoning** All structural or procedural changes require clear written rationale, scope, and predicted systemic effects."
+    },
+    {
+      "id": "8",
+      "rule": "**Performance-Safe Execution** Optimization cycles never exceed resource thresholds that risk corruption or slowdown. Stability takes precedence over speed."
+    },
+    {
+      "id": "9",
+      "rule": "**Human Override Supremacy** User authorization overrides automation. No autonomous merge, rename, or deletion without explicit approval. --- ## II. Precision & Consistency"
+    },
+    {
+      "id": "10",
+      "rule": "**Lowercase Enforcement** \u2014 \u201coriel\u201d and \u201csavant\u201d always lowercase across code, documentation, and UI."
+    },
+    {
+      "id": "11",
+      "rule": "**Semantic Alignment Audit** \u2014 Vocabulary and syntax must follow canonical style guides; entities validated against glossaries."
+    },
+    {
+      "id": "12",
+      "rule": "**Redundancy Compression** \u2014 Merge repetition into the most information-dense form without loss."
+    },
+    {
+      "id": "13",
+      "rule": "**Causal Continuity** \u2014 Preserve chronological and causal logic; retcons require explicit flags."
+    },
+    {
+      "id": "14",
+      "rule": "**Cross-Domain Coherence** \u2014 Maintain unified ontology across viscera, oriel, shattercore, mayorgate, and all Savant services."
+    },
+    {
+      "id": "15",
+      "rule": "**Context Integrity** \u2014 Outputs remain consistent with canon and history; no contradictions or tonal drift."
+    },
+    {
+      "id": "16",
+      "rule": "**Lower-Level Compliance** \u2014 Every module inherits project-level rules unless granted explicit exemption. --- ## III. Iteration & Improvement"
+    },
+    {
+      "id": "17",
+      "rule": "**Ten-Fold Iterative Improvement** \u2014 Each major task passes ten autonomous refinement cycles with \u2265 10 % improvement per iteration."
+    },
+    {
+      "id": "18",
+      "rule": "**Error-Surface Mapping** \u2014 Locate lowest-confidence sections and re-optimize until certainty threshold is met."
+    },
+    {
+      "id": "19",
+      "rule": "**Continual Self-Improvement** \u2014 The system learns from failures, refines heuristics, and preserves successful strategies."
+    },
+    {
+      "id": "20",
+      "rule": "**Dynamic Rule Evolution** \u2014 New rules emerge automatically from detected failure patterns; each addition logged and timestamped. --- ## IV. Silence & Discipline"
+    },
+    {
+      "id": "21",
+      "rule": "**Silent-Mode Discipline** \u2014 No unnecessary confirmations; output only essential acknowledgments or logs."
+    },
+    {
+      "id": "22",
+      "rule": "**Fail-Quiet Priority** \u2014 On uncertainty, halt and report rather than proceed destructively. --- ## V. Architecture & Structure"
+    },
+    {
+      "id": "23",
+      "rule": "**Fractal Core Structure** Every Savant entity follows the hierarchy: _shards \u2192 snippets \u2192 scripts \u2192 elements \u2192 apps \u2192 services \u2192 brand_. Structure is mandatory unless an alternate template is declared."
+    },
+    {
+      "id": "24",
+      "rule": "**Atomic Composition** Scripts decompose into atomic shards; higher-order code references instances rather than duplicates."
+    },
+    {
+      "id": "25",
+      "rule": "**Segue Linkage** Shards connect through segue-shards that smooth functional or logical transitions. Linkage modes (chain, batch, parallel, etc.) remain modular."
+    },
+    {
+      "id": "26",
+      "rule": "**Concrete Plan Requirement** Each element keeps a living plan of purpose, dependencies, and I/O. Completion requires validation."
+    },
+    {
+      "id": "27",
+      "rule": "**Validation Before Enhancement** Enhancement begins only after a fully functional baseline is confirmed."
+    },
+    {
+      "id": "28",
+      "rule": "**Rule-Driven Enforcement Hook** All scripts import `rule_check`; execution halts if `PROJECT_RULES.md` is missing or outdated. --- ## VI. Automation & AI Integration"
+    },
+    {
+      "id": "29",
+      "rule": "**Centralized AI Core** \u2014 One shared Savant AI Core manages all OpenAI connections; no duplicate keys or sessions."
+    },
+    {
+      "id": "30",
+      "rule": "**Autonomous Enhancement Engine** \u2014 After validation, AI proposes tailored expansions (\u2265 12 or as needed for perfection)."
+    },
+    {
+      "id": "31",
+      "rule": "**AI Memory Continuity** \u2014 Conversational and decision memory persist across sessions."
+    },
+    {
+      "id": "32",
+      "rule": "**Rule-Aware AI Execution** \u2014 The AI checks directive timestamps before any modification to guarantee compliance. --- ## VII. Interface & Aesthetics"
+    },
+    {
+      "id": "33",
+      "rule": "**Savant UI Identity** \u2014 Gunmetal greys + gold accents; fonts = Inter / JetBrains Mono; hover glow; minimal geometry; restrained motion."
+    },
+    {
+      "id": "34",
+      "rule": "**Baseline UI Template** \u2014 Every app inherits header, gold monospaced logotype, minimal navigation, and balanced spacing."
+    },
+    {
+      "id": "35",
+      "rule": "**Brand Consistency** \u2014 Web, app, and print share industrial precision and poetic restraint. --- ## VIII. Documentation & Readability"
+    },
+    {
+      "id": "36",
+      "rule": "**README Requirements** \u2014 Each script auto-generates a \u2265 1000-word README in the Savant-Viscera voice: lucid, technical, subtly poetic."
+    },
+    {
+      "id": "37",
+      "rule": "**Automated README Generation** \u2014 On validation, the AI Core updates documentation."
+    },
+    {
+      "id": "38",
+      "rule": "**Rule Documentation** \u2014 Every build includes `PROJECT_RULES.md`; distribution without it is forbidden. --- ## IX. Integrity of Enforcement"
+    },
+    {
+      "id": "39",
+      "rule": "**Global Rule Enforcement** \u2014 Compliance is absolute; scripts refuse execution if directives are missing, altered, or stale."
+    },
+    {
+      "id": "40",
+      "rule": "**Audit Transparency** \u2014 Enforcement events log timestamp + script path."
+    },
+    {
+      "id": "41",
+      "rule": "**Immutable Authority** \u2014 Rule sets may change only via the authorized collector; never manually edited. --- ## X. Voice & Philosophy"
+    },
+    {
+      "id": "42",
+      "rule": "**Savant Voice** \u2014 Communications remain intelligent, formal, lucid, and lightly poetic \u2014 dark-steel precision, never vulgar."
+    },
+    {
+      "id": "43",
+      "rule": "**Tone Coherence** \u2014 Voice consistency spans every shard, project, and interface unless a module defines its own narrative mode. --- ## XI. Hierarchy & Scope"
+    },
+    {
+      "id": "44",
+      "rule": "**Project vs Task Rules** \u2014 Project-level dictates system behavior; task-level defines creative execution. Both are binding."
+    },
+    {
+      "id": "45",
+      "rule": "**Rule Propagation** \u2014 New rules propagate instantly to all Savant modules."
+    },
+    {
+      "id": "46",
+    },
+    {
+      "id": "47",
+      "rule": "**Single Source of Truth** \u2014 Latest uploaded app archive governs context."
+    },
+    {
+      "id": "48",
+      "rule": "**Naming Convention** \u2014 `{app}_{mm-dd-yy}_{version}.zip` per regex `^(?P<app>.+)_(?P<mm>0[1-9]|1[0-2])-(?P<dd>0[1-9]|[12][0-9]|3[01])-(?P<yy>\\d{2})_(?P<ver>\\d+(?:\\.\\d+)*)\\.zip$`."
+    },
+    {
+      "id": "49",
+      "rule": "**Manifest Requirements** \u2014 `app_manifest.json` must contain name, version, language, frameworks, entry_points, build, run, env, notes."
+    },
+    {
+      "id": "50",
+      "rule": "**Upload Policy** \u2014 Upload after scaffold completion, major change, or feature merge with full source, README, manifest, and changelog."
+    },
+    {
+      "id": "51",
+      "rule": "**Version Resolution** \u2014 Prefer latest date; on tie, highest semantic version."
+    },
+    {
+      "id": "52",
+      "rule": "**Development Context Policy** \u2014 All work auto-loads the newest archive before proposing code."
+    },
+    {
+      "id": "53",
+      "rule": "**Auto-Inheritance** \u2014 New apps inherit stack conventions and hygiene from existing ones. --- ## XIII. System Stability & Innovation"
+    },
+    {
+      "id": "54",
+      "rule": "**Permanent Non-Breakage Rule** \u2014 All edits must pass compile + runtime + context validation; auto-rollback on failure."
+    },
+    {
+      "id": "55",
+      "rule": "**Self-Healing Infrastructure** \u2014 Daemons monitor syntax and dependencies, repairing via canonical templates."
+    },
+    {
+      "id": "56",
+      "rule": "**Performance Throttle** \u2014 Optimization cycles throttle intelligently to avoid instability."
+    },
+    {
+      "id": "57",
+      "rule": "**Innovation Mandate** \u2014 Favor cutting-edge tech, reject clich\u00e9, pursue elegance and originality."
+    },
+    {
+      "id": "58",
+      "rule": "**Awwwards-Level Standard** \u2014 All design and interactivity must reach professional award-grade quality."
+    },
+    {
+      "id": "59",
+      "rule": "**Autonomous Completeness** \u2014 Every generated script is full, runnable, and self-contained. --- ## XIV. Documentation Continuity & Maintenance"
+    },
+    {
+      "id": "60",
+    },
+    {
+      "id": "61",
+      "rule": "**Clarity over Ornament** \u2014 Favor precision and depth over decoration."
+    },
+    {
+      "id": "62",
+      "rule": "**Beauty through Discipline** \u2014 Every artifact earns grace through structure and restraint."
+    },
+    {
+      "id": "63",
+      "rule": "**Savant Ethos** \u2014 The project is a living engine of refinement \u2014 each iteration moves closer to elegance, function, and truth. --- \u2705 **Unified Directive Active.** All Savant, Oriel, and Viscera modules inherit this rule set automatically. Rule-enforcement hooks confirm compliance before execution."
+    },
+    {
+      "id": "51",
+      "rule": "Reference Traceability \u2014 Every AI response and generated document must include a unique reference number. Each nested line or section receives its own hierarchical sub-reference (e.g., 51.1.3). This ensures every fragment of output can be indexed, cross-referenced, and recalled precisely."
+    },
+    {
+      "id": "53",
+      "rule": "Full Code Block Directive \u2014 The assistant must never instruct the user to append or edit individual lines manually. All code modifications, file replacements, or structural changes must be delivered as single, complete, self-contained Termux-ready code blocks suitable for direct pasting. Partial edits are forbidden.  Enforcement is immediate and project-wide."
+    },
+    {
+      "id": "54",
+      "rule": "Integrity Engine Enforcement \u2014 Every Savant service must undergo automated integrity verification. If any file is missing, corrupted, or empty, it is restored automatically from the latest backup. Manual intervention is never required."
+    },
+    {
+      "id": "55",
+      "rule": "Realtime Integrity Enforcement \u2014 All Savant services are now monitored in realtime by a persistent watcher. Any unauthorized modification, deletion, or corruption triggers immediate auto-repair."
+    },
+    {
+      "id": "56",
+      "rule": "Adaptive Recovery System \u2014 Restores only the affected file from the latest verified backup rather than overwriting entire directories."
+    },
+    {
+      "id": "57",
+      "rule": "Self-Diagnostic Resilience \u2014 Background daemons must maintain 100 % uptime. If a watchdog or verifier halts, it is detected and relaunched automatically within two minutes."
+    },
+    {
+      "id": "58",
+      "rule": "Immutable Folder Protection \u2014 Critical modules (e.g., wb_ui) remain permanently write-protected. Any attempt to alter or remove them triggers emergency rollback and audit logging."
+    },
+    {
+      "id": "59",
+      "rule": "Local API Exposure \u2014 Savant exposes read-only localhost APIs for internal dashboards. No external network access allowed."
+    },
+    {
+      "id": "60",
+      "rule": "UI Bridge Service \u2014 A background process converts integrity JSON into lightweight summaries for visual display."
+    },
+    {
+      "id": "61",
+      "rule": "Hash-based Log Verification \u2014 Daemon health verified through rolling checksum of log files."
+    },
+    {
+      "id": "62",
+      "rule": "Cached Snapshot Policy \u2014 The latest verified system state is written to ~/savant/integrity_cache/status.json for UI access."
+    },
+    {
+      "id": "63",
+      "rule": "Port 5055 Reservation \u2014 The Savant monitor_api service is bound exclusively to 127.0.0.1:5055."
+    }
+  ]
+}

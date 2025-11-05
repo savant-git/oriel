@@ -1,0 +1,16 @@
+nohup: ignoring input
+INFO:     Started server process [25654]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:7070 (Press CTRL+C to quit)
+INFO:     127.0.0.1:40790 - "GET /api/version HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36424 - "GET /api/system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36434 - "GET /api/fractal HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36442 - "POST /api/ai HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45874 - "GET /api/schema HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:32976 - "GET /api/version HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32982 - "GET /api/schema HTTP/1.1" 404 Not Found
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [25654]

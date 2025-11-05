@@ -1,0 +1,8 @@
+{
+  "brand": "Savant",
+  "version": "♦12>9 | ⬣10=7 | ⬡8<5",
+  "stack": "Bun + SolidStart + Motion + Three.js",
+  "status": "active",
+  "bound_host": "0.0.0.0",
+  "bound_port": 8080
+}

@@ -1,0 +1,8 @@
+{
+  "silentMode": true,
+  "iterations": 10,
+  "improvementThreshold": 0.10,
+  "autoHeal": true,
+  "contextFile": "context-map.yaml",
+  "logFile": "logs/iteration.log"
+}

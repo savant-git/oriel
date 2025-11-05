@@ -1,0 +1,22 @@
+[
+  {
+    "id": "M_mhmfnb0a",
+    "timestamp": 1762373447290,
+    "data": "System boot complete",
+    "weight": 1,
+    "tags": [
+      "thought"
+    ],
+    "links": []
+  },
+  {
+    "id": "M_mhmfnb0b",
+    "timestamp": 1762373447291,
+    "data": "Oriel engine fully online",
+    "weight": 1,
+    "tags": [
+      "system"
+    ],
+    "links": []
+  }
+]

@@ -1,0 +1,17 @@
+/data/data/com.termux/files/home/projects/oriel/src/core/aiEngine.ts:
+  imports:
+    - @langchain/openai
+    - @langchain/core/prompts
+    - @langchain/core/output_parsers
+    - @langchain/core/runnables
+/data/data/com.termux/files/home/projects/oriel/src/main.tsx:
+  imports:
+    - react
+    - react-dom/client
+    - ./ui/App
+/data/data/com.termux/files/home/projects/oriel/src/theme/theme.css:
+  imports:
+
+/data/data/com.termux/files/home/projects/oriel/src/ui/App.tsx:
+  imports:
+    - react

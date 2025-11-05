@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "outDir": "build-compiled",
+    "rootDir": ".",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+
+    "types": ["node", "electron"],
+    "lib": ["es2020", "dom"],
+
+    "skipLibCheck": true,
+    "strict": false,
+    "noImplicitAny": false,
+    "noEmitOnError": false,
+    "sourceMap": false
+  },
+  "include": [
+    "main.ts",
+    "preload.ts",
+    "ui/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    "build-compiled"
+  ]
+}

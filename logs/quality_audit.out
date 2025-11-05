@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/savant/services/utils/personality_quality_bridge.py", line 62, in <module>
+    personality_reflex_cycle("automated_audit")
+  File "/data/data/com.termux/files/home/savant/services/utils/personality_quality_bridge.py", line 43, in personality_reflex_cycle
+    log(f"🧠 Initiating reflex cycle for context: {context}")
+  File "/data/data/com.termux/files/home/savant/services/utils/personality_quality_bridge.py", line 21, in log
+    f.write(f"[{datetime.now(datetime.UTC).isoformat()}] {msg}\n")
+                             ^^^^^^^^^^^^
+AttributeError: type object 'datetime.datetime' has no attribute 'UTC'

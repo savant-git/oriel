@@ -1,0 +1,15 @@
+{
+  "app": "oriel",
+  "levels": [
+    "app",
+    "lattice",
+    "facet",
+    "shard",
+    "filament",
+    "refract",
+    "grain"
+  ],
+  "version": "\u2b224<\ud83d\udd3b7<\u2b229",
+  "timestamp": "2025-10-28T18:37:44.629915Z",
+  "enhancement_log": "Enhanced by 24%"
+}

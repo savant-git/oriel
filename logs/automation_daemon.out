@@ -1,0 +1,87 @@
+nohup: ignoring input
+✅ integrity check complete.
+nohup: ignoring input
+✅ integrity check complete.
+nohup: ignoring input
+✅ integrity check complete.
+nohup: ignoring input
+✅ integrity check complete.
+nohup: ignoring input
+✅ integrity check complete.
+✅ integrity check complete.
+✅ integrity check complete.
+✅ integrity check complete.
+✅ integrity check complete.
+✅ integrity check complete.
+✅ integrity check complete.
+✅ integrity check complete.
+✅ integrity check complete.
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/client-only/index.js
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/node-environment-baseline.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/node-polyfill-crypto.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/lib/require-instrumentation-client.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/lib/setup-exception-listeners.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/compiled/server-only/empty.js
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/compiled/client-only/index.js
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/compiled/@edge-runtime/primitives/abort-controller.js.LEGAL.txt
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/compiled/@edge-runtime/primitives/console.js.LEGAL.txt
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/compiled/@edge-runtime/primitives/crypto.js.LEGAL.txt
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/compiled/@edge-runtime/primitives/events.js.LEGAL.txt
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/compiled/@edge-runtime/primitives/index.js.LEGAL.txt
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/compiled/@edge-runtime/primitives/stream.js.LEGAL.txt
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/compiled/@edge-runtime/primitives/timers.js.LEGAL.txt
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/compiled/@edge-runtime/primitives/url.js.LEGAL.txt
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/pages/vendored/contexts/amp-context.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/pages/vendored/contexts/app-router-context.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/pages/vendored/contexts/head-manager-context.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/pages/vendored/contexts/hooks-client-context.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/pages/vendored/contexts/html-context.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/pages/vendored/contexts/image-config-context.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/pages/vendored/contexts/loadable-context.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/pages/vendored/contexts/loadable.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/pages/vendored/contexts/router-context.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/pages/vendored/contexts/server-inserted-html.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/amp-context.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/app-router-context.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/head-manager-context.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/hooks-client-context.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/image-config-context.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/router-context.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/server-inserted-html.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-compiler-runtime.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-dom.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-runtime.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-server-dom-turbopack-server.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-server-dom-turbopack-static.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-server-dom-webpack-server.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-server-dom-webpack-static.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-compiler-runtime.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-dom-server.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-dom.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-runtime.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-server-dom-turbopack-client.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-server-dom-webpack-client.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/build/polyfills/process.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/build/webpack/loaders/css-loader/src/runtime/getUrl.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/build/polyfills/object.assign/auto.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/build/polyfills/object.assign/implementation.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/build/polyfills/object.assign/polyfill.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/build/polyfills/object.assign/shim.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/build/polyfills/fetch/whatwg-fetch.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/build/jest/__mocks__/empty.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/build/jest/__mocks__/fileMock.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/build/jest/__mocks__/nextFontMock.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/dist/build/jest/__mocks__/styleMock.d.ts
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/font/google/index.js
+⚠️ Empty file detected: /data/data/com.termux/files/home/savant/services/web/wb_ui/node_modules/next/font/local/index.js
+✅ integrity check complete.
+/data/data/com.termux/files/usr/bin/python3: can't open file '/data/data/com.termux/files/home/savant/services/scripts/rule_engine/enforce_guard.py': [Errno 2] No such file or directory
+/data/data/com.termux/files/usr/bin/python3: can't open file '/data/data/com.termux/files/home/savant/services/scripts/integrity_engine/verify_integrity.py': [Errno 2] No such file or directory
+/data/data/com.termux/files/usr/bin/python3: can't open file '/data/data/com.termux/files/home/savant/services/scripts/rule_engine/enforce_guard.py': [Errno 2] No such file or directory
+/data/data/com.termux/files/usr/bin/python3: can't open file '/data/data/com.termux/files/home/savant/services/scripts/integrity_engine/verify_integrity.py': [Errno 2] No such file or directory
+/data/data/com.termux/files/usr/bin/python3: can't open file '/data/data/com.termux/files/home/savant/services/scripts/rule_engine/enforce_guard.py': [Errno 2] No such file or directory
+/data/data/com.termux/files/usr/bin/python3: can't open file '/data/data/com.termux/files/home/savant/services/scripts/integrity_engine/verify_integrity.py': [Errno 2] No such file or directory

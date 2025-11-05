@@ -1,0 +1,4 @@
+[2025-11-03 21:51:32] 🧠 Starting Savant Extract v100...
+[2025-11-03 21:51:49] ⚠️ Skipped chat_raw_20251101_045357.json: 'NoneType' object has no attribute 'get'
+[2025-11-03 21:51:49] ⚠️ Skipped chat_raw_20251101_045818.json: 'NoneType' object has no attribute 'get'
+[2025-11-03 21:51:50] ✅ Extracted 0 messages → /home/you/savant/exports/conversations.json

@@ -1,0 +1,497 @@
+[
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/__init___231734_10-28-25.py",
+    "score": 0,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/__init___308574_10-28-25.py",
+    "score": 0,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/readme_generator/__init___828049_10-28-25.py",
+    "score": 0,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/readme_generator/readme_generator_369423_10-28-25.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/readme_generator/readme-generator/readme_generator_499870_10-28-25.py",
+    "score": 40,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/ledger_engine/ledger_watchdog.py",
+    "score": 30,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/shard-engine/assembler_872921_10-28-25.py",
+    "score": 30,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/fractal-core/segue_registry_757046_10-28-25.py",
+    "score": 50,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/fractal-core/fractal_core_713549_10-28-25.py",
+    "score": 50,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/fractal-core/optimize_system_496762_10-28-25.py",
+    "score": 30,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/task-engine/backend_277191_10-28-25.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/task-lattice/task_lattice_456361_10-28-25.py",
+    "score": 60,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/rule_check_171138_10-28-25.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/rule_guard.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/audit_guard_752855_10-28-25.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/trace_guard_863439_10-28-25.py",
+    "score": 0,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/auto_protect_221889_10-28-25.py",
+    "score": 0,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/enforcer.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/rule_engine_364275_10-28-25.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/__init___617768_10-28-25.py",
+    "score": 0,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/enforce_332575_10-28-25.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/enforce_guard_516018_10-28-25.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/hook_runtime_644236_10-28-25.py",
+    "score": 0,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/non_destructive_ops_973599_10-28-25.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/__init__.py",
+    "score": 0,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/telemetry/telemetry_daemon.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/telemetry/export_manifest.py",
+    "score": 0,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/task_engine/task_engine.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/task_engine/task_backend_542860_10-28-25.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/task_engine/task_engine_959252_10-28-25.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_memory_626440_10-28-25.py",
+    "score": 40,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_core_229796_10-28-25.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_core.py",
+    "score": 60,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/client_579228_10-28-25.py",
+    "score": 60,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_router_604946_10-28-25.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/__init___689589_10-28-25.py",
+    "score": 0,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_gateway.py",
+    "score": 80,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/self_optimizer.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_core_gateway.py",
+    "score": 30,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/personality_engine.py",
+    "score": 70,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_version_integration_228941_10-28-25.py",
+    "score": 50,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_core.py",
+    "score": 70,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_core_528231_10-28-25.py",
+    "score": 70,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/integrity_engine/verify_integrity_451066_10-28-25.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/integrity_engine/realtime_watcher_789448_10-28-25.py",
+    "score": 50,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/ui_bridge_307967_10-28-25.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_daemon_794198_10-28-25.py",
+    "score": 30,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/dashboard_watchdog.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/master_guard_982345_10-28-25.py",
+    "score": 30,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/self_diagnostic_405617_10-28-25.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_queue_718116_10-28-25.py",
+    "score": 30,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/svx_core_799175_10-28-25.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/svx_retroactive_937653_10-28-25.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/roadmap_engine/completion_roadmap_529888_10-28-25.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/version_engine/version_daemon.py",
+    "score": 30,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/version_engine/version_engine_975449_10-28-25.py",
+    "score": 30,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/version_engine/version_engine.py",
+    "score": 30,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/version_engine/full_version_syntax.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/version_engine/triadic_version_engine.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/context_engine/context_ledger.py",
+    "score": 70,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/context_engine/context_sync.py",
+    "score": 30,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/fractal_visualization/visualizer.py",
+    "score": 50,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/ai_memory/memory_engine.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/fractal_archive/archive.py",
+    "score": 50,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/shard_engine/shard_compiler.py",
+    "score": 60,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/shard_engine/live_indexer.py",
+    "score": 50,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/shard_engine/cross_linker.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/shard_engine/semantic_search.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/shard_engine/shard_mutator.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/shard_engine/phase_26.py",
+    "score": 0,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/shard_engine/phase_27.py",
+    "score": 0,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/shard_engine/phase_28.py",
+    "score": 0,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/shard_engine/phase_29.py",
+    "score": 0,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/shard_engine/phase_30.py",
+    "score": 0,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/visual_engine/log_parser.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/dependency_audit/quality_gate.py",
+    "score": 30,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/personality_engine/governor.py",
+    "score": 70,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/personality_engine/__init__.py",
+    "score": 0,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/personality_engine/deep_research/research_core.py",
+    "score": 50,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/personality_engine/deep_research/__init__.py",
+    "score": 0,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/personality_engine/decision_core/decision_core.py",
+    "score": 40,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/personality_engine/decision_core/__init__.py",
+    "score": 0,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/personality_engine/augment_core/augment_core.py",
+    "score": 80,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/personality_engine/augment_core/__init__.py",
+    "score": 0,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/personality_engine/reflex_core/reflex_core.py",
+    "score": 40,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/personality_engine/reflex_core/__init__.py",
+    "score": 0,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/personality_engine/governor_core/governor.py",
+    "score": 50,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/personality_engine/governor_core/__init__.py",
+    "score": 0,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/snippet_engine/snippet_manager.py",
+    "score": 40,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/scripts/snippet_engine/__init__.py",
+    "score": 0,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/web/wb_scripts/enhancement_engine/enhancement_engine_785342_10-28-25.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/web/wb_apps/oriel/node_modules/flatted/python/flatted.py",
+    "score": 50,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/web/wb_apps/oriel/scripts/classify_oriel_data_591149_10-28-25.py",
+    "score": 50,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/web/wb_api/main.py",
+    "score": 60,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/web/wb_tools/soundboard/server_673914_10-28-25.py",
+    "score": 20,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/api/main.py",
+    "score": 60,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/api/monitor_api_743569_10-28-25.py",
+    "score": 30,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/utils/cleanup_engine.py",
+    "score": 40,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  },
+  {
+    "path": "/data/data/com.termux/files/home/savant/services/utils/quality_enforcer.py",
+    "score": 90,
+    "status": "\u26a0\ufe0f Upgrade Required"
+  }
+]

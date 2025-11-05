@@ -1,0 +1,16 @@
+{
+  "nodeModulesDir": "auto",
+  "tasks": {
+    "dev": "deno run -A npm:solid-start dev --host 0.0.0.0 --port 8080"
+  },
+  "compilerOptions": {
+    "lib": ["dom", "esnext"],
+    "jsx": "preserve"
+  },
+  "imports": {
+    "@tanstack/solid-query": "npm:@tanstack/solid-query@^5.90.6",
+    "motion": "npm:motion@^12.23.24",
+    "solid-start": "npm:solid-start@^0.3.11",
+    "three": "npm:three@^0.180.0"
+  }
+}

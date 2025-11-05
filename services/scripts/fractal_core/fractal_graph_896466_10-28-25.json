@@ -1,0 +1,53 @@
+{
+  "name": "savant",
+  "curvature": 5.0,
+  "children": [
+    {
+      "name": "sector",
+      "curvature": 4.5,
+      "children": [
+        {
+          "name": "vessel",
+          "curvature": 3.9,
+          "children": [
+            {
+              "name": "lattice",
+              "curvature": 2.8,
+              "children": [
+                {
+                  "name": "facet",
+                  "curvature": 2.3,
+                  "children": [
+                    {
+                      "name": "shard",
+                      "curvature": 1.8,
+                      "children": [
+                        {
+                          "name": "filament",
+                          "curvature": 1.2,
+                          "children": [
+                            {
+                              "name": "refract",
+                              "curvature": 0.7,
+                              "children": [
+                                {
+                                  "name": "grain",
+                                  "curvature": 0.4,
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+[2025-10-31T08:28:32.927819+00:00] ✅ Removed 7 redundant items.
+[2025-10-31T08:28:32.929138+00:00] 🔗 Verifying connections...
+[2025-10-31T08:28:32.930160+00:00] ▶ Check OpenAI + GitHub + S3 connectivity
+[2025-10-31T08:28:48.886826+00:00] ⛓️  CORE: Savant Core
+────────────────────────────────────────────────
+v1.0
+Restored aesthetic
+────────────────────────────────────────────────
+☑  DONE: Complete.
+
+
+🔑 Testing OpenAI API connection...
+☑  DONE: Complete.
+
+
+🐙 Testing GitHub token...
+☑  DONE: Complete.
+
+
+☁️  Testing S3 connectivity...
+☑  DONE: Complete.
+
+☑  DONE: Complete.
+[2025-10-31T08:28:48.890245+00:00] 📚 Running knowledge synthesis cluster...
+[2025-10-31T08:28:48.891141+00:00] ▶ Knowledge synthesis
+[2025-10-31T08:28:49.157418+00:00] ⚠ Knowledge synthesis failed:
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/savant/services/scripts/intelligence_cluster/knowledge_synthesis_cluster.py", line 29, in <module>
+    from shard_tools import chunk_text, infer_domains, sha1_str, save_json, level_from_shards, log_event
+  File "/data/data/com.termux/files/home/savant/services/scripts/intelligence_cluster/shard_tools.py", line 18
+    ```python
+    ^
+SyntaxError: invalid syntax
+[2025-10-31T08:28:49.158075+00:00] 📦 Running export + compaction cycle...
+[2025-10-31T08:28:49.158792+00:00] ▶ Run export_cluster_v5_1.py

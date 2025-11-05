@@ -1,0 +1,164 @@
+{
+  "history": [
+    {
+      "id": "6e60b7c0-9d53-4259-a09d-fcf40e742130",
+      "timestamp": "2025-10-28T22:01:13.555080",
+      "scope": "governance",
+      "change_type": "initialization",
+      "description": "Project rules imported and normalized.",
+      "status": "active",
+      "author": "system"
+    },
+    {
+      "id": "3e496926-2ab4-4c84-aedf-117126cdec51",
+      "timestamp": "2025-10-28T22:01:13.556012",
+      "scope": "hierarchy",
+      "change_type": "revision",
+      "description": "Expanded to 13-level fractal hierarchy.",
+      "status": "active",
+      "author": "system"
+    },
+    {
+      "id": "e7afdab0-ac7a-4d4a-bc41-5f4d9101a58e",
+      "timestamp": "2025-10-28T22:01:13.557065",
+      "scope": "hierarchy",
+      "change_type": "app_inheritance",
+      "description": "Apps begin at app level and inherit downward.",
+      "status": "active",
+      "author": "system"
+    },
+    {
+      "id": "c72acfff-25d5-4c4b-b0dd-bf42c8d51ba6",
+      "timestamp": "2025-10-28T22:01:13.557762",
+      "scope": "hierarchy",
+      "change_type": "symbol_update",
+      "description": "Shard level marked red hex; others gold/orange shades.",
+      "status": "active",
+      "author": "system"
+    },
+    {
+      "id": "4b6a9740-c921-46a0-8727-88d88d2e1478",
+      "timestamp": "2025-10-28T22:01:13.558516",
+      "scope": "ui_template",
+      "change_type": "creation",
+      "description": "Savant baseline UI created (Next.js/Tailwind/Framer Motion/Three.js).",
+      "status": "active",
+      "author": "system"
+    },
+    {
+      "id": "7ff24732-f719-434d-b8f7-c2918ffa59af",
+      "timestamp": "2025-10-28T22:01:13.559238",
+      "scope": "version_system",
+      "change_type": "implementation",
+      "description": "Triadic version system with relational operators encoded as _lt_, _eq_, _gt_.",
+      "status": "active",
+      "author": "system"
+    },
+    {
+      "id": "8e5974ab-b2a4-4d09-850e-07d68f0cd608",
+      "timestamp": "2025-10-28T22:01:13.559922",
+      "scope": "context_system",
+      "change_type": "implementation",
+      "description": "Immutable ledger introduced to ensure coherence.",
+      "status": "active",
+      "author": "system"
+    },
+    {
+      "id": "b8e7d3d7-b1fd-48a5-912c-7b647b8b92e5",
+      "timestamp": "2025-10-28T22:01:13.560703",
+      "scope": "enhancement_engine",
+      "change_type": "policy_update",
+      "description": "Enhancements run only after validation and project completion.",
+      "status": "active",
+      "author": "system"
+    },
+    {
+      "id": "285cfa74-761b-424f-b824-3aaa8de7d2be",
+      "timestamp": "2025-10-28T22:01:13.561437",
+      "scope": "rule_system",
+      "change_type": "integration",
+      "description": "All non-negotiable rules integrated and propagated.",
+      "status": "active",
+      "author": "system"
+    },
+    {
+      "id": "db215e70-6ea9-4258-8f5b-15807ff11d10",
+      "timestamp": "2025-10-28T22:01:13.562242",
+      "scope": "ai_core",
+      "change_type": "centralization",
+      "description": "Single OpenAI key and shared AI interface established.",
+      "status": "active",
+      "author": "system"
+    },
+    {
+      "id": "ceb39e14-c3de-44f9-b539-a94a8f41aa23",
+      "timestamp": "2025-10-28T22:01:13.563012",
+      "scope": "task_engine",
+      "change_type": "foundation",
+      "description": "Dynamic nested task lattice created.",
+      "status": "active",
+      "author": "system"
+    },
+    {
+      "id": "be6c4f79-6291-4ae4-a1ae-c149b479905b",
+      "timestamp": "2025-10-28T22:01:13.563727",
+      "scope": "automation",
+      "change_type": "daemon_init",
+      "description": "Realtime watcher, self-diagnostic, master_guard launched.",
+      "status": "active",
+      "author": "system"
+    },
+    {
+      "id": "12e69452-f337-4c82-80ea-ce25cfa60dd2",
+      "timestamp": "2025-10-28T22:01:13.564469",
+      "scope": "branding",
+      "change_type": "definition",
+      "description": "Savant aesthetic defined: gunmetal + gold minimal industrial precision.",
+      "status": "active",
+      "author": "system"
+    },
+    {
+      "id": "c93963c1-8d16-485f-afd8-921dbdf343eb",
+      "timestamp": "2025-10-28T22:08:26.374145",
+      "scope": "ai_core",
+      "change_type": "invoke",
+      "description": "Prompt len=90, model=gpt-5-turbo",
+      "status": "active",
+      "author": "system"
+    },
+    {
+      "id": "30f29f95-f4fa-42dd-a79c-3335c2405646",
+      "timestamp": "2025-10-28T22:08:28.733516",
+      "scope": "ai_core",
+      "change_type": "error",
+      "description": "Error code: 404 - {'error': {'message': 'The model `gpt-5-turbo` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}",
+      "status": "active",
+      "author": "system"
+    },
+    {
+      "id": "671a699f-000e-4e0c-bce8-16853dcf5649",
+      "timestamp": "2025-10-28T22:28:31.540279",
+      "scope": "ai_core",
+      "change_type": "invoke",
+      "description": "Prompt len=43 model=gpt-4o",
+      "status": "active",
+      "author": "system"
+    },
+    {
+      "id": "493201e4-9a24-49cb-8e57-02a1b06ca233",
+      "timestamp": "2025-10-28T22:28:41.066725",
+      "scope": "ai_core",
+      "change_type": "response",
+      "description": "OK",
+      "status": "active",
+      "author": "system"
+    }
+  ],
+  "summary": {
+    "total_entries": 17,
+    "active": 17,
+    "recent_scope": "ai_core",
+    "recent_change": "response",
+    "last_update": "2025-10-28T22:28:41.066753"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "compilerOptions": {
+    /* === Language & Target === */
+    "target": "ES2020",                      // modern JS output
+    "lib": ["ES2020"],                       // standard library support
+    "module": "commonjs",                    // ensures ts-node works
+    "moduleResolution": "node",              // Node-style import resolution
+
+    /* === Paths & Output === */
+    "rootDir": "./",                         // base folder for source
+    "outDir": "./dist",                      // compiled JS output folder
+    "baseUrl": ".",                          // allows relative path aliases
+    "paths": {
+      "@core/*": ["core/*"],
+      "@apps/*": ["apps/*"],
+      "@docs/*": ["docs/*"],
+      "@utils/*": ["utils/*"]
+    },
+
+    /* === Interop & Compatibility === */
+    "esModuleInterop": true,                 // allows default imports from CJS
+    "resolveJsonModule": true,               // lets you import .json files
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+
+    /* === Node & Types === */
+    "types": ["node"],                       // enables fs, path, etc.
+    "typeRoots": ["./node_modules/@types"],
+
+    /* === Strictness & Checking === */
+    "strict": false,                         // can enable later for type safety
+    "noImplicitAny": false,
+    "forceConsistentCasingInFileNames": true,
+
+    /* === Experimental / Modern Options === */
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+
+  /* === File Inclusion === */
+  "include": [
+    "core/**/*.ts",
+    "apps/**/*.ts",
+    "utils/**/*.ts",
+    "docs/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "archives"
+  ]
+}

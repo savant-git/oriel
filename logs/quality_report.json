@@ -1,0 +1,10 @@
+{
+  "timestamp": "bootstrap",
+  "results": [
+    {
+      "file": "bootstrap",
+      "score": 100,
+      "issues": []
+    }
+  ]
+}

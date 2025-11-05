@@ -1,0 +1,16 @@
+{
+  "project": "oriel",
+  "purpose": "A modular AI-assisted creative OS for writing, branding, and simulation with dynamic UI.",
+  "standards": {
+    "language": "TypeScript",
+    "ui_framework": "React + Vite",
+    "animation": "Framer Motion, Three.js",
+    "style": "Modern, minimalist, cosmic-industrial aesthetic",
+    "ai": ["Gemini 2.5 Pro", "OpenAI GPT-5", "Claude 3 Opus"]
+  },
+  "rules": {
+    "never_remove_elements": true,
+    "preserve_functional_architecture": true,
+    "contextual_optimization": true
+  }
+}

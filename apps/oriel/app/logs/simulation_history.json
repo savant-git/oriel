@@ -1,0 +1,1698 @@
+[
+  {
+    "type": "tick",
+    "timestamp": 1762376713217,
+    "payload": {
+      "delta": 0,
+      "now": 1762376713217
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376713250,
+    "payload": {
+      "now": 1762376713250,
+      "delta": 35
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376713251,
+    "payload": {
+      "delta": 34,
+      "now": 1762376713251
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376713283,
+    "payload": {
+      "now": 1762376713283,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376713285,
+    "payload": {
+      "delta": 34,
+      "now": 1762376713285
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376713316,
+    "payload": {
+      "now": 1762376713316,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376713319,
+    "payload": {
+      "delta": 34,
+      "now": 1762376713319
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376713349,
+    "payload": {
+      "now": 1762376713349,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376713353,
+    "payload": {
+      "delta": 34,
+      "now": 1762376713353
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376713382,
+    "payload": {
+      "now": 1762376713382,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376713387,
+    "payload": {
+      "delta": 34,
+      "now": 1762376713387
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376713415,
+    "payload": {
+      "now": 1762376713415,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376713421,
+    "payload": {
+      "delta": 34,
+      "now": 1762376713421
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376713448,
+    "payload": {
+      "now": 1762376713448,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376713455,
+    "payload": {
+      "delta": 34,
+      "now": 1762376713455
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376713481,
+    "payload": {
+      "now": 1762376713481,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376713489,
+    "payload": {
+      "delta": 34,
+      "now": 1762376713489
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376713514,
+    "payload": {
+      "now": 1762376713514,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376713523,
+    "payload": {
+      "delta": 34,
+      "now": 1762376713523
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376713547,
+    "payload": {
+      "now": 1762376713547,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376713557,
+    "payload": {
+      "delta": 34,
+      "now": 1762376713557
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376713580,
+    "payload": {
+      "now": 1762376713580,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376713591,
+    "payload": {
+      "delta": 34,
+      "now": 1762376713591
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376713613,
+    "payload": {
+      "now": 1762376713613,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376713625,
+    "payload": {
+      "delta": 34,
+      "now": 1762376713625
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376713646,
+    "payload": {
+      "now": 1762376713646,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376713659,
+    "payload": {
+      "delta": 34,
+      "now": 1762376713659
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376713679,
+    "payload": {
+      "now": 1762376713679,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376713692,
+    "payload": {
+      "delta": 32,
+      "now": 1762376713691
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376713713,
+    "payload": {
+      "now": 1762376713713,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376713724,
+    "payload": {
+      "delta": 33,
+      "now": 1762376713724
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376713747,
+    "payload": {
+      "now": 1762376713747,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376713758,
+    "payload": {
+      "delta": 34,
+      "now": 1762376713758
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376713780,
+    "payload": {
+      "now": 1762376713780,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376713792,
+    "payload": {
+      "delta": 34,
+      "now": 1762376713792
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376713812,
+    "payload": {
+      "now": 1762376713812,
+      "delta": 32
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376713826,
+    "payload": {
+      "delta": 34,
+      "now": 1762376713826
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376713846,
+    "payload": {
+      "now": 1762376713846,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376713858,
+    "payload": {
+      "delta": 32,
+      "now": 1762376713858
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376713879,
+    "payload": {
+      "now": 1762376713879,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376713892,
+    "payload": {
+      "delta": 34,
+      "now": 1762376713892
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376713912,
+    "payload": {
+      "now": 1762376713912,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376713926,
+    "payload": {
+      "delta": 34,
+      "now": 1762376713926
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376713945,
+    "payload": {
+      "now": 1762376713945,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376713960,
+    "payload": {
+      "delta": 34,
+      "now": 1762376713960
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376713977,
+    "payload": {
+      "now": 1762376713977,
+      "delta": 32
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376713994,
+    "payload": {
+      "delta": 34,
+      "now": 1762376713994
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714011,
+    "payload": {
+      "now": 1762376714011,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714026,
+    "payload": {
+      "delta": 32,
+      "now": 1762376714026
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714044,
+    "payload": {
+      "now": 1762376714044,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714060,
+    "payload": {
+      "delta": 34,
+      "now": 1762376714060
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714076,
+    "payload": {
+      "now": 1762376714076,
+      "delta": 32
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714094,
+    "payload": {
+      "delta": 34,
+      "now": 1762376714094
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714110,
+    "payload": {
+      "now": 1762376714110,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714126,
+    "payload": {
+      "delta": 32,
+      "now": 1762376714126
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714144,
+    "payload": {
+      "now": 1762376714144,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714160,
+    "payload": {
+      "delta": 34,
+      "now": 1762376714160
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714176,
+    "payload": {
+      "now": 1762376714176,
+      "delta": 32
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714194,
+    "payload": {
+      "delta": 34,
+      "now": 1762376714194
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714210,
+    "payload": {
+      "now": 1762376714210,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714226,
+    "payload": {
+      "delta": 32,
+      "now": 1762376714226
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714244,
+    "payload": {
+      "now": 1762376714244,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714259,
+    "payload": {
+      "delta": 33,
+      "now": 1762376714259
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714277,
+    "payload": {
+      "now": 1762376714277,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714293,
+    "payload": {
+      "delta": 34,
+      "now": 1762376714293
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714309,
+    "payload": {
+      "now": 1762376714309,
+      "delta": 32
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714327,
+    "payload": {
+      "delta": 34,
+      "now": 1762376714327
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714342,
+    "payload": {
+      "now": 1762376714342,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714360,
+    "payload": {
+      "delta": 33,
+      "now": 1762376714360
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714376,
+    "payload": {
+      "now": 1762376714376,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714393,
+    "payload": {
+      "delta": 33,
+      "now": 1762376714393
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714409,
+    "payload": {
+      "now": 1762376714409,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714427,
+    "payload": {
+      "delta": 34,
+      "now": 1762376714427
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714441,
+    "payload": {
+      "now": 1762376714441,
+      "delta": 32
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714461,
+    "payload": {
+      "delta": 34,
+      "now": 1762376714461
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714474,
+    "payload": {
+      "now": 1762376714474,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714494,
+    "payload": {
+      "delta": 33,
+      "now": 1762376714494
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714508,
+    "payload": {
+      "now": 1762376714508,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714526,
+    "payload": {
+      "delta": 32,
+      "now": 1762376714526
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714541,
+    "payload": {
+      "now": 1762376714541,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714560,
+    "payload": {
+      "delta": 34,
+      "now": 1762376714560
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714573,
+    "payload": {
+      "now": 1762376714573,
+      "delta": 32
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714594,
+    "payload": {
+      "delta": 34,
+      "now": 1762376714594
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714607,
+    "payload": {
+      "now": 1762376714607,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714626,
+    "payload": {
+      "delta": 32,
+      "now": 1762376714626
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714641,
+    "payload": {
+      "now": 1762376714641,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714660,
+    "payload": {
+      "delta": 34,
+      "now": 1762376714660
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714673,
+    "payload": {
+      "now": 1762376714673,
+      "delta": 32
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714694,
+    "payload": {
+      "delta": 34,
+      "now": 1762376714694
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714707,
+    "payload": {
+      "now": 1762376714707,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714726,
+    "payload": {
+      "delta": 32,
+      "now": 1762376714726
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714741,
+    "payload": {
+      "now": 1762376714741,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714760,
+    "payload": {
+      "delta": 34,
+      "now": 1762376714760
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714773,
+    "payload": {
+      "now": 1762376714773,
+      "delta": 32
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714794,
+    "payload": {
+      "delta": 34,
+      "now": 1762376714794
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714807,
+    "payload": {
+      "now": 1762376714807,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714826,
+    "payload": {
+      "delta": 32,
+      "now": 1762376714826
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714841,
+    "payload": {
+      "now": 1762376714841,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714860,
+    "payload": {
+      "delta": 34,
+      "now": 1762376714860
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714874,
+    "payload": {
+      "now": 1762376714874,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714894,
+    "payload": {
+      "delta": 34,
+      "now": 1762376714894
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714906,
+    "payload": {
+      "now": 1762376714906,
+      "delta": 32
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714928,
+    "payload": {
+      "delta": 34,
+      "now": 1762376714928
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714940,
+    "payload": {
+      "now": 1762376714940,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714960,
+    "payload": {
+      "delta": 32,
+      "now": 1762376714960
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376714973,
+    "payload": {
+      "now": 1762376714973,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376714994,
+    "payload": {
+      "delta": 34,
+      "now": 1762376714994
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715006,
+    "payload": {
+      "now": 1762376715006,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715028,
+    "payload": {
+      "delta": 34,
+      "now": 1762376715028
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715039,
+    "payload": {
+      "now": 1762376715039,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715061,
+    "payload": {
+      "delta": 33,
+      "now": 1762376715061
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715073,
+    "payload": {
+      "now": 1762376715073,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715094,
+    "payload": {
+      "delta": 33,
+      "now": 1762376715094
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715106,
+    "payload": {
+      "now": 1762376715106,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715128,
+    "payload": {
+      "delta": 34,
+      "now": 1762376715128
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715139,
+    "payload": {
+      "now": 1762376715139,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715162,
+    "payload": {
+      "delta": 34,
+      "now": 1762376715162
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715172,
+    "payload": {
+      "now": 1762376715171,
+      "delta": 32
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715196,
+    "payload": {
+      "delta": 34,
+      "now": 1762376715196
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715204,
+    "payload": {
+      "now": 1762376715204,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715229,
+    "payload": {
+      "delta": 33,
+      "now": 1762376715229
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715238,
+    "payload": {
+      "now": 1762376715238,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715261,
+    "payload": {
+      "delta": 32,
+      "now": 1762376715261
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715272,
+    "payload": {
+      "now": 1762376715272,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715294,
+    "payload": {
+      "delta": 33,
+      "now": 1762376715294
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715305,
+    "payload": {
+      "now": 1762376715305,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715327,
+    "payload": {
+      "delta": 33,
+      "now": 1762376715327
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715338,
+    "payload": {
+      "now": 1762376715338,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715360,
+    "payload": {
+      "delta": 33,
+      "now": 1762376715360
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715371,
+    "payload": {
+      "now": 1762376715371,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715394,
+    "payload": {
+      "delta": 34,
+      "now": 1762376715394
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715404,
+    "payload": {
+      "now": 1762376715404,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715428,
+    "payload": {
+      "delta": 34,
+      "now": 1762376715428
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715437,
+    "payload": {
+      "now": 1762376715437,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715462,
+    "payload": {
+      "delta": 34,
+      "now": 1762376715462
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715470,
+    "payload": {
+      "now": 1762376715470,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715496,
+    "payload": {
+      "delta": 34,
+      "now": 1762376715496
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715503,
+    "payload": {
+      "now": 1762376715503,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715530,
+    "payload": {
+      "delta": 34,
+      "now": 1762376715530
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715535,
+    "payload": {
+      "now": 1762376715535,
+      "delta": 32
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715563,
+    "payload": {
+      "delta": 33,
+      "now": 1762376715563
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715569,
+    "payload": {
+      "now": 1762376715569,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715596,
+    "payload": {
+      "delta": 33,
+      "now": 1762376715596
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715602,
+    "payload": {
+      "now": 1762376715602,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715630,
+    "payload": {
+      "delta": 34,
+      "now": 1762376715630
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715635,
+    "payload": {
+      "now": 1762376715635,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715664,
+    "payload": {
+      "delta": 34,
+      "now": 1762376715664
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715668,
+    "payload": {
+      "now": 1762376715668,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715698,
+    "payload": {
+      "delta": 34,
+      "now": 1762376715698
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715701,
+    "payload": {
+      "now": 1762376715701,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715732,
+    "payload": {
+      "delta": 34,
+      "now": 1762376715732
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715734,
+    "payload": {
+      "now": 1762376715734,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715766,
+    "payload": {
+      "delta": 34,
+      "now": 1762376715766
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715767,
+    "payload": {
+      "now": 1762376715767,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715800,
+    "payload": {
+      "delta": 34,
+      "now": 1762376715800
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715801,
+    "payload": {
+      "now": 1762376715801,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715833,
+    "payload": {
+      "delta": 32,
+      "now": 1762376715832
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715835,
+    "payload": {
+      "now": 1762376715835,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715865,
+    "payload": {
+      "delta": 33,
+      "now": 1762376715865
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715869,
+    "payload": {
+      "now": 1762376715869,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715899,
+    "payload": {
+      "delta": 34,
+      "now": 1762376715899
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715902,
+    "payload": {
+      "now": 1762376715902,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715933,
+    "payload": {
+      "delta": 34,
+      "now": 1762376715933
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715935,
+    "payload": {
+      "now": 1762376715935,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376715967,
+    "payload": {
+      "delta": 34,
+      "now": 1762376715967
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376715968,
+    "payload": {
+      "now": 1762376715968,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376716001,
+    "payload": {
+      "delta": 34,
+      "now": 1762376716001
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376716002,
+    "payload": {
+      "now": 1762376716002,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376716034,
+    "payload": {
+      "delta": 33,
+      "now": 1762376716034
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376716036,
+    "payload": {
+      "now": 1762376716036,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376716066,
+    "payload": {
+      "delta": 32,
+      "now": 1762376716066
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376716069,
+    "payload": {
+      "now": 1762376716069,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376716100,
+    "payload": {
+      "delta": 34,
+      "now": 1762376716100
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376716102,
+    "payload": {
+      "now": 1762376716102,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376716134,
+    "payload": {
+      "delta": 34,
+      "now": 1762376716134
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376716135,
+    "payload": {
+      "now": 1762376716135,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376716168,
+    "payload": {
+      "delta": 34,
+      "now": 1762376716168
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376716168,
+    "payload": {
+      "now": 1762376716168,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376716202,
+    "payload": {
+      "delta": 34,
+      "now": 1762376716202
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376716202,
+    "payload": {
+      "now": 1762376716202,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376716235,
+    "payload": {
+      "delta": 33,
+      "now": 1762376716235
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376716236,
+    "payload": {
+      "now": 1762376716236,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376716269,
+    "payload": {
+      "delta": 34,
+      "now": 1762376716269
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376716269,
+    "payload": {
+      "now": 1762376716269,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376716303,
+    "payload": {
+      "delta": 34,
+      "now": 1762376716303
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376716303,
+    "payload": {
+      "now": 1762376716303,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376716336,
+    "payload": {
+      "delta": 33,
+      "now": 1762376716336
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376716336,
+    "payload": {
+      "now": 1762376716336,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376716370,
+    "payload": {
+      "delta": 34,
+      "now": 1762376716370
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376716370,
+    "payload": {
+      "now": 1762376716370,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376716403,
+    "payload": {
+      "delta": 33,
+      "now": 1762376716403
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376716404,
+    "payload": {
+      "now": 1762376716404,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376716437,
+    "payload": {
+      "delta": 34,
+      "now": 1762376716437
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376716437,
+    "payload": {
+      "now": 1762376716437,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376716471,
+    "payload": {
+      "delta": 34,
+      "now": 1762376716471
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376716471,
+    "payload": {
+      "now": 1762376716471,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376716504,
+    "payload": {
+      "delta": 33,
+      "now": 1762376716504
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376716504,
+    "payload": {
+      "now": 1762376716504,
+      "delta": 33
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376716538,
+    "payload": {
+      "delta": 34,
+      "now": 1762376716538
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376716538,
+    "payload": {
+      "now": 1762376716538,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376716570,
+    "payload": {
+      "delta": 32,
+      "now": 1762376716570
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376716572,
+    "payload": {
+      "now": 1762376716572,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376716604,
+    "payload": {
+      "delta": 34,
+      "now": 1762376716604
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376716604,
+    "payload": {
+      "now": 1762376716604,
+      "delta": 32
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376716638,
+    "payload": {
+      "delta": 34,
+      "now": 1762376716638
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376716638,
+    "payload": {
+      "now": 1762376716638,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376716670,
+    "payload": {
+      "delta": 32,
+      "now": 1762376716670
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376716672,
+    "payload": {
+      "now": 1762376716672,
+      "delta": 34
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376716704,
+    "payload": {
+      "delta": 34,
+      "now": 1762376716704
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376716704,
+    "payload": {
+      "now": 1762376716704,
+      "delta": 32
+    }
+  },
+  {
+    "type": "tick",
+    "timestamp": 1762376716738,
+    "payload": {
+      "delta": 34,
+      "now": 1762376716738
+    }
+  },
+  {
+    "type": "reso",
+    "timestamp": 1762376716738,
+    "payload": {
+      "now": 1762376716738,
+      "delta": 34
+    }
+  }
+]

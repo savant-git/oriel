@@ -1,0 +1,38 @@
+name: Build and Publish Oriel
+
+on:
+  push:
+    tags:
+      - 'v*'          # triggers when you push tags like v1.0.1
+
+permissions:
+  contents: write     # needed to create releases
+  actions: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: |
+          cd savant/apps/oriel/app
+          npm ci
+
+      - name: Build and publish
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          cd savant/apps/oriel/app
+          npx electron-builder --publish always --$RUNNER_OS

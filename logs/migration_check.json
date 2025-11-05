@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-10-30T11:56:35.251903+00:00",
+  "status": {
+    "openai": false,
+    "github": true,
+    "s3": true,
+    "ready": false
+  }
+}

@@ -1,0 +1,19 @@
+
+--- FILE: chat_full.txt ---
+
+[PLACEHOLDER] — Paste the full unabridged chat transcript here
+(including both sides and all code blocks)
+
+
+--- FILE: chat_full_log.txt ---
+
+
+--- FILE: chat_full.txt ---
+
+[PLACEHOLDER] — Paste the full unabridged chat transcript here
+(including both sides and all code blocks)
+
+
+--- FILE: chat_full_log.txt ---
+
+(no chat log found)

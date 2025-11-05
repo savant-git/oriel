@@ -1,0 +1,102 @@
+/data/data/com.termux/files/home/savant/services/web/dashboard/dashboard_openapi.py:109: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+INFO:     Started server process [21493]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:7070 (Press CTRL+C to quit)
+INFO:     127.0.0.1:51256 - "GET /api/events/recent HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51264 - "POST /api/events/subscribe?type=test_event HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41120 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59208 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36996 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35408 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40106 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36146 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35262 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33632 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54190 - "POST /api/ai HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43702 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53312 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39194 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37060 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50576 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42366 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34686 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49342 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54730 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55310 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33898 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45930 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37314 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36046 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38994 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43982 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50404 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49502 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46508 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39192 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41216 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45742 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48470 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42916 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47976 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57852 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45924 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33306 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45058 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51092 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59280 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39624 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53898 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43016 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35000 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44258 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53402 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49244 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42782 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35448 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48950 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41386 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46460 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42304 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48784 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34530 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54832 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56762 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53022 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37102 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55190 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33058 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45660 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47522 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59030 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58680 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53448 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44732 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52432 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49340 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49250 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37744 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49650 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36582 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41938 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53308 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41246 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55036 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34350 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55628 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51554 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56332 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51822 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57490 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56914 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59818 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41796 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52308 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37794 - "GET /api/reflex/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57546 - "GET /api/reflex/validate HTTP/1.1" 200 OK

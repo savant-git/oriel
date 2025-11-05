@@ -1,0 +1,7 @@
+{
+  "ai_core/ai_core.py": "♦12>8 | ⬣10=8 | ⬡9<7",
+  "fractal_core/fractal_core.py": "♦13=10 | ⬣11>8 | ⬡9=9",
+  "personality_engine/governor_core/governor.py": "♦14>11 | ⬣12>9 | ⬡10=10",
+  "integrity_engine/context_ledger.py": "♦13>11 | ⬣11=9 | ⬡9=9",
+  "utils/personality_quality_bridge.py": "♦12>10 | ⬣10>9 | ⬡9=9"
+}

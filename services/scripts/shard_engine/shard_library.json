@@ -1,0 +1,2473 @@
+[
+  {
+    "id": "9786e197f6",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/README.md",
+    "length": 8,
+    "content": "**SAVANT : FRACTAL / savant/services/scripts**\n\nStructure is the first art.  This folder is a living node in the network.\nIts contents form the smallest gestures of design and the largest systems of reason.\nEach file here breathes through the lattice\u2014clarity through recursion.\n\n\n_Last regenerated: 2025-10-28 02:59:00_",
+    "timestamp": "2025-10-28T22:48:46.159649+00:00"
+  },
+  {
+    "id": "1dbe2ee85a",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/readme_generator/README.md",
+    "length": 8,
+    "content": "**SAVANT : FRACTAL / savant/services/scripts/readme_generator**\n\nStructure is the first art.  This folder is a living node in the network.\nIts contents form the smallest gestures of design and the largest systems of reason.\nEach file here breathes through the lattice\u2014clarity through recursion.\n\n\n_Last regenerated: 2025-10-28 02:59:00_",
+    "timestamp": "2025-10-28T22:48:46.162134+00:00"
+  },
+  {
+    "id": "ede4b9ed94",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/readme_generator/readme_generator_369423_10-28-25.py",
+    "length": 4,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nGenerates long-form README files in the savant voice.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.162843+00:00"
+  },
+  {
+    "id": "db74a6003f",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/readme_generator/readme_generator_369423_10-28-25.py",
+    "length": 17,
+    "content": "inspect, importlib, textwrap, datetime\nfrom pathlib import Path\nfrom jinja2 import Template\nfrom savant.services.scripts.rule_engine.enforce import enforce_rules\n\nTEMPLATE = Template(\"\"\"# {{name}}\n_Last generated: {{ts}} UTC_\n\n{{summary}}\n\n{% for f in funcs %}\n## {{f.name}}\n{{f.doc}}\n{% endfor %}\n\"\"\")\n\n@enforce_rules",
+    "timestamp": "2025-10-28T22:48:46.162876+00:00"
+  },
+  {
+    "id": "0a6da6c8e7",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/readme_generator/readme_generator_369423_10-28-25.py",
+    "length": 12,
+    "content": "generate(module_path:str):\n    p=Path(module_path); modname=p.stem\n    mod=importlib.import_module(f\"savant.services.scripts.{p.parent.name}.{modname}\")\n    funcs=[f for _,f in inspect.getmembers(mod,inspect.isfunction)]\n    rendered=TEMPLATE.render(\n        name=modname,\n        ts=datetime.datetime.utcnow().isoformat(),\n        summary=textwrap.dedent(inspect.getdoc(mod) or \"savant module\"),\n        funcs=[{\"name\":f.__name__,\"doc\":textwrap.dedent(inspect.getdoc(f) or \"undocumented\")} for f in funcs]\n    )\n    out=p.with_suffix('.README.md'); out.write_text(rendered)\n    return out",
+    "timestamp": "2025-10-28T22:48:46.162901+00:00"
+  },
+  {
+    "id": "2b9e6acbd2",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/enhancement_engine/enhance_835554_10-28-25.py",
+    "length": 4,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nPost-completion enhancement engine.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.163960+00:00"
+  },
+  {
+    "id": "e6e7cda8cc",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/enhancement_engine/enhance_835554_10-28-25.py",
+    "length": 13,
+    "content": "asyncio, orjson\nfrom savant.services.scripts.ai_core.ai_core import query\nfrom savant.services.scripts.rule_engine.enforce import enforce_rules\n\n@enforce_rules\nasync def enhance(path:str):\n    code=open(path).read()\n    prompt=(f\"Analyze and enhance this completed module:\\n{code}\\n\"\n            \"Return improvements only, no commentary.\")\n    result=await query(prompt)\n    out=path.replace(\".py\",\".enhanced.py\")\n    open(out,\"w\").write(result)\n    return out",
+    "timestamp": "2025-10-28T22:48:46.164025+00:00"
+  },
+  {
+    "id": "9f0f32ad69",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/enhancement_engine/advanced_mode_833696_10-28-25.py",
+    "length": 1,
+    "content": "#!/usr/bin/env python3",
+    "timestamp": "2025-10-28T22:48:46.164700+00:00"
+  },
+  {
+    "id": "4cddeb97c4",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/enhancement_engine/advanced_mode_833696_10-28-25.py",
+    "length": 5,
+    "content": "json, random, datetime\nfrom pathlib import Path\n\nROOT=Path.home()/ \"savant\"\nENH_FILE=ROOT/\"downloads/savant_all_enhancements.json\"",
+    "timestamp": "2025-10-28T22:48:46.164736+00:00"
+  },
+  {
+    "id": "ac15511981",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/enhancement_engine/advanced_mode_833696_10-28-25.py",
+    "length": 12,
+    "content": "enhance(element:str):\n    improvement=random.uniform(0.1,0.3)\n    record={\"element\":element,\"improvement\":round(improvement*100,2),\n            \"time\":datetime.datetime.utcnow().isoformat()+\"Z\"}\n    data=json.loads(ENH_FILE.read_text()) if ENH_FILE.exists() else {\"enhancements\":[]}\n    data[\"enhancements\"].append(record)\n    ENH_FILE.write_text(json.dumps(data,indent=2))\n    print(f\"\u2728 Enhanced {element}: +{round(improvement*100)}%\")\n\nif __name__==\"__main__\":\n    import sys\n    enhance(sys.argv[1] if len(sys.argv)>1 else \"unnamed\")",
+    "timestamp": "2025-10-28T22:48:46.164755+00:00"
+  },
+  {
+    "id": "67cde4540f",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/enhancement_engine/README.md",
+    "length": 8,
+    "content": "**SAVANT : FRACTAL / savant/services/scripts/enhancement_engine**\n\nStructure is the first art.  This folder is a living node in the network.\nIts contents form the smallest gestures of design and the largest systems of reason.\nEach file here breathes through the lattice\u2014clarity through recursion.\n\n\n_Last regenerated: 2025-10-28 02:59:00_",
+    "timestamp": "2025-10-28T22:48:46.165184+00:00"
+  },
+  {
+    "id": "cf74fc25e2",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/enhancement_engine/enhancement_core.py",
+    "length": 4,
+    "content": "json, random, time\nfrom pathlib import Path\nROOT=Path.home()/ \"savant\"\nENH_FILE=ROOT/\"downloads/savant_enhancements.json\"",
+    "timestamp": "2025-10-28T22:48:46.165708+00:00"
+  },
+  {
+    "id": "ddb6e78aea",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/enhancement_engine/enhancement_core.py",
+    "length": 3,
+    "content": "enhance_task(task):\n    improv=[\"refactor\",\"optimize\",\"augment\",\"stabilize\",\"document\",\"link\"]\n    return {\"path\":task[\"path\"],\"enhancement\":random.choice(improv),\"score\":round(random.uniform(0.7,1.0),2)}",
+    "timestamp": "2025-10-28T22:48:46.165734+00:00"
+  },
+  {
+    "id": "f8ebc8a68e",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/enhancement_engine/enhancement_core.py",
+    "length": 8,
+    "content": "run_enhancement():\n    tasks=json.loads((ROOT/\"downloads/savant_tasks.json\").read_text())\n    results=[enhance_task(t) for t in tasks]\n    ENH_FILE.write_text(json.dumps(results,indent=2))\n    print(f\"\u2699\ufe0f  Enhancements generated \u2192 {ENH_FILE}\")\n\nif __name__==\"__main__\":\n    run_enhancement()",
+    "timestamp": "2025-10-28T22:48:46.165751+00:00"
+  },
+  {
+    "id": "fb4f38cc00",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/enhancement_engine/enhancement_engine_805912_10-28-25.py",
+    "length": 8,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nSAVANT ENHANCEMENT ENGINE \u2014 Interactive Advanced Mode\n--------------------------------------------------------------\nAsks user for a root folder or file.\nIf folder: asks whether to include subfolders.\nThen generates tailored + cooperative enhancements.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.166221+00:00"
+  },
+  {
+    "id": "0da0b66571",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/enhancement_engine/enhancement_engine_805912_10-28-25.py",
+    "length": 4,
+    "content": "os, json, time, random\nfrom pathlib import Path\n\nBASE = Path.home() / \"savant/services\"",
+    "timestamp": "2025-10-28T22:48:46.166247+00:00"
+  },
+  {
+    "id": "c76b116244",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/enhancement_engine/enhancement_engine_805912_10-28-25.py",
+    "length": 8,
+    "content": "generate_enhancements(name, linked):\n    count = max(12, random.randint(14, 25))\n    solo = [f\"Enhancement {i+1}: refine {name} \u2014 {random.choice(['optimize structure','expand metadata','improve resilience','reduce redundancy','augment aesthetic'])}.\"\n            for i in range(count)]\n    coop = [f\"Cooperative enhancement: align {name} with {link} for unified performance.\"\n            for link in linked]\n    return {\"timestamp\": time.strftime(\"%Y-%m-%d %H:%M:%S\"),\n            \"individual\": solo, \"cooperative\": coop}",
+    "timestamp": "2025-10-28T22:48:46.166263+00:00"
+  },
+  {
+    "id": "f47d29375e",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/enhancement_engine/enhancement_engine_805912_10-28-25.py",
+    "length": 9,
+    "content": "scan_elements(root: Path, recursive: bool):\n    elements = []\n    for dirpath, dirnames, filenames in os.walk(root):\n        p = Path(dirpath)\n        if any(p.iterdir()) and p != root:\n            elements.append(p)\n        if not recursive:\n            break\n    return elements",
+    "timestamp": "2025-10-28T22:48:46.166281+00:00"
+  },
+  {
+    "id": "8d70aa8922",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/enhancement_engine/enhancement_engine_805912_10-28-25.py",
+    "length": 11,
+    "content": "enhance_path(path: Path, recursive: bool):\n    if path.is_file():\n        targets = [path]\n    else:\n        targets = scan_elements(path, recursive)\n    for i, p in enumerate(targets):\n        linked = [x.name for x in targets if x != p and random.random() < 0.3]\n        data = generate_enhancements(p.name, linked)\n        out = p / \"enhancements.json\"\n        out.write_text(json.dumps(data, indent=2))\n        print(f\"\u2728 Enhanced: {p}\")",
+    "timestamp": "2025-10-28T22:48:46.166318+00:00"
+  },
+  {
+    "id": "72bcd49087",
+    "name": "snippet_10",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/enhancement_engine/enhancement_engine_805912_10-28-25.py",
+    "length": 16,
+    "content": "main():\n    print(\"\\n\u2699\ufe0f  SAVANT ENHANCEMENT ENGINE : ADVANCED MODE\\n\")\n    root_input = input(\"Enter folder or file to enhance (e.g., web, brand, print, or path): \").strip()\n    root_path = (BASE / root_input) if not Path(root_input).is_absolute() else Path(root_input)\n    if not root_path.exists():\n        print(\"\u274c Path not found.\")\n        return\n    if root_path.is_dir():\n        sub = input(\"Include subfolders? (y/n): \").lower().startswith(\"y\")\n        enhance_path(root_path, sub)\n    else:\n        enhance_path(root_path, False)\n    print(\"\\n\u2705 Enhancements generated.\")\n\nif __name__ == \"__main__\":\n    main()",
+    "timestamp": "2025-10-28T22:48:46.166340+00:00"
+  },
+  {
+    "id": "cd4882c11f",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/enhancement_engine/collect_enhancements_355559_10-28-25.py",
+    "length": 11,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nSAVANT : COLLECT ENHANCEMENTS (v2 \u2014 CLEAN + CHUNKED)\n--------------------------------------------------------------\nWorkflow:\n  1\ufe0f\u20e3  Delete every existing enhancements.json across ~/savant.\n  2\ufe0f\u20e3  Rebuild fresh enhancements (if engine was just run).\n  3\ufe0f\u20e3  Collect all current enhancement data into one JSON structure.\n  4\ufe0f\u20e3  Split result into 50 MB chunks \u2192 savant_all_enhancements_01.json \u2026\n  5\ufe0f\u20e3  Delete the large temporary file afterwards.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.167034+00:00"
+  },
+  {
+    "id": "1d3248b246",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/enhancement_engine/collect_enhancements_355559_10-28-25.py",
+    "length": 12,
+    "content": "json, os, time\nfrom pathlib import Path\n\n# ---------- CONFIGURATION --------------------------------------\nHOME   = Path.home()\nROOT   = HOME / \"savant\"\nDL_DIR = Path(\"/storage/emulated/0/Download\")\nBASE   = DL_DIR / \"savant_all_enhancements.json\"\nMAX_MB = 50\nCHUNK_SIZE = MAX_MB * 1024 * 1024   # bytes\n\n# ---------- 1\ufe0f\u20e3  CLEAN PREVIOUS ENHANCEMENTS --------------------",
+    "timestamp": "2025-10-28T22:48:46.167096+00:00"
+  },
+  {
+    "id": "961b128a29",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/enhancement_engine/collect_enhancements_355559_10-28-25.py",
+    "length": 12,
+    "content": "clean_old_enhancements():\n    print(\"\ud83e\uddf9 Removing previous enhancements.json files \u2026\")\n    count = 0\n    for p in ROOT.rglob(\"enhancements.json\"):\n        try:\n            p.unlink()\n            count += 1\n        except Exception as e:\n            print(f\"\u26a0\ufe0f  Could not delete {p}: {e}\")\n    print(f\"\ud83e\udde9 {count} old enhancement files removed.\\n\")\n\n# ---------- 2\ufe0f\u20e3  COLLECT ENHANCEMENTS ---------------------------",
+    "timestamp": "2025-10-28T22:48:46.167135+00:00"
+  },
+  {
+    "id": "3b4a38c220",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/enhancement_engine/collect_enhancements_355559_10-28-25.py",
+    "length": 17,
+    "content": "collect_enhancements():\n    print(\"\u2699\ufe0f  Collecting new enhancements \u2026\")\n    elements = []\n    for path in ROOT.rglob(\"enhancements.json\"):\n        try:\n            data = json.loads(path.read_text())\n            elements.append({\n                \"name\": path.parent.name,\n                \"path\": str(path.parent.resolve()),\n                \"enhancements\": data\n            })\n            print(f\"   + {path}\")\n        except Exception as e:\n            print(f\"\u26a0\ufe0f  Skipped {path}: {e}\")\n    return elements\n\n# ---------- 3\ufe0f\u20e3  WRITE MAIN FILE --------------------------------",
+    "timestamp": "2025-10-28T22:48:46.167163+00:00"
+  },
+  {
+    "id": "6dbf675245",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/enhancement_engine/collect_enhancements_355559_10-28-25.py",
+    "length": 13,
+    "content": "write_main(elements):\n    merged = {\n        \"elements\": elements,\n        \"count\": len(elements),\n        \"generated\": time.strftime(\"%Y-%m-%d %H:%M:%S\")\n    }\n    DL_DIR.mkdir(parents=True, exist_ok=True)\n    with open(BASE, \"w\") as f:\n        json.dump(merged, f, indent=2)\n    print(f\"\\n\u2705 Combined file written \u2192 {BASE}\")\n    return BASE\n\n# ---------- 4\ufe0f\u20e3  SPLIT IF OVERSIZED ------------------------------",
+    "timestamp": "2025-10-28T22:48:46.167187+00:00"
+  },
+  {
+    "id": "1cc7860790",
+    "name": "snippet_10",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/enhancement_engine/collect_enhancements_355559_10-28-25.py",
+    "length": 19,
+    "content": "split_if_oversize(file_path: Path):\n    size = file_path.stat().st_size\n    if size <= CHUNK_SIZE:\n        print(f\"\ud83d\udce6 File size {size/1024/1024:.1f} MB \u2264 {MAX_MB} MB \u2192 no split.\")\n        return\n    print(f\"\u2699\ufe0f  Splitting {size/1024/1024:.1f} MB file into 50 MB chunks \u2026\")\n    data = file_path.read_bytes()\n    total_parts = (len(data) // CHUNK_SIZE) + 1\n    for i in range(total_parts):\n        start, end = i * CHUNK_SIZE, (i + 1) * CHUNK_SIZE\n        chunk = data[start:end]\n        part_name = file_path.with_name(f\"{file_path.stem}_{i+1:02d}.json\")\n        with open(part_name, \"wb\") as f:\n            f.write(chunk)\n        print(f\"   \u2702\ufe0f  {part_name.name} ({len(chunk)/1024/1024:.1f} MB)\")\n    file_path.unlink(missing_ok=True)\n    print(\"\ud83e\uddf9 Original merged file removed after chunking.\\n\")\n\n# ---------- 5\ufe0f\u20e3  MAIN ROUTINE -----------------------------------",
+    "timestamp": "2025-10-28T22:48:46.167252+00:00"
+  },
+  {
+    "id": "6016fcd64a",
+    "name": "snippet_12",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/enhancement_engine/collect_enhancements_355559_10-28-25.py",
+    "length": 13,
+    "content": "main():\n    print(\"\\n\u2699\ufe0f  SAVANT ENHANCEMENT COLLECTOR (v2 \u2014 CLEAN + CHUNKED)\\n\")\n    clean_old_enhancements()\n    elements = collect_enhancements()\n    if not elements:\n        print(\"\u274c No enhancements found. Run the enhancement engine first.\")\n        return\n    combined = write_main(elements)\n    split_if_oversize(combined)\n    print(\"\u2705  Collection and chunking complete.\\n\")\n\nif __name__ == \"__main__\":\n    main()",
+    "timestamp": "2025-10-28T22:48:46.167279+00:00"
+  },
+  {
+    "id": "1e856cba6a",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/shard-engine/README.md",
+    "length": 8,
+    "content": "**SAVANT : FRACTAL / savant/services/scripts/shard-engine**\n\nStructure is the first art.  This folder is a living node in the network.\nIts contents form the smallest gestures of design and the largest systems of reason.\nEach file here breathes through the lattice\u2014clarity through recursion.\n\n\n_Last regenerated: 2025-10-28 02:59:00_",
+    "timestamp": "2025-10-28T22:48:46.168005+00:00"
+  },
+  {
+    "id": "7c39145dd3",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/shard-engine/assembler_872921_10-28-25.py",
+    "length": 5,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nSAVANT SHARD ASSEMBLER  \u2014  v1\nReads script manifests, assembles snippets, validates, and writes builds.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.168465+00:00"
+  },
+  {
+    "id": "b7fff05205",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/shard-engine/assembler_872921_10-28-25.py",
+    "length": 7,
+    "content": "json, hashlib, subprocess\nfrom pathlib import Path\n\nROOT = Path.home()/ \"savant/services/scripts\"\nLIB  = ROOT / \"snippet-library/python\"\nBUILD = ROOT / \"build\"\nMANIFESTS = ROOT / \"snippet-library/manifests\"",
+    "timestamp": "2025-10-28T22:48:46.168499+00:00"
+  },
+  {
+    "id": "3b6ff098f6",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/shard-engine/assembler_872921_10-28-25.py",
+    "length": 1,
+    "content": "hashfile(p): return hashlib.sha1(p.read_bytes()).hexdigest()[:10]",
+    "timestamp": "2025-10-28T22:48:46.168516+00:00"
+  },
+  {
+    "id": "76918498cc",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/shard-engine/assembler_872921_10-28-25.py",
+    "length": 23,
+    "content": "assemble(script_id:str):\n    mfile = MANIFESTS / f\"{script_id}.json\"\n    if not mfile.exists():\n        print(f\"\u274c No manifest {mfile}\"); return\n    data=json.loads(mfile.read_text())\n    parts=[]\n    for ref in data[\"uses\"]:\n        sfile = LIB / f\"{ref}.py\"\n        if not sfile.exists(): \n            print(f\"\u26a0\ufe0f missing snippet {ref}\"); continue\n        parts.append(sfile.read_text())\n    out = \"\\n\\n\".join(parts)\n    BUILD.mkdir(exist_ok=True)\n    outpath = BUILD / f\"{script_id}.py\"\n    outpath.write_text(out)\n    print(f\"\u2705 built {outpath}\")\n    try:\n        subprocess.run([\"python3\",\"-m\",\"py_compile\",str(outpath)],check=True)\n        print(\"\u2705 validation ok\")\n    except subprocess.CalledProcessError:\n        print(\"\u274c validation failed\")\n    data[\"hash\"]=hashfile(outpath)\n    mfile.write_text(json.dumps(data,indent=2))",
+    "timestamp": "2025-10-28T22:48:46.168550+00:00"
+  },
+  {
+    "id": "f9105a295b",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal-core/segue_registry_757046_10-28-25.py",
+    "length": 10,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nSAVANT : SEGUE REGISTRY HELPER\nScans ~/savant/services/web for shard pairs,\nlinks them using SegueRegistry and auto-infers segue shard types.\n\"\"\"\nfrom pathlib import Path\nfrom fractal_core import Shard, SegueRegistry\n\nBASE = Path.home() / \"savant/services/web\"",
+    "timestamp": "2025-10-28T22:48:46.169668+00:00"
+  },
+  {
+    "id": "a751d2223b",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal-core/segue_registry_757046_10-28-25.py",
+    "length": 12,
+    "content": "build_registry():\n    reg = SegueRegistry(BASE)\n    shards=[]\n    for p in BASE.rglob(\"*.py\"):\n        shards.append(Shard(p.stem,\"logic\",p))\n    for i in range(len(shards)-1):\n        reg.link(shards[i],shards[i+1],\"chain\")\n    reg.export()\n    print(\"\u2705  Auto-generated segue registry for web shards.\")\n\nif __name__==\"__main__\":\n    build_registry()",
+    "timestamp": "2025-10-28T22:48:46.169729+00:00"
+  },
+  {
+    "id": "580cc50ab3",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal-core/README.md",
+    "length": 8,
+    "content": "**SAVANT : FRACTAL / savant/services/scripts/fractal-core**\n\nStructure is the first art.  This folder is a living node in the network.\nIts contents form the smallest gestures of design and the largest systems of reason.\nEach file here breathes through the lattice\u2014clarity through recursion.\n\n\n_Last regenerated: 2025-10-28 02:59:00_",
+    "timestamp": "2025-10-28T22:48:46.170148+00:00"
+  },
+  {
+    "id": "e1c3814dee",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal-core/fractal_core_713549_10-28-25.py",
+    "length": 10,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nSAVANT FRACTAL CORE \u2014 rev. segue-integrated\nDefines:\n  \u2022 Shard / Instance\n  \u2022 Segue (linkage metadata)\n  \u2022 SegueShard (transitional intelligence)\n  \u2022 SegueRegistry (auto-injection + optimization)\n\"\"\"\nfrom __future__ import annotations",
+    "timestamp": "2025-10-28T22:48:46.170759+00:00"
+  },
+  {
+    "id": "cd9f3ee6f0",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal-core/fractal_core_713549_10-28-25.py",
+    "length": 5,
+    "content": "hashlib, json, time\nfrom pathlib import Path\nfrom typing import Any, Dict, List, Optional\n\n# ---------- utilities ------------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.170794+00:00"
+  },
+  {
+    "id": "d15dab39ea",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal-core/fractal_core_713549_10-28-25.py",
+    "length": 3,
+    "content": "sha16(p: Path) -> str:\n    try: return hashlib.sha256(p.read_bytes()).hexdigest()[:16]\n    except: return \"unreadable\"",
+    "timestamp": "2025-10-28T22:48:46.170812+00:00"
+  },
+  {
+    "id": "f941605215",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal-core/fractal_core_713549_10-28-25.py",
+    "length": 3,
+    "content": "utcnow() -> str: return time.strftime(\"%Y-%m-%dT%H:%M:%SZ\")\n\n# ---------- core shard classes ---------------------------------",
+    "timestamp": "2025-10-28T22:48:46.170829+00:00"
+  },
+  {
+    "id": "3ec2ff120c",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal-core/fractal_core_713549_10-28-25.py",
+    "length": 8,
+    "content": "Shard:\n    def __init__(self,id:str,type:str,path:Optional[Path]=None,meta:Optional[Dict[str,Any]]=None):\n        self.id=id; self.type=type; self.path=path; self.meta=meta or {}\n        self.inputs:List[str]=[]; self.outputs:List[str]=[]\n        self.children:List[str]=[]; self.instances:List[Instance]=[]\n    def to_dict(self)->Dict[str,Any]:\n        return {\"id\":self.id,\"type\":self.type,\"path\":str(self.path) if self.path else None,\n                \"inputs\":self.inputs,\"outputs\":self.outputs,\"meta\":self.meta,\"children\":self.children}",
+    "timestamp": "2025-10-28T22:48:46.170849+00:00"
+  },
+  {
+    "id": "940fed5f93",
+    "name": "snippet_10",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal-core/fractal_core_713549_10-28-25.py",
+    "length": 7,
+    "content": "Instance:\n    def __init__(self,shard:Shard,context:Dict[str,Any]):\n        self.shard=shard; self.context=context; self.created=utcnow()\n    def to_dict(self)->Dict[str,Any]:\n        return {\"shard\":self.shard.id,\"context\":self.context,\"created\":self.created}\n\n# ---------- linkage descriptor ---------------------------------",
+    "timestamp": "2025-10-28T22:48:46.170867+00:00"
+  },
+  {
+    "id": "82bc9c70c5",
+    "name": "snippet_12",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal-core/fractal_core_713549_10-28-25.py",
+    "length": 10,
+    "content": "Segue:\n    \"\"\"Defines execution relation (linkage mode only).\"\"\"\n    def __init__(self,source:str,target:str,mode:str=\"chain\",method:str=\"serial_flow\"):\n        self.source=source; self.target=target\n        self.mode=mode; self.method=method; self.created=utcnow()\n    def to_dict(self)->Dict[str,Any]:\n        return {\"source\":self.source,\"target\":self.target,\n                \"mode\":self.mode,\"method\":self.method,\"created\":self.created}\n\n# ---------- segue shard (transitional intelligence) -------------",
+    "timestamp": "2025-10-28T22:48:46.170899+00:00"
+  },
+  {
+    "id": "c490f7d5cb",
+    "name": "snippet_14",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal-core/fractal_core_713549_10-28-25.py",
+    "length": 22,
+    "content": "SegueShard:\n    \"\"\"Intermediary between shards \u2014 handles data, tone, timing, intent.\"\"\"\n    def __init__(self,stype:str,behavior:str,smoothing:str=\"default\",meta:Optional[Dict[str,Any]]=None):\n        self.stype=stype; self.behavior=behavior; self.smoothing=smoothing\n        self.meta=meta or {}; self.created=utcnow()\n    def apply(self,data:Dict[str,Any])->Dict[str,Any]:\n        if self.stype==\"context\" and self.behavior==\"carry\":\n            data[\"context_carried\"]=True\n        elif self.stype==\"temporal\" and self.behavior==\"fade\":\n            data[\"transition\"]=\"smoothed\"\n        elif self.stype==\"semantic\" and self.behavior==\"tone_mapper\":\n            data[\"voice\"]=\"savant\"\n        elif self.stype==\"transform\" and self.behavior==\"normalize\":\n            data={k.lower():v for k,v in data.items()}\n        elif self.stype==\"aesthetic\" and self.behavior==\"easing\":\n            data[\"curve\"]=\"ease_in_out\"\n        return data\n    def to_dict(self)->Dict[str,Any]:\n        return {\"type\":self.stype,\"behavior\":self.behavior,\n                \"smoothing\":self.smoothing,\"created\":self.created}\n\n# ---------- registry / orchestrator -----------------------------",
+    "timestamp": "2025-10-28T22:48:46.170938+00:00"
+  },
+  {
+    "id": "fdcb5cee6a",
+    "name": "snippet_16",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal-core/fractal_core_713549_10-28-25.py",
+    "length": 31,
+    "content": "SegueRegistry:\n    \"\"\"Registers shard linkages and injects appropriate segue shards.\"\"\"\n    def __init__(self,root:Path):\n        self.root=root; self.segues:List[Segue]=[]; self.segue_shards:List[SegueShard]=[]\n    def infer(self,src:Shard,tgt:Shard)->SegueShard:\n        mapping={\n            (\"data\",\"data\"):(\"context\",\"carry\"),\n            (\"ui\",\"ui\"):(\"aesthetic\",\"easing\"),\n            (\"text\",\"text\"):(\"semantic\",\"tone_mapper\"),\n            (\"logic\",\"logic\"):(\"transform\",\"normalize\"),\n            (\"data\",\"ui\"):(\"bridge\",\"schema_harmonizer\"),\n        }\n        stype,beh=mapping.get((src.type,tgt.type),(\"context\",\"carry\"))\n        return SegueShard(stype,beh,\"smooth\")\n    def link(self,src:Shard,tgt:Shard,mode=\"chain\"):\n        seg=Segue(src.id,tgt.id,mode); self.segues.append(seg)\n        segue_shard=self.infer(src,tgt); self.segue_shards.append(segue_shard)\n        return seg,segue_shard\n    def export(self):\n        data={\"generated\":utcnow(),\n              \"segues\":[s.to_dict() for s in self.segues],\n              \"segue_shards\":[s.to_dict() for s in self.segue_shards]}\n        out=self.root/\"segue_registry.json\"\n        out.write_text(json.dumps(data,indent=2))\n        print(f\"\u2705 Segue registry exported \u2192 {out}\")\n\nif __name__==\"__main__\":\n    root=Path.cwd()\n    a=Shard(\"alpha\",\"data\"); b=Shard(\"beta\",\"ui\")\n    reg=SegueRegistry(root)\n    reg.link(a,b,\"chain\"); reg.export()",
+    "timestamp": "2025-10-28T22:48:46.170974+00:00"
+  },
+  {
+    "id": "9332048bb2",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal-core/optimize_system_496762_10-28-25.py",
+    "length": 5,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nSAVANT : SYSTEM OPTIMIZER (v2)\nSkips vendor folders such as node_modules, .next, dist, build.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.171566+00:00"
+  },
+  {
+    "id": "8af48766d8",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal-core/optimize_system_496762_10-28-25.py",
+    "length": 4,
+    "content": "json, time\nfrom pathlib import Path\n\nROOT = Path.home() / \"savant\"",
+    "timestamp": "2025-10-28T22:48:46.171599+00:00"
+  },
+  {
+    "id": "b297e6ac95",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal-core/optimize_system_496762_10-28-25.py",
+    "length": 10,
+    "content": "audit_files():\n    print(\"\ud83e\udde9 Auditing JSON structures\u2026 (skipping node_modules, .next, dist)\")\n    skip = {\"node_modules\",\".next\",\"dist\",\"build\"}\n    for p in ROOT.rglob(\"*.json\"):\n        if any(seg in skip for seg in p.parts):\n            continue\n        try:\n            json.loads(p.read_text())\n        except Exception as e:\n            print(f\"\u26a0\ufe0f  {p}: {e}\")",
+    "timestamp": "2025-10-28T22:48:46.171647+00:00"
+  },
+  {
+    "id": "2bf64af7c0",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal-core/optimize_system_496762_10-28-25.py",
+    "length": 8,
+    "content": "performance_report():\n    start=time.time(); sum(range(10_000_000))\n    print(f\"\u2699\ufe0f  Synthetic benchmark: {time.time()-start:.3f}s baseline\")\n\nif __name__==\"__main__\":\n    print(\"\\n\u2699\ufe0f  SAVANT SYSTEM OPTIMIZER (v2)\\n\")\n    audit_files(); performance_report()\n    print(\"\u2705 Optimization audit complete.\\n\")",
+    "timestamp": "2025-10-28T22:48:46.171672+00:00"
+  },
+  {
+    "id": "71d42ee0d9",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task-engine/README.md",
+    "length": 8,
+    "content": "**SAVANT : FRACTAL / savant/services/scripts/task-engine**\n\nStructure is the first art.  This folder is a living node in the network.\nIts contents form the smallest gestures of design and the largest systems of reason.\nEach file here breathes through the lattice\u2014clarity through recursion.\n\n\n_Last regenerated: 2025-10-28 02:59:00_",
+    "timestamp": "2025-10-28T22:48:46.172558+00:00"
+  },
+  {
+    "id": "9f0f32ad69",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task-engine/backend_277191_10-28-25.py",
+    "length": 1,
+    "content": "#!/usr/bin/env python3",
+    "timestamp": "2025-10-28T22:48:46.173073+00:00"
+  },
+  {
+    "id": "d20c225eb3",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task-engine/backend_277191_10-28-25.py",
+    "length": 6,
+    "content": "json\nfrom pathlib import Path\nfrom savant.services.scripts.ai_core.ai_router import ai_route\nfrom savant.services.scripts.ai_core.ai_memory import mem\n\nTASK_FILE = Path.home()/ \"savant/services/scripts/task_lattice/task_data.json\"",
+    "timestamp": "2025-10-28T22:48:46.173105+00:00"
+  },
+  {
+    "id": "ae17e486c1",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task-engine/backend_277191_10-28-25.py",
+    "length": 12,
+    "content": "analyze_tasks():\n    if not TASK_FILE.exists():\n        print(\"\u274c No task data found.\");return\n    data=json.loads(TASK_FILE.read_text())\n    prompt=f\"Analyze this Savant task lattice and optimize its structure:\\n{json.dumps(data)[:6000]}\"\n    result=ai_route(\"task_engine\",prompt)\n    print(\"\\n\ud83e\udd16  AI Suggestion:\\n\")\n    print(result)\n    mem.remember(\"task_engine\",prompt,result)\n\nif __name__==\"__main__\":\n    analyze_tasks()",
+    "timestamp": "2025-10-28T22:48:46.173138+00:00"
+  },
+  {
+    "id": "b03cd88b75",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task-lattice/README.md",
+    "length": 8,
+    "content": "**SAVANT : FRACTAL / savant/services/scripts/task-lattice**\n\nStructure is the first art.  This folder is a living node in the network.\nIts contents form the smallest gestures of design and the largest systems of reason.\nEach file here breathes through the lattice\u2014clarity through recursion.\n\n\n_Last regenerated: 2025-10-28 02:59:00_",
+    "timestamp": "2025-10-28T22:48:46.173970+00:00"
+  },
+  {
+    "id": "12408daa56",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task-lattice/task_lattice_456361_10-28-25.py",
+    "length": 12,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nSAVANT TASK LATTICE \u2014 v4.5 (Focused Element/Project Mode)\n--------------------------------------------------------------\nUsage:\n    python task_lattice.py\nThen choose a path:\n    e.g.  web/wb_apps/oriel     \u2192 element mode\n          web                    \u2192 project mode\nYou\u2019ll be asked if subtasks should include nested folders/files.\nExports full lattice to:  ~/downloads/savant_task_lattice.json\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.174702+00:00"
+  },
+  {
+    "id": "f3fefbda80",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task-lattice/task_lattice_456361_10-28-25.py",
+    "length": 14,
+    "content": "json, os, time, uuid\nfrom pathlib import Path\n\nHOME = Path.home()\nROOT = HOME / \"savant\"\n\n# detect downloads dir\nfor name in (\"downloads\",\"Download\",\"Downloads\"):\n    cand = HOME / name\n    if cand.exists() or name == \"downloads\":\n        EXPORT_DIR = cand\n        break\nEXPORT = EXPORT_DIR / \"savant_task_lattice.json\"\nDATA   = ROOT / \"services/scripts/task_lattice/task_data.json\"",
+    "timestamp": "2025-10-28T22:48:46.174741+00:00"
+  },
+  {
+    "id": "40e4b4f425",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task-lattice/task_lattice_456361_10-28-25.py",
+    "length": 3,
+    "content": "utcnow(): return time.strftime(\"%Y-%m-%d %H:%M:%S\")\n\n# ---------------- Task object ----------------",
+    "timestamp": "2025-10-28T22:48:46.174757+00:00"
+  },
+  {
+    "id": "5afaab0373",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task-lattice/task_lattice_456361_10-28-25.py",
+    "length": 16,
+    "content": "Task:\n    def __init__(self,title,priority=3,parent=None,type=\"meta\"):\n        self.id=str(uuid.uuid4())[:8]\n        self.title=title; self.priority=priority\n        self.parent=parent; self.type=type\n        self.status=\"pending\"; self.created=utcnow(); self.updated=self.created\n        self.children=[]\n    def to_dict(self):\n        return {\n            \"id\":self.id,\"title\":self.title,\"priority\":self.priority,\n            \"parent\":self.parent,\"type\":self.type,\"status\":self.status,\n            \"created\":self.created,\"updated\":self.updated,\n            \"children\":[c.to_dict() for c in self.children]\n        }\n\n# ---------------- Lattice engine ----------------",
+    "timestamp": "2025-10-28T22:48:46.174782+00:00"
+  },
+  {
+    "id": "a1e481fbc0",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task-lattice/task_lattice_456361_10-28-25.py",
+    "length": 70,
+    "content": "TaskLattice:\n    def __init__(self):\n        self.tasks=[]\n        if DATA.exists():\n            try:self.load()\n            except: self.tasks=[]\n    def load(self):\n        raw=json.loads(DATA.read_text())\n        def build(d,parent=None):\n            t=Task(d[\"title\"],d[\"priority\"],parent,d[\"type\"])\n            t.id=d[\"id\"];t.status=d[\"status\"]\n            t.created=d[\"created\"];t.updated=d[\"updated\"]\n            t.children=[build(c,t.id) for c in d.get(\"children\",[])]\n            return t\n        self.tasks=[build(d) for d in raw]\n    def save(self):\n        DATA.parent.mkdir(parents=True,exist_ok=True)\n        DATA.write_text(json.dumps([t.to_dict() for t in self.tasks],indent=2))\n        self.export_download()\n    def export_download(self):\n        EXPORT.parent.mkdir(parents=True,exist_ok=True)\n        summary={\"generated\":utcnow(),\"tasks\":[t.to_dict() for t in self.tasks]}\n        EXPORT.write_text(json.dumps(summary,indent=2))\n        print(f\"\ud83d\udce4 Exported current lattice \u2192 {EXPORT}\")\n\n    # ----- creation -----\n    def create_from_path(self, path:Path, recursive:bool):\n        \"\"\"Builds a task tree from the given element or project path\"\"\"\n        if not path.exists():\n            print(f\"\u274c Path not found: {path}\"); return\n        root_task=Task(path.name,3,None,\"project\" if path.is_dir() else \"element\")\n        self.tasks=[root_task]\n        if path.is_dir() and recursive:\n            for dirpath,dirnames,filenames in os.walk(path):\n                parent_id=None\n                rel=str(Path(dirpath).relative_to(path))\n                if rel!=\".\": parent_id=root_task.id\n                for d in dirnames:\n                    child=Task(d,3,parent_id,\"folder\")\n                    root_task.children.append(child)\n                for f in filenames:\n                    child=Task(f,3,parent_id,\"file\")\n                    root_task.children.append(child)\n        elif path.is_dir():\n            # only top-level\n            for item in path.iterdir():\n                ttype=\"folder\" if item.is_dir() else \"file\"\n                root_task.children.append(Task(item.name,3,root_task.id,ttype))\n        self.save()\n\n    # ----- manual interaction -----\n    def add(self,title,priority=3,parent=None):\n        t=Task(title,priority,parent); self.tasks.append(t); self.save()\n    def mark(self,tid,status):\n        def search(lst):\n            for t in lst:\n                if t.id==tid: return t\n                r=search(t.children)\n                if r: return r\n        t=search(self.tasks)\n        if t:\n            t.status=status;t.updated=utcnow();self.save()\n    def show(self,tasks=None,level=0):\n        tasks=tasks or self.tasks\n        for t in tasks:\n            pad=\" \"*(level*2)\n            print(f\"{pad}- [{t.status[:1].upper()}] {t.title} ({t.type}) id:{t.id}\")\n            self.show(t.children,level+1)\n\n# ---------------- CLI ----------------",
+    "timestamp": "2025-10-28T22:48:46.174876+00:00"
+  },
+  {
+    "id": "49a5fff175",
+    "name": "snippet_10",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task-lattice/task_lattice_456361_10-28-25.py",
+    "length": 28,
+    "content": "main():\n    lat=TaskLattice()\n    print(\"\\n\u2699\ufe0f  SAVANT TASK LATTICE (v4.5)\\n\")\n    root_in=input(\"Enter element or project path (relative to ~/savant/services/): \").strip()\n    if not root_in: \n        print(\"\u274c No path given.\"); return\n    base=Path.home()/ \"savant/services\"/ root_in\n    if not base.exists():\n        print(\"\u274c Invalid path.\"); return\n    rec=input(\"Include nested files/folders? (y/n): \").lower().startswith(\"y\")\n    lat.create_from_path(base,rec)\n\n    # interactive options\n    while True:\n        cmd=input(\"(s)how  (m)ark  (a)dd  (q)uit > \").strip().lower()\n        if cmd==\"s\": lat.show()\n        elif cmd==\"m\":\n            tid=input(\"Task id: \"); status=input(\"Status (pending,doing,done): \")\n            lat.mark(tid,status)\n        elif cmd==\"a\":\n            title=input(\"Task title: \"); pr=int(input(\"Priority (1\u20135): \") or 3)\n            lat.add(title,pr)\n        elif cmd==\"q\": break\n        else: print(\"Commands: s, m, a, q\")\n    print(\"\u2705 Lattice built and exported.\")\n\nif __name__==\"__main__\":\n    main()",
+    "timestamp": "2025-10-28T22:48:46.174912+00:00"
+  },
+  {
+    "id": "bc74b8ab63",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/rule_check_171138_10-28-25.py",
+    "length": 8,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nSAVANT RULE CHECK \u2014 v1\n--------------------------------------------------------------\nImported automatically by every Savant script.\nPrevents execution if PROJECT_RULES.md is missing or outdated.\n\"\"\"\nfrom pathlib import Path",
+    "timestamp": "2025-10-28T22:48:46.176070+00:00"
+  },
+  {
+    "id": "0e26bea71e",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/rule_check_171138_10-28-25.py",
+    "length": 12,
+    "content": "sys, datetime\n\nDOC = Path.home() / \"savant/docs/PROJECT_RULES.md\"\n\nif not DOC.exists():\n    sys.exit(\"\u274c  PROJECT_RULES.md missing \u2014 execution stopped.\")\n\nmtime = DOC.stat().st_mtime\nage_hours = (datetime.datetime.now().timestamp() - mtime) / 3600\n\nif age_hours > 24:\n    sys.exit(\"\u274c  PROJECT_RULES.md older than 24h \u2014 regenerate with rule_engine.py.\")",
+    "timestamp": "2025-10-28T22:48:46.176125+00:00"
+  },
+  {
+    "id": "42767f05d6",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/rule_guard.py",
+    "length": 14,
+    "content": "os, time, json\nfrom datetime import datetime\nfrom pathlib import Path\nROOT=Path.home()/ \"savant\"\nRULES=ROOT/\"docs/PROJECT_RULES.md\"\nif not RULES.exists():\n    raise SystemExit(\"\u274c RULES FILE MISSING \u2014 EXECUTION HALTED\")\n\nstamp = RULES.stat().st_mtime\nage = (time.time()-stamp)/3600\nif age>24:\n    raise SystemExit(\"\u23f1 RULES OUTDATED \u2014 Update required\")\n\nprint(f\"\ud83e\uddf1 RULE ENFORCEMENT OK @ {datetime.utcnow().isoformat()}\")",
+    "timestamp": "2025-10-28T22:48:46.176773+00:00"
+  },
+  {
+    "id": "ff080fcb5b",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/README.md",
+    "length": 8,
+    "content": "**SAVANT : FRACTAL / savant/services/scripts/rule_engine**\n\nStructure is the first art.  This folder is a living node in the network.\nIts contents form the smallest gestures of design and the largest systems of reason.\nEach file here breathes through the lattice\u2014clarity through recursion.\n\n\n_Last regenerated: 2025-10-28 02:59:00_",
+    "timestamp": "2025-10-28T22:48:46.177305+00:00"
+  },
+  {
+    "id": "e8abd241e9",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/audit_guard_752855_10-28-25.py",
+    "length": 4,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nContinuous audit daemon \u2014 scans logs and directories for rule violations.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.178088+00:00"
+  },
+  {
+    "id": "f65b99e7ca",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/audit_guard_752855_10-28-25.py",
+    "length": 8,
+    "content": "re, time\nfrom pathlib import Path\nfrom rich.console import Console\n\nconsole = Console()\nROOT = Path.home()/ \"savant\"\nLOG = ROOT/ \"logs/compliance.log\"\nRULES = ROOT/ \"docs/PROJECT_RULES.md\"",
+    "timestamp": "2025-10-28T22:48:46.178126+00:00"
+  },
+  {
+    "id": "21b38cf382",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/audit_guard_752855_10-28-25.py",
+    "length": 20,
+    "content": "scan():\n    if not RULES.exists():\n        console.print(\"[red]\u26d4 PROJECT_RULES.md missing![/red]\")\n        return\n    txt = RULES.read_text()\n    if \"SAVANT PROJECT\" not in txt:\n        console.print(\"[red]\u26d4 Rule codex corrupted![/red]\")\n    # Search for uppercase branding in logs\n    if LOG.exists():\n        lines = LOG.read_text().splitlines()[-200:]\n        for l in lines:\n            if re.search(r\"\\bSavant\\b|\\bOriel\\b\", l):\n                console.print(f\"[red]\u26a0\ufe0f Branding violation detected: {l}[/red]\")\n    console.print(\"[green]\u2713 Compliance check OK[/green]\")\n\nif __name__ == \"__main__\":\n    console.print(\"[cyan]\ud83d\udd0d savant audit guard running...[/cyan]\")\n    while True:\n        scan()\n        time.sleep(60)",
+    "timestamp": "2025-10-28T22:48:46.178174+00:00"
+  },
+  {
+    "id": "2b1f56baa3",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/trace_guard_863439_10-28-25.py",
+    "length": 4,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nAuto-assigns hierarchical reference numbers to every Savant output.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.178862+00:00"
+  },
+  {
+    "id": "0f65f41a03",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/trace_guard_863439_10-28-25.py",
+    "length": 7,
+    "content": "add_refs(text:str):\n    lines=text.splitlines()\n    root=str(uuid.uuid4())[:8]\n    out=[]\n    for i,l in enumerate(lines,1):\n        out.append(f\"[{root}.{i:03d}] {l}\")\n    return \"\\n\".join(out)",
+    "timestamp": "2025-10-28T22:48:46.178890+00:00"
+  },
+  {
+    "id": "10a3091255",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/auto_protect_221889_10-28-25.py",
+    "length": 5,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nAuto-protection import hook.\nInjects safe_remove into builtins at runtime for all savant modules.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.179490+00:00"
+  },
+  {
+    "id": "312f13bce2",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/auto_protect_221889_10-28-25.py",
+    "length": 3,
+    "content": "builtins\nfrom savant.services.scripts.rule_engine.non_destructive_ops import safe_remove\nbuiltins.safe_remove = safe_remove",
+    "timestamp": "2025-10-28T22:48:46.179517+00:00"
+  },
+  {
+    "id": "9f0f32ad69",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/enforcer.py",
+    "length": 1,
+    "content": "#!/usr/bin/env python3",
+    "timestamp": "2025-10-28T22:48:46.180096+00:00"
+  },
+  {
+    "id": "fe61cf880f",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/enforcer.py",
+    "length": 11,
+    "content": "json, re, sys\nfrom pathlib import Path\nfrom datetime import datetime, timezone\n\nROOT = Path.home()/ \"savant\"\nDOCS = ROOT/\"docs\"\nRULES = DOCS/\"PROJECT_RULES.md\"\nINDEX = DOCS/\"rules_manifest.json\"\nREF_PATH = DOCS/\"ref_counter.json\"\n\n# --- reference numbering --------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.180140+00:00"
+  },
+  {
+    "id": "84311700a5",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/enforcer.py",
+    "length": 9,
+    "content": "next_ref():\n    REF_PATH.parent.mkdir(parents=True, exist_ok=True)\n    ref = {\"post\":0,\"line\":0}\n    if REF_PATH.exists():\n        ref = json.loads(REF_PATH.read_text())\n    ref[\"post\"] += 1\n    ref[\"line\"] = 0\n    REF_PATH.write_text(json.dumps(ref))\n    return f\"{ref['post']:04d}\"",
+    "timestamp": "2025-10-28T22:48:46.180158+00:00"
+  },
+  {
+    "id": "0d079bb038",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/enforcer.py",
+    "length": 7,
+    "content": "next_line_ref():\n    ref = json.loads(REF_PATH.read_text())\n    ref[\"line\"] += 1\n    REF_PATH.write_text(json.dumps(ref))\n    return f\"{ref['post']:04d}.{ref['line']:03d}\"\n\n# --- rule extraction ------------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.180174+00:00"
+  },
+  {
+    "id": "06f095430e",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/enforcer.py",
+    "length": 17,
+    "content": "parse_rules():\n    if not RULES.exists():\n        raise FileNotFoundError(\"PROJECT_RULES.md missing\")\n    data = RULES.read_text().splitlines()\n    rules = []\n    cur = None\n    for line in data:\n        if re.match(r\"^\\d+\\.\", line.strip()):\n            if cur: rules.append(cur)\n            num, text = line.split(\".\",1)\n            cur = {\"id\":num.strip(),\"rule\":text.strip()}\n        elif cur and line.strip():\n            cur[\"rule\"] += \" \"+line.strip()\n    if cur: rules.append(cur)\n    return rules\n\n# --- rule manifest sync ---------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.180192+00:00"
+  },
+  {
+    "id": "0b027bbb60",
+    "name": "snippet_10",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/enforcer.py",
+    "length": 11,
+    "content": "sync_manifest():\n    rules = parse_rules()\n    manifest = {\n        \"timestamp\": datetime.now(timezone.utc).isoformat(),\n        \"count\": len(rules),\n        \"rules\": rules\n    }\n    INDEX.write_text(json.dumps(manifest, indent=2))\n    print(f\"\u2705 Rule manifest synced ({len(rules)} rules)\")\n\n# --- enforcement hook -----------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.180242+00:00"
+  },
+  {
+    "id": "f70b4b2be4",
+    "name": "snippet_12",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/enforcer.py",
+    "length": 17,
+    "content": "enforce():\n    if not INDEX.exists():\n        sync_manifest()\n    manifest = json.loads(INDEX.read_text())\n    now = datetime.now(timezone.utc)\n    ts = datetime.fromisoformat(manifest[\"timestamp\"])\n    age = (now - ts).total_seconds() / 3600\n    if age > 24:\n        print(\"\u274c Rule set outdated (>24h) \u2014 update required.\")\n        sys.exit(1)\n    print(f\"\ud83e\uddf1 Savant Enforcement Active \u2014 {len(manifest['rules'])} directives loaded.\")\n\nif __name__==\"__main__\":\n    if len(sys.argv)>1 and sys.argv[1]==\"sync\":\n        sync_manifest()\n    else:\n        enforce()",
+    "timestamp": "2025-10-28T22:48:46.180269+00:00"
+  },
+  {
+    "id": "5f192107b9",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/rule_engine_364275_10-28-25.py",
+    "length": 6,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nSAVANT RULE ENGINE \u2014 v1\nMonitors the project for new 'non-negotiable rules', updates directives,\nand ensures all Savant components follow the current canon.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.180997+00:00"
+  },
+  {
+    "id": "f67182eb26",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/rule_engine_364275_10-28-25.py",
+    "length": 11,
+    "timestamp": "2025-10-28T22:48:46.181025+00:00"
+  },
+  {
+    "id": "f26c91cbac",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/rule_engine_364275_10-28-25.py",
+    "length": 9,
+    "content": "parse_rules():\n    \"\"\"Scan any text files in data/rules for new rules\"\"\"\n    rule_pattern = re.compile(r'^\\d+\\.\\s+.+', re.M)\n    all_rules = []\n    for f in RULE_SRC.glob(\"*.txt\"):\n        text = f.read_text(errors=\"ignore\")\n        found = rule_pattern.findall(text)\n        all_rules.extend(found)\n    return sorted(set(all_rules))",
+    "timestamp": "2025-10-28T22:48:46.181037+00:00"
+  },
+  {
+    "id": "c8092a7fa8",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/rule_engine_364275_10-28-25.py",
+    "length": 10,
+    "content": "update_files():\n    rules = parse_rules()\n    timestamp = time.strftime(\"%Y-%m-%d %H:%M:%S\")\n    header = f\"# SAVANT NON-NEGOTIABLE RULES\\n\\n_Last updated {timestamp}_\\n\\n\"\n    MASTER.write_text(header + \"\\n\".join(rules))\n    PROJECT.write_text(header + \"\\n\".join(rules))\n    print(f\"\u2705  Updated {len(rules)} rules across docs.\\n\")\n\nif __name__ == \"__main__\":\n    update_files()",
+    "timestamp": "2025-10-28T22:48:46.181076+00:00"
+  },
+  {
+    "id": "2b5940e7df",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/enforce_332575_10-28-25.py",
+    "length": 4,
+    "content": "#!/usr/bin/env python3\nfrom pathlib import Path\nfrom functools import wraps\nfrom rich.console import Console",
+    "timestamp": "2025-10-28T22:48:46.182068+00:00"
+  },
+  {
+    "id": "db2f73167e",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/enforce_332575_10-28-25.py",
+    "length": 5,
+    "content": "re, time, sys\n\nconsole = Console()\nROOT = Path.home()/\"savant\"\nRULE_FILE = ROOT/\"docs/PROJECT_RULES.md\"",
+    "timestamp": "2025-10-28T22:48:46.182112+00:00"
+  },
+  {
+    "id": "d1e0f1f3b1",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/enforce_332575_10-28-25.py",
+    "length": 9,
+    "content": "_validate_codex():\n    if not RULE_FILE.exists():\n        console.print(\"[red bold]\u26d4 codex missing[/red bold]\"); sys.exit(1)\n    txt = RULE_FILE.read_text(errors=\"ignore\")\n    if \"savant project\" not in txt.lower():\n        console.print(\"[red bold]\u26d4 codex corrupted[/red bold]\"); sys.exit(1)\n    if re.search(r\"\\bSavant\\b|\\bOriel\\b\", txt):\n        console.print(\"[red bold]\u26d4 casing violation in codex[/red bold]\"); sys.exit(1)\n    console.print(f\"[green]\u2713 codex verified {time.strftime('%H:%M:%S')}[/green]\")",
+    "timestamp": "2025-10-28T22:48:46.182137+00:00"
+  },
+  {
+    "id": "d920ffb227",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/enforce_332575_10-28-25.py",
+    "length": 5,
+    "content": "enforce_rules(func):\n    @wraps(func)\n    def wrapper(*a,**kw):\n        _validate_codex(); return func(*a,**kw)\n    return wrapper",
+    "timestamp": "2025-10-28T22:48:46.182152+00:00"
+  },
+  {
+    "id": "bb8a7f6b3b",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/enforce_guard_516018_10-28-25.py",
+    "length": 4,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nsavant enforce_guard \u2014 validates rule codex and branding compliance.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.182652+00:00"
+  },
+  {
+    "id": "0d719ebfdb",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/enforce_guard_516018_10-28-25.py",
+    "length": 5,
+    "content": "re, sys, time\nfrom pathlib import Path\nROOT = Path.home()/ \"savant\"\nRULE_FILE = ROOT/\"docs/PROJECT_RULES.md\"\nLOG = ROOT/\"logs/compliance.log\"",
+    "timestamp": "2025-10-28T22:48:46.182678+00:00"
+  },
+  {
+    "id": "58a2a7ecc2",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/enforce_guard_516018_10-28-25.py",
+    "length": 1,
+    "content": "_log(msg): LOG.write_text(f\"[{time.strftime('%Y-%m-%d %H:%M:%S')}] {msg}\\n\", append=True)",
+    "timestamp": "2025-10-28T22:48:46.182688+00:00"
+  },
+  {
+    "id": "fc6c64bd9a",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/enforce_guard_516018_10-28-25.py",
+    "length": 7,
+    "content": "check_rules():\n    if not RULE_FILE.exists():\n        sys.exit(\"\u26d4 Missing PROJECT_RULES.md.\")\n    txt = RULE_FILE.read_text(errors=\"ignore\")\n    if re.search(r\"\\bSavant\\b|\\bOriel\\b\", txt):\n        sys.exit(\"\u26d4 Branding violation detected in codex.\")\n    _log(\"\u2713 codex verified ok.\")",
+    "timestamp": "2025-10-28T22:48:46.182702+00:00"
+  },
+  {
+    "id": "d6d753a37c",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/enforce_guard_516018_10-28-25.py",
+    "length": 4,
+    "content": "guard_output(text:str)->str:\n    if re.search(r\"\\bSavant\\b|\\bOriel\\b\", text):\n        raise ValueError(\"Rule breach: brand names must remain lowercase.\")\n    return text",
+    "timestamp": "2025-10-28T22:48:46.182711+00:00"
+  },
+  {
+    "id": "c595aec1ce",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/hook_runtime_644236_10-28-25.py",
+    "length": 4,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nInjects rule enforcement into every Python module executed inside savant.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.185278+00:00"
+  },
+  {
+    "id": "f6df0196ae",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/hook_runtime_644236_10-28-25.py",
+    "length": 4,
+    "content": "builtins\nfrom savant.services.scripts.rule_engine.enforce_guard import verify_output\n\n_builtin_print = builtins.print",
+    "timestamp": "2025-10-28T22:48:46.185327+00:00"
+  },
+  {
+    "id": "3b47aff8d1",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/hook_runtime_644236_10-28-25.py",
+    "length": 5,
+    "content": "guarded_print(*args, **kwargs):\n    text = \" \".join(map(str, args))\n    verify_output(text)\n    _builtin_print(text, **kwargs)\nbuiltins.print = guarded_print",
+    "timestamp": "2025-10-28T22:48:46.185342+00:00"
+  },
+  {
+    "id": "73734b652c",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/non_destructive_ops_973599_10-28-25.py",
+    "length": 4,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nPrevents deletion or overwriting of Savant directories.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.186072+00:00"
+  },
+  {
+    "id": "95e69827de",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/non_destructive_ops_973599_10-28-25.py",
+    "length": 4,
+    "content": "shutil, time\nfrom pathlib import Path\nBACKUP = Path.home()/ \"savant/backups\"\nBACKUP.mkdir(parents=True, exist_ok=True)",
+    "timestamp": "2025-10-28T22:48:46.186099+00:00"
+  },
+  {
+    "id": "f65a1c3f21",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/non_destructive_ops_973599_10-28-25.py",
+    "length": 5,
+    "content": "safe_move(src:Path):\n    if not src.exists(): return\n    dest = BACKUP/f\"{src.name}_bak_{time.strftime('%Y%m%d_%H%M%S')}\"\n    shutil.move(str(src), dest)\n    print(f\"\ud83d\udee1\ufe0f  Backed up \u2192 {dest}\")",
+    "timestamp": "2025-10-28T22:48:46.186136+00:00"
+  },
+  {
+    "id": "9b5c420114",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/__init__.py",
+    "length": 1,
+    "content": "from pathlib import Path",
+    "timestamp": "2025-10-28T22:48:46.186791+00:00"
+  },
+  {
+    "id": "dc180fd397",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/rule_engine/__init__.py",
+    "length": 3,
+    "content": "check_rules():\n    enforcer = Path.home()/ \"savant/services/scripts/rule_engine/enforcer.py\"\n    subprocess.run([sys.executable, str(enforcer)], check=True)",
+    "timestamp": "2025-10-28T22:48:46.186829+00:00"
+  },
+  {
+    "id": "751830f9be",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/telemetry/telemetry_daemon.py",
+    "length": 5,
+    "content": "time, json\nfrom datetime import datetime\nfrom pathlib import Path\nROOT=Path.home()/ \"savant\"\nLOG=ROOT/\"logs/telemetry.log\"",
+    "timestamp": "2025-10-28T22:48:46.187854+00:00"
+  },
+  {
+    "id": "c7d39d80a4",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/telemetry/telemetry_daemon.py",
+    "length": 11,
+    "content": "collect():\n    return {\n        \"time\":datetime.utcnow().isoformat(),\n        \"rule_status\":\"ok\",\n        \"enhancements\":len(json.loads((ROOT/'downloads/savant_enhancements.json').read_text())) if (ROOT/'downloads/savant_enhancements.json').exists() else 0\n    }\n\nif __name__==\"__main__\":\n    while True:\n        LOG.write_text(json.dumps(collect(),indent=2))\n        time.sleep(600)",
+    "timestamp": "2025-10-28T22:48:46.187897+00:00"
+  },
+  {
+    "id": "7b8d1956bf",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/telemetry/export_manifest.py",
+    "length": 11,
+    "content": "json, time\nfrom pathlib import Path\nROOT=Path.home()/ \"savant\"\nmanifest=ROOT/\"docs/manifest.json\"\nmanifest.write_text(json.dumps({\n  \"time\":time.time(),\n  \"version\":\"auto\",\n  \"rules\":\"enforced\",\n  \"elements\":len(list(Path(ROOT).rglob('*.py')))\n},indent=2))\nprint(\"\ud83d\udcdc Manifest exported \u2192\",manifest)",
+    "timestamp": "2025-10-28T22:48:46.188333+00:00"
+  },
+  {
+    "id": "96d1ae4165",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task_engine/task_engine.py",
+    "length": 6,
+    "content": "os, json, time\nfrom datetime import datetime\nfrom pathlib import Path\n\nROOT = Path.home()/ \"savant\"\nTASK_FILE = ROOT/\"downloads/savant_tasks.json\"",
+    "timestamp": "2025-10-28T22:48:46.189431+00:00"
+  },
+  {
+    "id": "8a7e7e5676",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task_engine/task_engine.py",
+    "length": 8,
+    "content": "collect_elements(root):\n    tasks=[]\n    for path,_,files in os.walk(root):\n        for f in files:\n            if f.endswith(('.py','.tsx','.js')): \n                rel=str(Path(path)/f)\n                tasks.append({\"path\":rel,\"priority\":\"medium\",\"status\":\"pending\"})\n    return tasks",
+    "timestamp": "2025-10-28T22:48:46.189475+00:00"
+  },
+  {
+    "id": "171e361d36",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task_engine/task_engine.py",
+    "length": 7,
+    "content": "save_tasks(data):\n    TASK_FILE.write_text(json.dumps(data,indent=2))\n    print(f\"\ud83e\udded Saved {len(data)} tasks \u2192 {TASK_FILE}\")\n\nif __name__==\"__main__\":\n    all_tasks=collect_elements(str(ROOT/\"services\"))\n    save_tasks(all_tasks)",
+    "timestamp": "2025-10-28T22:48:46.189502+00:00"
+  },
+  {
+    "id": "0ca9172773",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task_engine/README.md",
+    "length": 8,
+    "content": "**SAVANT : FRACTAL / savant/services/scripts/task_engine**\n\nStructure is the first art.  This folder is a living node in the network.\nIts contents form the smallest gestures of design and the largest systems of reason.\nEach file here breathes through the lattice\u2014clarity through recursion.\n\n\n_Last regenerated: 2025-10-28 02:59:00_",
+    "timestamp": "2025-10-28T22:48:46.190138+00:00"
+  },
+  {
+    "id": "b23c2169c5",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task_engine/task_backend_542860_10-28-25.py",
+    "length": 6,
+    "content": "#!/usr/bin/env python3\nfrom savant.services.scripts.rule_engine import rule_check  # noqa: F401\n\"\"\"\nSAVANT TASK ENGINE BACKEND \u2014 v3\nIntegrates advanced AI Core for autonomous lattice optimization.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.190777+00:00"
+  },
+  {
+    "id": "fdfd7456ba",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task_engine/task_backend_542860_10-28-25.py",
+    "length": 8,
+    "content": "json, time\nfrom pathlib import Path\nfrom savant.services.scripts.ai_core.ai_router import ai_route\nfrom savant.services.scripts.ai_core.ai_memory import mem\n\nTASK_FILE = Path.home()/ \"savant/services/scripts/task_lattice/task_data.json\"\nREPORTS   = Path.home()/ \"savant/data/ai/task_reports\"\nREPORTS.mkdir(parents=True, exist_ok=True)",
+    "timestamp": "2025-10-28T22:48:46.190808+00:00"
+  },
+  {
+    "id": "5e988d14aa",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task_engine/task_backend_542860_10-28-25.py",
+    "length": 18,
+    "content": "analyze_tasks():\n    if not TASK_FILE.exists():\n        print(\"\u274c  No task data found.\");return\n    data=json.loads(TASK_FILE.read_text())\n    prompt=f\"\"\"\nAnalyze and improve the following Savant task lattice. \nDetermine bottlenecks, dependencies, missing subtasks, and optimal order.\nReturn a structured analysis and rewritten lattice.\n{json.dumps(data)[:12000]}\n\"\"\"\n    result=ai_route(\"task_engine\",prompt,level=5)\n    out=REPORTS / f\"task_analysis_{int(time.time())}.txt\"\n    out.write_text(result)\n    mem.remember(\"task_engine\",prompt,result)\n    print(f\"\u2705  Analysis written to {out}\")\n\nif __name__==\"__main__\":\n    analyze_tasks()",
+    "timestamp": "2025-10-28T22:48:46.190827+00:00"
+  },
+  {
+    "id": "9f0f32ad69",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task_engine/task_engine_959252_10-28-25.py",
+    "length": 1,
+    "content": "#!/usr/bin/env python3",
+    "timestamp": "2025-10-28T22:48:46.191307+00:00"
+  },
+  {
+    "id": "8e57856bac",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task_engine/task_engine_959252_10-28-25.py",
+    "length": 6,
+    "content": "json, datetime, uuid\nfrom pathlib import Path\nROOT = Path.home()/ \"savant\"\nDATA = ROOT/ \"data\"\nDATA.mkdir(exist_ok=True)\nTASK_FILE = DATA/ \"task_lattice.json\"",
+    "timestamp": "2025-10-28T22:48:46.191333+00:00"
+  },
+  {
+    "id": "6f7994ba15",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task_engine/task_engine_959252_10-28-25.py",
+    "length": 4,
+    "content": "load_tasks():\n    if TASK_FILE.exists():\n        return json.loads(TASK_FILE.read_text())\n    return {\"tasks\":[]}",
+    "timestamp": "2025-10-28T22:48:46.191342+00:00"
+  },
+  {
+    "id": "5227bc43b6",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task_engine/task_engine_959252_10-28-25.py",
+    "length": 2,
+    "content": "save_tasks(data):\n    TASK_FILE.write_text(json.dumps(data,indent=2))",
+    "timestamp": "2025-10-28T22:48:46.191352+00:00"
+  },
+  {
+    "id": "7fe44f6c76",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task_engine/task_engine_959252_10-28-25.py",
+    "length": 7,
+    "content": "add_task(name:str,desc:str,priority:int=5,level:str=\"facet\"):\n    tasks=load_tasks()\n    t={\"id\":str(uuid.uuid4()),\"name\":name,\"desc\":desc,\"priority\":priority,\n       \"level\":level,\"status\":\"pending\",\"created\":datetime.datetime.utcnow().isoformat()}\n    tasks[\"tasks\"].append(t)\n    save_tasks(tasks)\n    print(f\"\u2705 Added task: {name}\")",
+    "timestamp": "2025-10-28T22:48:46.191372+00:00"
+  },
+  {
+    "id": "8ddab38817",
+    "name": "snippet_10",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task_engine/task_engine_959252_10-28-25.py",
+    "length": 5,
+    "content": "list_tasks():\n    data=load_tasks()\n    tasks=sorted(data[\"tasks\"], key=lambda x:x.get(\"priority\",5))\n    for t in tasks:\n        print(f\"[{t['status'].upper()}] {t['name']} (L:{t['level']}, P:{t['priority']})\")",
+    "timestamp": "2025-10-28T22:48:46.191382+00:00"
+  },
+  {
+    "id": "1b047551a6",
+    "name": "snippet_12",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/task_engine/task_engine_959252_10-28-25.py",
+    "length": 16,
+    "content": "mark_done(name:str):\n    data=load_tasks()\n    for t in data[\"tasks\"]:\n        if t[\"name\"]==name:\n            t[\"status\"]=\"done\"\n            t[\"completed\"]=datetime.datetime.utcnow().isoformat()\n    save_tasks(data)\n    print(f\"\u2705 Task '{name}' marked done.\")\n\nif __name__==\"__main__\":\n    import sys\n    if len(sys.argv)<2: print(\"Usage: task_engine.py [add|list|done] ...\"); sys.exit()\n    cmd=sys.argv[1]\n    if cmd==\"add\": add_task(sys.argv[2], sys.argv[3] if len(sys.argv)>3 else \"\")\n    elif cmd==\"list\": list_tasks()\n    elif cmd==\"done\": mark_done(sys.argv[2])",
+    "timestamp": "2025-10-28T22:48:46.191397+00:00"
+  },
+  {
+    "id": "71a1873013",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_memory_626440_10-28-25.py",
+    "length": 5,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nSAVANT AI MEMORY \u2014 v3\nMaintains rolling conversation logs and session summaries.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.192903+00:00"
+  },
+  {
+    "id": "ec56b6b8a0",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_memory_626440_10-28-25.py",
+    "length": 6,
+    "content": "json, time\nfrom collections import deque\nfrom pathlib import Path\n\nDATA = Path.home()/ \"savant/data/ai/memory.json\"\nDATA.parent.mkdir(parents=True, exist_ok=True)",
+    "timestamp": "2025-10-28T22:48:46.192961+00:00"
+  },
+  {
+    "id": "44a126beee",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_memory_626440_10-28-25.py",
+    "length": 18,
+    "content": "AIMemory:\n    def __init__(self,limit:int=50):\n        self.limit=limit\n        self.history={\"global\":deque(maxlen=limit)}\n        self.load()\n    def load(self):\n        if DATA.exists():\n            try:self.history=json.loads(DATA.read_text())\n            except Exception:pass\n    def save(self):\n        DATA.write_text(json.dumps(self.history,indent=2))\n    def remember(self,module,user,ai):\n        rec={\"time\":time.strftime(\"%Y-%m-%d %H:%M:%S\"),\"user\":user,\"ai\":ai}\n        self.history.setdefault(module,[]).append(rec)\n        self.history[module]=self.history[module][-self.limit:]\n        self.save()\n\nmem=AIMemory()",
+    "timestamp": "2025-10-28T22:48:46.192984+00:00"
+  },
+  {
+    "id": "9f0f32ad69",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_core_229796_10-28-25.py",
+    "length": 1,
+    "content": "#!/usr/bin/env python3",
+    "timestamp": "2025-10-28T22:48:46.193763+00:00"
+  },
+  {
+    "id": "b1a3862747",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_core_229796_10-28-25.py",
+    "length": 13,
+    "content": "os, openai, json, sys\nfrom pathlib import Path\nfrom datetime import datetime\n\nROOT = Path.home()/ \"savant\"\nENV = ROOT/ \".env\"\nif ENV.exists():\n    for line in ENV.read_text().splitlines():\n        if line.strip() and \"=\" in line:\n            k,v = line.strip().split(\"=\",1)\n            os.environ[k]=v\n\nopenai.api_key = os.getenv(\"OPENAI_API_KEY\",\"\")",
+    "timestamp": "2025-10-28T22:48:46.193798+00:00"
+  },
+  {
+    "id": "401b137dbd",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_core_229796_10-28-25.py",
+    "length": 14,
+    "content": "ai_task(prompt:str, model:str=\"gpt-4o-mini\", temperature:float=0.5)->str:\n    if not openai.api_key:\n        return \"\u274c API key missing. Add OPENAI_API_KEY to .env\"\n    completion = openai.ChatCompletion.create(\n        model=model,\n        messages=[{\"role\":\"system\",\"content\":\"You are the Savant AI Core, writing in the 'savant' voice.\"},\n                  {\"role\":\"user\",\"content\":prompt}],\n        temperature=temperature\n    )\n    return completion.choices[0].message.content.strip()\n\nif __name__==\"__main__\":\n    q=\" \".join(sys.argv[1:]) or \"Describe Savant architecture.\"\n    print(ai_task(q))",
+    "timestamp": "2025-10-28T22:48:46.193817+00:00"
+  },
+  {
+    "id": "27ce58850f",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/README.md",
+    "length": 8,
+    "content": "**SAVANT : FRACTAL / savant/services/scripts/ai_core**\n\nStructure is the first art.  This folder is a living node in the network.\nIts contents form the smallest gestures of design and the largest systems of reason.\nEach file here breathes through the lattice\u2014clarity through recursion.\n\n\n_Last regenerated: 2025-10-28 02:59:00_",
+    "timestamp": "2025-10-28T22:48:46.194430+00:00"
+  },
+  {
+    "id": "7fe8648b50",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_core.py",
+    "length": 8,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nSAVANT AI CORE v2.2\n\u2022 Centralized gateway for all intelligent operations.\n\u2022 Enforces PROJECT_RULES.md before every completion.\n\u2022 Writes reference numbers to context ledger.\n\u2022 Provides unified interface to OpenAI-compatible models.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.195157+00:00"
+  },
+  {
+    "id": "e50ba71bc8",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_core.py",
+    "length": 11,
+    "content": "os, sys, json, uuid, time, subprocess\nfrom pathlib import Path\nfrom datetime import datetime, timezone\nfrom dotenv import load_dotenv\nfrom openai import OpenAI\n\nROOT = Path.home() / \"savant\"\nDOCS = ROOT / \"docs\"\nLOGS = ROOT / \"logs\"\nLEDGER = ROOT / \"services\" / \"scripts\" / \"context_engine\" / \"context_ledger.py\"\nENFORCER = ROOT / \"services\" / \"scripts\" / \"rule_engine\" / \"enforcer.py\"",
+    "timestamp": "2025-10-28T22:48:46.195198+00:00"
+  },
+  {
+    "id": "1aa2d31b0c",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_core.py",
+    "length": 1,
+    "content": "utc(): return datetime.now(timezone.utc).isoformat()",
+    "timestamp": "2025-10-28T22:48:46.195213+00:00"
+  },
+  {
+    "id": "f8be771db7",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_core.py",
+    "length": 3,
+    "content": "ref(tag=\"post\"): return f\"{int(time.time()*1000)}-{uuid.uuid4().hex[:6]}-{tag}\"\n\n# --- Rule enforcement -------------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.195228+00:00"
+  },
+  {
+    "id": "db40c251db",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_core.py",
+    "length": 8,
+    "content": "check_rules():\n    try:\n        subprocess.run([sys.executable, str(ENFORCER)], check=True, capture_output=True)\n    except subprocess.CalledProcessError as e:\n        print(\"\u274c Rule enforcement failed:\\n\", e.stderr.decode())\n        sys.exit(1)\n\n# --- Ledger logging ---------------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.195249+00:00"
+  },
+  {
+    "id": "0a321011e8",
+    "name": "snippet_10",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_core.py",
+    "length": 6,
+    "content": "log_to_ledger(entry:dict):\n    LEDGER.parent.mkdir(parents=True, exist_ok=True)\n    with open(ROOT/\"logs\"/\"context_ledger.log\",\"a\") as f:\n        f.write(json.dumps(entry)+\"\\n\")\n\n# --- OpenAI gateway ---------------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.195265+00:00"
+  },
+  {
+    "id": "c632947578",
+    "name": "snippet_12",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_core.py",
+    "length": 6,
+    "content": "get_client():\n    load_dotenv(ROOT/\".env\")\n    api_key = os.getenv(\"OPENAI_API_KEY\")\n    if not api_key:\n        raise EnvironmentError(\"OPENAI_API_KEY missing from .env\")\n    return OpenAI(api_key=api_key)",
+    "timestamp": "2025-10-28T22:48:46.195280+00:00"
+  },
+  {
+    "id": "96df6c1869",
+    "name": "snippet_14",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_core.py",
+    "length": 22,
+    "content": "ai_chat(prompt:str, model=\"gpt-4o-mini\"):\n    check_rules()\n    client = get_client()\n    ref_id = ref(\"chat\")\n    log_to_ledger({\"ref\":ref_id,\"timestamp\":utc(),\"type\":\"chat\",\"prompt\":prompt})\n    try:\n        res = client.chat.completions.create(\n            model=model,\n            messages=[{\"role\":\"system\",\"content\":\"You are Savant \u2014 speak with lucid precision and subtle poetry.\"},\n                      {\"role\":\"user\",\"content\":prompt}],\n            temperature=0.7\n        )\n        reply = res.choices[0].message.content.strip()\n        log_to_ledger({\"ref\":ref_id,\"timestamp\":utc(),\"type\":\"reply\",\"content\":reply})\n        print(f\"\\n\ud83e\udde0 Savant [{ref_id}]\\n{reply}\\n\")\n    except Exception as e:\n        log_to_ledger({\"ref\":ref_id,\"timestamp\":utc(),\"error\":str(e)})\n        print(\"\u26a0\ufe0f AI Core Error:\",e)\n\nif __name__==\"__main__\":\n    prompt = \" \".join(sys.argv[1:]) if len(sys.argv)>1 else input(\"Enter prompt: \")\n    ai_chat(prompt)",
+    "timestamp": "2025-10-28T22:48:46.195344+00:00"
+  },
+  {
+    "id": "995964e753",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/client_579228_10-28-25.py",
+    "length": 5,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nSAVANT AI CORE \u2014 v3\nCentralized OpenAI API client with retry, caching, and memory.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.196164+00:00"
+  },
+  {
+    "id": "48fa043f57",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/client_579228_10-28-25.py",
+    "length": 15,
+    "content": "os, json, time, hashlib, random\nfrom pathlib import Path\nfrom dotenv import load_dotenv\nfrom openai import OpenAI, APIError, RateLimitError\n\nROOT = Path(__file__).resolve().parents[3]\nload_dotenv(ROOT / \".env\")\nAPI_KEY = os.getenv(\"OPENAI_API_KEY\")\nif not API_KEY:\n    raise EnvironmentError(\"Missing OPENAI_API_KEY in savant/.env\")\n\nCACHE = ROOT / \"data/ai/cache\"\nCACHE.mkdir(parents=True, exist_ok=True)\n\nclient = OpenAI(api_key=API_KEY)",
+    "timestamp": "2025-10-28T22:48:46.196194+00:00"
+  },
+  {
+    "id": "8459a50e4f",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/client_579228_10-28-25.py",
+    "length": 3,
+    "content": "_cache_key(prompt, system, model):\n    h = hashlib.sha1(f\"{prompt}{system}{model}\".encode()).hexdigest()\n    return CACHE / f\"{h}.json\"",
+    "timestamp": "2025-10-28T22:48:46.196204+00:00"
+  },
+  {
+    "id": "811f3ce4c8",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/client_579228_10-28-25.py",
+    "length": 4,
+    "content": "_from_cache(prompt, system, model):\n    p=_cache_key(prompt,system,model)\n    if p.exists(): return json.loads(p.read_text()).get(\"result\")\n    return None",
+    "timestamp": "2025-10-28T22:48:46.196214+00:00"
+  },
+  {
+    "id": "3af6e69b7f",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/client_579228_10-28-25.py",
+    "length": 3,
+    "content": "_to_cache(prompt, system, model, result):\n    p=_cache_key(prompt,system,model)\n    p.write_text(json.dumps({\"time\":time.time(),\"result\":result},indent=2))",
+    "timestamp": "2025-10-28T22:48:46.196230+00:00"
+  },
+  {
+    "id": "3fb1774523",
+    "name": "snippet_10",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/client_579228_10-28-25.py",
+    "length": 24,
+    "content": "chat(prompt:str, model:str=\"gpt-4o-mini\", system:str=\"You are Savant AI Core\", max_retries:int=3):\n    cached=_from_cache(prompt,system,model)\n    if cached: return cached\n    for attempt in range(max_retries):\n        try:\n            resp = client.chat.completions.create(\n                model=model,\n                temperature=0.8,\n                messages=[\n                    {\"role\":\"system\",\"content\":system},\n                    {\"role\":\"user\",\"content\":prompt[:12000]}\n                ],\n            )\n            result = resp.choices[0].message.content.strip()\n            _to_cache(prompt,system,model,result)\n            return result\n        except (APIError, RateLimitError) as e:\n            wait = (attempt+1)*5 + random.random()*3\n            print(f\"\u26a0\ufe0f  API error {e}; retrying in {wait:.1f}s\")\n            time.sleep(wait)\n        except Exception as e:\n            print(\"\u274c Unhandled error:\",e)\n            break\n    return \"AI Core failed after retries.\"",
+    "timestamp": "2025-10-28T22:48:46.196259+00:00"
+  },
+  {
+    "id": "711b954403",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_router_604946_10-28-25.py",
+    "length": 6,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nSAVANT AI ROUTER \u2014 v3\nRoutes contextual prompts through the AI Core with specialized system roles.\n\"\"\"\nfrom .client import chat",
+    "timestamp": "2025-10-28T22:48:46.197060+00:00"
+  },
+  {
+    "id": "f76275fa01",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_router_604946_10-28-25.py",
+    "length": 19,
+    "content": "ai_route(context:str, prompt:str, level:int=3):\n    systems={\n      \"task_engine\":(\n        \"You are the Savant Task Intelligence Core. \"\n        \"You analyze, reason, and restructure complex task lattices with precision. \"\n        \"Your tone is clear, analytical, subtly poetic.\"\n      ),\n      \"oriel\":(\n        \"You are the Oriel narrative cognition layer. \"\n        \"Compose and interpret in a mythic yet human register.\"\n      ),\n      \"enhancement\":(\n        \"You are the Savant Enhancement Architect. \"\n        \"Identify refinements that elevate code and design elegantly.\"\n      )\n    }\n    system=systems.get(context,\"You are Savant AI Core.\")\n    model = \"gpt-4o\" if level>3 else \"gpt-4o-mini\"\n    return chat(prompt,model=model,system=system)",
+    "timestamp": "2025-10-28T22:48:46.197122+00:00"
+  },
+  {
+    "id": "90458481ef",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_gateway.py",
+    "length": 5,
+    "content": "#!/usr/bin/env python3\nfrom fastapi import FastAPI, Form, Request\nfrom fastapi.responses import HTMLResponse\nfrom pydantic import BaseModel\nfrom pathlib import Path",
+    "timestamp": "2025-10-28T22:48:46.198248+00:00"
+  },
+  {
+    "id": "6f50d599d5",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_gateway.py",
+    "length": 5,
+    "content": "sys\nsys.path.insert(0, str(Path(__file__).resolve().parents[3]))\nfrom services.scripts.ai_core.ai_core import ai_chat\n\napp = FastAPI(title=\"Savant AI Gateway\", version=\"2.1\")",
+    "timestamp": "2025-10-28T22:48:46.198287+00:00"
+  },
+  {
+    "id": "0f95541896",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/ai_gateway.py",
+    "length": 37,
+    "content": "PromptRequest(BaseModel):\n    prompt: str\n\n@app.post(\"/chat\")\nasync def chat(req: PromptRequest):\n    try:\n        reply = ai_chat(req.prompt, model=\"gpt-4o\")\n        return {\"status\":\"ok\",\"reply\":reply}\n    except Exception as e:\n        return {\"status\":\"error\",\"message\":str(e)}\n\n@app.get(\"/chat-form\", response_class=HTMLResponse)\nasync def chat_form():\n    return \"\"\"\n    <html><body style=\"background:#111;color:#e4c66f;font-family:JetBrains Mono;\">\n    <h2>Savant AI Gateway</h2>\n    <form action=\"/chat-form\" method=\"post\">\n      <textarea name=\"prompt\" rows=\"4\" cols=\"60\" style=\"background:#1e1e21;color:#e4c66f;border:1px solid #c7a740;\"></textarea><br>\n      <input type=\"submit\" value=\"Send\" style=\"background:#2e2e32;color:#c7a740;padding:6px 12px;\">\n    </form></body></html>\n    \"\"\"\n\n@app.post(\"/chat-form\", response_class=HTMLResponse)\nasync def chat_form_post(prompt: str = Form(...)):\n    try:\n        reply = ai_chat(prompt, model=\"gpt-4o\")\n        return f\"<pre style='background:#1e1e21;color:#e4c66f;padding:1em;'>{reply}</pre>\"\n    except Exception as e:\n        return f\"<pre style='color:red;'>Error: {e}</pre>\"\n\n@app.get(\"/status\")\nasync def status():\n    return {\"status\":\"running\",\"engine\":\"Savant AI Core 2.1\"}\n\nif __name__==\"__main__\":\n    import uvicorn\n    uvicorn.run(\"services.scripts.ai_core.ai_gateway:app\", host=\"0.0.0.0\", port=8080)",
+    "timestamp": "2025-10-28T22:48:46.198314+00:00"
+  },
+  {
+    "id": "081994d45f",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/self_optimizer.py",
+    "length": 5,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nPhase 14: Savant Self-Optimization\nMonitors response quality and dynamically tunes model temperature and context size.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.198847+00:00"
+  },
+  {
+    "id": "eb91dcf37c",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/self_optimizer.py",
+    "length": 2,
+    "content": "json, random\nfrom pathlib import Path",
+    "timestamp": "2025-10-28T22:48:46.198874+00:00"
+  },
+  {
+    "id": "015f4e7bcd",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/self_optimizer.py",
+    "length": 4,
+    "content": "numpy as np\n\nROOT=Path.home()/ \"savant\"/\"logs\"\nCONF=ROOT/\"ai_tuning.json\"",
+    "timestamp": "2025-10-28T22:48:46.198884+00:00"
+  },
+  {
+    "id": "5be5d3a4af",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/self_optimizer.py",
+    "length": 6,
+    "content": "record(feedback:int):\n    data={\"score\":feedback,\"session\":random.random()}\n    hist=[]\n    if CONF.exists(): hist=json.loads(CONF.read_text())\n    hist.append(data)\n    CONF.write_text(json.dumps(hist[-50:],indent=2))",
+    "timestamp": "2025-10-28T22:48:46.198895+00:00"
+  },
+  {
+    "id": "0e2d9a879b",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_core/self_optimizer.py",
+    "length": 7,
+    "content": "tune():\n    if not CONF.exists(): return {\"temperature\":0.7,\"context\":0.8}\n    data=json.loads(CONF.read_text())\n    mean=np.mean([d[\"score\"] for d in data])\n    temp=max(0.2,min(1.2,0.7+(0.5-mean)*0.3))\n    ctx=max(0.5,min(1.0,0.8+(mean-0.5)*0.2))\n    return {\"temperature\":round(temp,2),\"context\":round(ctx,2)}",
+    "timestamp": "2025-10-28T22:48:46.198905+00:00"
+  },
+  {
+    "id": "9f0f32ad69",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_version_integration_228941_10-28-25.py",
+    "length": 1,
+    "content": "#!/usr/bin/env python3",
+    "timestamp": "2025-10-28T22:48:46.200005+00:00"
+  },
+  {
+    "id": "41ca500734",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_version_integration_228941_10-28-25.py",
+    "length": 19,
+    "content": "json, uuid, random\nfrom pathlib import Path\nfrom typing import Dict, Any, List\n\n# ==============================================================\n#  IMPORTS & BRAND DEFINITIONS\n# ==============================================================\nBRAND_COLORS={\n \"savant\":\"#101012\",\"sector\":\"#1a1b1f\",\"vessel\":\"#2c2d31\",\"app\":\"#d4af37\",\n \"lattice\":\"#c2a040\",\"facet\":\"#e5c565\",\"shard\":\"#b3212d\",\"filament\":\"#f0b040\",\n \"refract\":\"#edd28c\",\"grain\":\"#f8e5a4\",\"pulse\":\"#d4b270\",\"echo\":\"#b79963\",\"veil\":\"#a88c57\"\n}\n\nHIERARCHY=[\"savant\",\"sector\",\"vessel\",\"app\",\"lattice\",\"facet\",\"shard\",\n           \"filament\",\"refract\",\"grain\",\"pulse\",\"echo\",\"veil\"]\n\n# ==============================================================\n#  FRACTAL ENTITY\n# ==============================================================",
+    "timestamp": "2025-10-28T22:48:46.200038+00:00"
+  },
+  {
+    "id": "5af1007910",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_version_integration_228941_10-28-25.py",
+    "length": 20,
+    "content": "FractalEntity:\n    def __init__(self,name:str,level:int,parent=None):\n        self.id=str(uuid.uuid4())[:8]\n        self.name=name\n        self.level=level\n        self.parent=parent\n        self.children:List['FractalEntity']=[]\n        self.color=BRAND_COLORS.get(name,\"#999\")\n\n    def add_child(self,child:'FractalEntity'):\n        child.parent=self\n        self.children.append(child)\n\n    def to_dict(self)->Dict[str,Any]:\n        return {\"id\":self.id,\"name\":self.name,\"level\":self.level,\"color\":self.color,\n                \"children\":[c.to_dict() for c in self.children]}\n\n# ==============================================================\n#  FRACTAL HIERARCHY BUILDER\n# ==============================================================",
+    "timestamp": "2025-10-28T22:48:46.200052+00:00"
+  },
+  {
+    "id": "1d73487e88",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_version_integration_228941_10-28-25.py",
+    "length": 15,
+    "content": "build_hierarchy(start:str,end:str)->FractalEntity:\n    si,ei=HIERARCHY.index(start),HIERARCHY.index(end)\n    if si>=ei: raise ValueError(\"Invalid hierarchy range\")\n    nodes=[]\n    for i in range(si,ei+1):\n        node=FractalEntity(HIERARCHY[i],i)\n        if nodes: nodes[-1].add_child(node)\n        nodes.append(node)\n    return nodes[0]\n\n# ==============================================================\n#  VERSIONING ENGINE (INTEGRATED)\n# ==============================================================\nSYMBOLS={\"default\":\"\u2b22\",\"reflect\":\"\u2b21\",\"shard\":\"\ud83d\udd3b\"}\nBRAND_SYMBOLS={\"\u2b22\":\"#d4af37\",\"\u2b21\":\"#e5d28c\",\"\ud83d\udd3b\":\"#b3212d\"}",
+    "timestamp": "2025-10-28T22:48:46.200075+00:00"
+  },
+  {
+    "id": "ad9a10783a",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_version_integration_228941_10-28-25.py",
+    "length": 4,
+    "content": "pick_symbol(layer:str)->str:\n    if layer==\"shard\": return SYMBOLS[\"shard\"]\n    if layer in [\"refract\",\"veil\",\"echo\"]: return SYMBOLS[\"reflect\"]\n    return SYMBOLS[\"default\"]",
+    "timestamp": "2025-10-28T22:48:46.200086+00:00"
+  },
+  {
+    "id": "f8f9e87ff3",
+    "name": "snippet_10",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_version_integration_228941_10-28-25.py",
+    "length": 3,
+    "content": "generate_digit(layer:str)->int:\n    base={\"app\":3,\"facet\":6,\"shard\":7,\"grain\":8}.get(layer,5)\n    return min(9,max(1,base+random.choice([-1,0,1])))",
+    "timestamp": "2025-10-28T22:48:46.200095+00:00"
+  },
+  {
+    "id": "a9b73990fd",
+    "name": "snippet_12",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_version_integration_228941_10-28-25.py",
+    "length": 4,
+    "content": "relation_symbol(a:int,b:int)->str:\n    if a<b: return \"<\"\n    if a>b: return \">\"\n    return \"=\"",
+    "timestamp": "2025-10-28T22:48:46.200109+00:00"
+  },
+  {
+    "id": "ade93eafb4",
+    "name": "snippet_14",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_version_integration_228941_10-28-25.py",
+    "length": 3,
+    "content": "select_triad(levels:List[str])->List[str]:\n    top,mid,bottom=levels[0],levels[len(levels)//2],levels[-1]\n    return [top,mid,bottom]",
+    "timestamp": "2025-10-28T22:48:46.200121+00:00"
+  },
+  {
+    "id": "3607cdbcce",
+    "name": "snippet_16",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_version_integration_228941_10-28-25.py",
+    "length": 11,
+    "content": "build_version(levels:List[str])->str:\n    triad=select_triad(levels)\n    digits=[generate_digit(l) for l in triad]\n    symbols=[pick_symbol(l) for l in triad]\n    r1=relation_symbol(digits[0],digits[1])\n    r2=relation_symbol(digits[1],digits[2])\n    return f\"{symbols[0]}{digits[0]}{r1}{symbols[1]}{digits[1]}{r2}{symbols[2]}{digits[2]}\"\n\n# ==============================================================\n#  EXPORT + READ/WRITE MANIFEST / README\n# ==============================================================",
+    "timestamp": "2025-10-28T22:48:46.200133+00:00"
+  },
+  {
+    "id": "eaf90ea78a",
+    "name": "snippet_18",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_version_integration_228941_10-28-25.py",
+    "length": 7,
+    "content": "update_manifest(app_name:str,levels:List[str],version:str):\n    app_dir=Path.home()/f\"savant/services/web/wb_apps/{app_name}\"\n    app_dir.mkdir(parents=True,exist_ok=True)\n    manifest=app_dir/\"app_manifest.json\"\n    data={\"app\":app_name,\"levels\":levels,\"version\":version}\n    manifest.write_text(json.dumps(data,indent=2))\n    print(f\"\ud83d\udcd8 Manifest updated \u2192 {manifest}\")",
+    "timestamp": "2025-10-28T22:48:46.200160+00:00"
+  },
+  {
+    "id": "8291a73eac",
+    "name": "snippet_20",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_version_integration_228941_10-28-25.py",
+    "length": 9,
+    "content": "update_readme(app_name:str,version:str):\n    app_dir=Path.home()/f\"savant/services/web/wb_apps/{app_name}\"\n    readme=app_dir/\"README.md\"\n    text=f\"# {app_name.capitalize()}\\n\\n\" \\\n         f\"### Version: {version}\\n\\n\" \\\n         \"This document auto-updates with each structural or enhancement cycle.\\n\" \\\n         \"Version follows the Savant Fractal Triad System (SVX): symbol hierarchy + maturity digits.\"\n    readme.write_text(text)\n    print(f\"\ud83d\udcd8 README updated \u2192 {readme}\")",
+    "timestamp": "2025-10-28T22:48:46.200182+00:00"
+  },
+  {
+    "id": "0972c3dcc0",
+    "name": "snippet_22",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_version_integration_228941_10-28-25.py",
+    "length": 27,
+    "content": "log_project_versions(app_name:str,version:str):\n    log_path=Path.home()/ \"downloads/savant_project_versions.json\"\n    try:\n        data=json.loads(log_path.read_text())\n    except Exception: data={}\n    data[app_name]=version\n    log_path.write_text(json.dumps(data,indent=2))\n    print(f\"\ud83d\uddc2\ufe0f Project versions consolidated \u2192 {log_path}\")\n\n# ==============================================================\n#  EXECUTION\n# ==============================================================\nif __name__==\"__main__\":\n    APP_NAME=\"savant_soundboard\"\n    APP_START=\"app\"\n    APP_END=\"grain\"\n\n    print(\"\ud83d\udd38 Building hierarchy and version data...\")\n    levels=HIERARCHY[HIERARCHY.index(APP_START):HIERARCHY.index(APP_END)+1]\n    version=build_version(levels)\n\n    # Save data\n    update_manifest(APP_NAME,levels,version)\n    update_readme(APP_NAME,version)\n    log_project_versions(APP_NAME,version)\n\n    print(f\"\u2705 {APP_NAME} version registered: {version}\")",
+    "timestamp": "2025-10-28T22:48:46.200214+00:00"
+  },
+  {
+    "id": "4c941b1e56",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_core.py",
+    "length": 2,
+    "content": "json,uuid,math,random\nfrom pathlib import Path",
+    "timestamp": "2025-10-28T22:48:46.200824+00:00"
+  },
+  {
+    "id": "29e0141b3f",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_core.py",
+    "length": 6,
+    "content": "FractalEntity:\n    def __init__(self,name,curvature,parent=None):\n        self.id=str(uuid.uuid4())[:8]\n        self.name=name; self.curvature=curvature; self.parent=parent; self.children=[]\n    def add_child(self,c): c.parent=self; self.children.append(c)\n    def export(self): return {\"id\":self.id,\"name\":self.name,\"curv\":self.curvature,\"children\":[ch.export() for ch in self.children]}",
+    "timestamp": "2025-10-28T22:48:46.200858+00:00"
+  },
+  {
+    "id": "2e5998ba74",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_core.py",
+    "length": 12,
+    "content": "export_graph(root):\n    path=Path.home()/ \"savant/services/scripts/fractal_core/fractal_graph.json\"\n    path.write_text(json.dumps(root.export(),indent=2))\n    return str(path)\n\nif __name__==\"__main__\":\n    s=FractalEntity(\"savant\",5.0)\n    v=FractalEntity(\"vessel\",4.3); s.add_child(v)\n    a=FractalEntity(\"app\",3.7); v.add_child(a)\n    f=FractalEntity(\"facet\",2.9); a.add_child(f)\n    sh=FractalEntity(\"shard\",1.6); f.add_child(sh)\n    print(\"\u2705 Fractal graph exported:\",export_graph(s))",
+    "timestamp": "2025-10-28T22:48:46.200891+00:00"
+  },
+  {
+    "id": "fc59eec49d",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_core_528231_10-28-25.py",
+    "length": 1,
+    "content": "from __future__ import annotations",
+    "timestamp": "2025-10-28T22:48:46.201609+00:00"
+  },
+  {
+    "id": "16ceb949ae",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_core_528231_10-28-25.py",
+    "length": 8,
+    "content": "uuid, time, json, math\nfrom pathlib import Path\nfrom typing import Any, Dict, List, Optional\n\nEXPORT_DIR = Path.home() / \"savant/services/scripts/fractal_core\"\nVISUAL_DIR = Path.home() / \"savant/visuals\"\nEXPORT_PATH = EXPORT_DIR / \"fractal_graph.json\"\nVISUAL_PATH = VISUAL_DIR / \"fractal_graph.html\"",
+    "timestamp": "2025-10-28T22:48:46.201635+00:00"
+  },
+  {
+    "id": "d6f6110fb4",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_core_528231_10-28-25.py",
+    "length": 12,
+    "content": "FractalEntity:\n    def __init__(self, name:str, parent:Optional['FractalEntity']=None, curvature:float=1.0):\n        self.id=str(uuid.uuid4())\n        self.name=name\n        self.parent=parent\n        self.children=[]\n        self.curvature=curvature\n        self.created=time.time()\n\n    def add_child(self, child:'FractalEntity'):\n        self.children.append(child)\n        child.parent=self",
+    "timestamp": "2025-10-28T22:48:46.201648+00:00"
+  },
+  {
+    "id": "91ab63ae0e",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_core_528231_10-28-25.py",
+    "length": 9,
+    "content": "SegueShard:\n    def __init__(self, a:FractalEntity, b:FractalEntity, mode:str=\"structural\"):\n        self.id=str(uuid.uuid4())\n        self.a=a; self.b=b; self.mode=mode\n        self.vector={\n            \"radius\":abs(a.curvature-b.curvature),\n            \"pitch\":(a.curvature+b.curvature)/2,\n            \"elasticity\":1/math.exp(abs(a.curvature-b.curvature))\n        }",
+    "timestamp": "2025-10-28T22:48:46.201660+00:00"
+  },
+  {
+    "id": "9f8e20acb2",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_core_528231_10-28-25.py",
+    "length": 6,
+    "content": "export_graph(root:FractalEntity)->dict:\n    def _walk(n:FractalEntity)->dict:\n        return {\"name\":n.name,\"curvature\":n.curvature,\"children\":[_walk(c) for c in n.children]}\n    data=_walk(root)\n    EXPORT_PATH.write_text(json.dumps(data,indent=2))\n    return data",
+    "timestamp": "2025-10-28T22:48:46.201670+00:00"
+  },
+  {
+    "id": "d7e3971bfa",
+    "name": "snippet_10",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_core_528231_10-28-25.py",
+    "length": 3,
+    "content": "export_visualizer(data:dict):\n    VISUAL_DIR.mkdir(parents=True,exist_ok=True)\n    html=f\"\"\"<!DOCTYPE html><html><head><meta charset='utf-8'>",
+    "timestamp": "2025-10-28T22:48:46.201680+00:00"
+  },
+  {
+    "id": "ccb0c3e9b9",
+    "name": "snippet_12",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_core_528231_10-28-25.py",
+    "length": 1,
+    "content": ">Savant Fractal Graph</title>",
+    "timestamp": "2025-10-28T22:48:46.201689+00:00"
+  },
+  {
+    "id": "96899d572d",
+    "name": "snippet_14",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_core_528231_10-28-25.py",
+    "length": 1,
+    "content": "src='https://cdn.jsdelivr.net/npm/force-graph@1.43.4/dist/force-graph.min.js'></script>",
+    "timestamp": "2025-10-28T22:48:46.201698+00:00"
+  },
+  {
+    "id": "9b87f6ceee",
+    "name": "snippet_16",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_core_528231_10-28-25.py",
+    "length": 1,
+    "content": ">body{{margin:0;background:#0f0f10;color:#c7a740;}}</style></head><body>",
+    "timestamp": "2025-10-28T22:48:46.201713+00:00"
+  },
+  {
+    "id": "db19cc9ec5",
+    "name": "snippet_18",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_core_528231_10-28-25.py",
+    "length": 1,
+    "content": "id='graph'></canvas>",
+    "timestamp": "2025-10-28T22:48:46.201723+00:00"
+  },
+  {
+    "id": "7d061ad248",
+    "name": "snippet_22",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_core_528231_10-28-25.py",
+    "length": 1,
+    "content": "gData={json.dumps(data)};",
+    "timestamp": "2025-10-28T22:48:46.201732+00:00"
+  },
+  {
+    "id": "609dc98953",
+    "name": "snippet_24",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_core_528231_10-28-25.py",
+    "length": 1,
+    "content": "nodes=[];const links=[];",
+    "timestamp": "2025-10-28T22:48:46.201740+00:00"
+  },
+  {
+    "id": "59bfffa5e1",
+    "name": "snippet_26",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_core/fractal_core_528231_10-28-25.py",
+    "length": 28,
+    "content": "walk(node,parent=null){{nodes.push({{id:node.name,curv:node.curvature}});if(parent)links.push({{source:parent.name,target:node.name}});\n(node.children||[]).forEach(c=>walk(c,node));}}\nwalk(gData);\nForceGraph()(document.getElementById('graph'))\n  .graphData({{nodes,links}})\n  .nodeColor(n=>`rgba(199,167,64,${{1-n.curv/6}})`)\n  .linkColor(()=>\"#444\")\n  .nodeLabel(n=>`${{n.id}} : curvature ${{n.curv}}`)\n  .backgroundColor(\"#0f0f10\");\n</script></body></html>\"\"\"\n    VISUAL_PATH.write_text(html)\n    return VISUAL_PATH\n\nif __name__==\"__main__\":\n    savant=FractalEntity(\"savant\",curvature=5.0)\n    sector=FractalEntity(\"sector\",curvature=4.5); savant.add_child(sector)\n    vessel=FractalEntity(\"vessel\",curvature=3.9); sector.add_child(vessel)\n    lattice=FractalEntity(\"lattice\",curvature=2.8); vessel.add_child(lattice)\n    facet=FractalEntity(\"facet\",curvature=2.3); lattice.add_child(facet)\n    shard=FractalEntity(\"shard\",curvature=1.8); facet.add_child(shard)\n    filament=FractalEntity(\"filament\",curvature=1.2); shard.add_child(filament)\n    refract=FractalEntity(\"refract\",curvature=0.7); filament.add_child(refract)\n    grain=FractalEntity(\"grain\",curvature=0.4); refract.add_child(grain)\n\n    graph_data=export_graph(savant)\n    html_path=export_visualizer(graph_data)\n    print(f\"\u2705 fractal_graph.json saved \u2192 {EXPORT_PATH}\")\n    print(f\"\ud83c\udf10 fractal_graph.html created \u2192 {html_path}\")",
+    "timestamp": "2025-10-28T22:48:46.201777+00:00"
+  },
+  {
+    "id": "9d6287c159",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/integrity_engine/verify_integrity_451066_10-28-25.py",
+    "length": 5,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nVerifies file integrity across Savant directories.\nRestores any missing or outdated file from newest backup.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.202788+00:00"
+  },
+  {
+    "id": "1b49c41f51",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/integrity_engine/verify_integrity_451066_10-28-25.py",
+    "length": 5,
+    "content": "os, hashlib, shutil, time\nfrom pathlib import Path\nROOT = Path.home()/ \"savant\"\nBACKUPS = ROOT/\"backups\"\nLOG = ROOT/\"logs/integrity.log\"",
+    "timestamp": "2025-10-28T22:48:46.202822+00:00"
+  },
+  {
+    "id": "a9852b4387",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/integrity_engine/verify_integrity_451066_10-28-25.py",
+    "length": 5,
+    "content": "checksum(path): \n    h=hashlib.sha256()\n    with open(path,'rb') as f:\n        for chunk in iter(lambda:f.read(4096),b''): h.update(chunk)\n    return h.hexdigest()",
+    "timestamp": "2025-10-28T22:48:46.202838+00:00"
+  },
+  {
+    "id": "b64f6e7c93",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/integrity_engine/verify_integrity_451066_10-28-25.py",
+    "length": 3,
+    "content": "find_backup(name:str):\n    files = sorted(BACKUPS.glob(f\"{name}_bak_*\"), key=os.path.getmtime, reverse=True)\n    return files[0] if files else None",
+    "timestamp": "2025-10-28T22:48:46.202851+00:00"
+  },
+  {
+    "id": "3456fbb1b0",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/integrity_engine/verify_integrity_451066_10-28-25.py",
+    "length": 21,
+    "content": "verify_folder(folder):\n    folder = Path(folder)\n    if not folder.exists(): \n        print(f\"\u26a0\ufe0f Missing {folder}, trying restore...\")\n        backup = find_backup(folder.name)\n        if backup: shutil.copytree(backup, folder); print(f\"\u2705 Restored from {backup}\")\n        else: print(\"\u274c No backup available.\")\n        return\n    for f in folder.rglob('*'):\n        if f.is_file() and f.stat().st_size == 0:\n            print(f\"\u26a0\ufe0f Empty file detected: {f}\")\n            backup=find_backup(folder.name)\n            if backup:\n                src=list(backup.rglob(f.name))\n                if src: shutil.copy(src[0], f); print(f\"\u2705 Repaired {f} from backup.\")\n    open(LOG,'a').write(f\"[{time.strftime('%H:%M:%S')}] verified {folder}\\n\")\n\nif __name__==\"__main__\":\n    for folder in (ROOT/\"services/web\").glob(\"wb_ui*\"):\n        verify_folder(folder)\n    print(\"\u2705 integrity check complete.\")",
+    "timestamp": "2025-10-28T22:48:46.202891+00:00"
+  },
+  {
+    "id": "b770e3cb8d",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/integrity_engine/realtime_watcher_789448_10-28-25.py",
+    "length": 4,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nsavant realtime_watcher \u2014 monitors file changes and auto-recovers instantly.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.203499+00:00"
+  },
+  {
+    "id": "72f5dfedb8",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/integrity_engine/realtime_watcher_789448_10-28-25.py",
+    "length": 8,
+    "content": "time, hashlib, shutil, subprocess, os\nfrom pathlib import Path\nfrom watchdog.observers import Observer\nfrom watchdog.events import FileSystemEventHandler\n\nROOT = Path.home()/ \"savant\"\nBACKUPS = ROOT/\"backups\"\nLOG = ROOT/\"logs/realtime.log\"",
+    "timestamp": "2025-10-28T22:48:46.203529+00:00"
+  },
+  {
+    "id": "6996f5246d",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/integrity_engine/realtime_watcher_789448_10-28-25.py",
+    "length": 8,
+    "content": "checksum(path):\n    h=hashlib.sha256()\n    try:\n        with open(path,'rb') as f:\n            for chunk in iter(lambda:f.read(4096),b''): h.update(chunk)\n        return h.hexdigest()\n    except FileNotFoundError:\n        return None",
+    "timestamp": "2025-10-28T22:48:46.203544+00:00"
+  },
+  {
+    "id": "041e4f31b6",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/integrity_engine/realtime_watcher_789448_10-28-25.py",
+    "length": 3,
+    "content": "latest_backup(name:str):\n    files = sorted(BACKUPS.glob(f\"{name}_bak_*\"), key=os.path.getmtime, reverse=True)\n    return files[0] if files else None",
+    "timestamp": "2025-10-28T22:48:46.203557+00:00"
+  },
+  {
+    "id": "7e680dc711",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/integrity_engine/realtime_watcher_789448_10-28-25.py",
+    "length": 46,
+    "content": "SavantHandler(FileSystemEventHandler):\n    def on_deleted(self, event):\n        if event.is_directory: return\n        self.restore(event.src_path)\n    def on_modified(self, event):\n        if event.is_directory: return\n        self.verify(event.src_path)\n\n    def restore(self, path):\n        name = Path(path).name\n        backup = latest_backup(Path(path).parent.name)\n        if not backup: \n            LOG.write_text(f\"[{time.ctime()}] \u274c No backup for {name}\\n\", append=True)\n            return\n        candidate = list(backup.rglob(name))\n        if candidate:\n            shutil.copy(candidate[0], path)\n            LOG.write_text(f\"[{time.ctime()}] \u2705 Restored deleted file {path}\\n\", append=True)\n            print(f\"\u2705 Restored {path}\")\n        else:\n            LOG.write_text(f\"[{time.ctime()}] \u26a0\ufe0f No matching file {name} in backup\\n\", append=True)\n\n    def verify(self, path):\n        ref = latest_backup(Path(path).parent.name)\n        if not ref: return\n        candidate = list(ref.rglob(Path(path).name))\n        if not candidate: return\n        ref_hash = checksum(candidate[0])\n        cur_hash = checksum(path)\n        if ref_hash and cur_hash and ref_hash != cur_hash:\n            shutil.copy(candidate[0], path)\n            LOG.write_text(f\"[{time.ctime()}] \ud83d\udd01 Repaired modified file {path}\\n\", append=True)\n            print(f\"\ud83d\udd01 Auto-repaired {path}\")\n\nif __name__==\"__main__\":\n    watcher = Observer()\n    watch_root = ROOT/\"services/web\"\n    handler = SavantHandler()\n    watcher.schedule(handler, str(watch_root), recursive=True)\n    watcher.start()\n    print(f\"\ud83d\udc41\ufe0f  Savant realtime watcher active \u2192 {watch_root}\")\n    try:\n        while True: time.sleep(2)\n    except KeyboardInterrupt:\n        watcher.stop()\n    watcher.join()",
+    "timestamp": "2025-10-28T22:48:46.203600+00:00"
+  },
+  {
+    "id": "84bac1efa7",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/ui_bridge_307967_10-28-25.py",
+    "length": 4,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nConverts daemon JSON \u2192 dashboard friendly summaries.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.204509+00:00"
+  },
+  {
+    "id": "3cf858ae3c",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/ui_bridge_307967_10-28-25.py",
+    "length": 6,
+    "content": "json, time\nfrom pathlib import Path\n\nROOT=Path.home()/ \"savant\"\nSRC=ROOT/\"integrity_cache\"/\"status.json\"\nOUT=ROOT/\"integrity_cache\"/\"ui_summary.json\"",
+    "timestamp": "2025-10-28T22:48:46.204551+00:00"
+  },
+  {
+    "id": "fb3f890bdb",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/ui_bridge_307967_10-28-25.py",
+    "length": 17,
+    "content": "convert():\n    if not SRC.exists(): return\n    raw=eval(SRC.read_text())\n    daemons=raw.get(\"daemons\",{})\n    score=sum(v for v in daemons.values())/len(daemons)\n    state=\"stable\" if score==1 else \"degraded\" if score>0 else \"offline\"\n    OUT.write_text(json.dumps({\n        \"timestamp\":raw[\"timestamp\"],\n        \"state\":state,\n        \"active\":[k for k,v in daemons.items() if v],\n        \"inactive\":[k for k,v in daemons.items() if not v]\n    },indent=2))\n\nif __name__==\"__main__\":\n    while True:\n        convert()\n        time.sleep(15)",
+    "timestamp": "2025-10-28T22:48:46.204572+00:00"
+  },
+  {
+    "id": "9f0f32ad69",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_daemon_794198_10-28-25.py",
+    "length": 1,
+    "content": "#!/usr/bin/env python3",
+    "timestamp": "2025-10-28T22:48:46.205244+00:00"
+  },
+  {
+    "id": "1922b4a431",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_daemon_794198_10-28-25.py",
+    "length": 18,
+    "content": "json, time, datetime, random\nfrom pathlib import Path\nfrom typing import Dict, List\n\n# --------------------------------------------------------------\n# PATHS\n# --------------------------------------------------------------\nROOT = Path.home()/ \"savant\"\nWB_APPS = ROOT/ \"services/web/wb_apps\"\nROADMAP = Path.home()/ \"downloads/savant_completion_roadmap.json\"\nTASK_LATTICE = ROOT/ \"data/task_lattice.json\"\nLOG_PATH = ROOT/ \"logs/auto_finish_daemon.log\"\nLOG_PATH.parent.mkdir(parents=True,exist_ok=True)\n\n# --------------------------------------------------------------\n# FRACTAL VERSIONING (same SVX logic)\n# --------------------------------------------------------------\nSYMBOLS={\"default\":\"\u2b22\",\"reflect\":\"\u2b21\",\"shard\":\"\ud83d\udd3b\"}",
+    "timestamp": "2025-10-28T22:48:46.205287+00:00"
+  },
+  {
+    "id": "ad9a10783a",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_daemon_794198_10-28-25.py",
+    "length": 4,
+    "content": "pick_symbol(layer:str)->str:\n    if layer==\"shard\": return SYMBOLS[\"shard\"]\n    if layer in [\"refract\",\"veil\",\"echo\"]: return SYMBOLS[\"reflect\"]\n    return SYMBOLS[\"default\"]",
+    "timestamp": "2025-10-28T22:48:46.205302+00:00"
+  },
+  {
+    "id": "938f455c46",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_daemon_794198_10-28-25.py",
+    "length": 3,
+    "content": "generate_digit(layer:str)->int:\n    base={\"app\":3,\"facet\":6,\"shard\":7,\"grain\":8}.get(layer,5)\n    return min(9,max(1,base+random.choice([0,1])))",
+    "timestamp": "2025-10-28T22:48:46.205315+00:00"
+  },
+  {
+    "id": "a9b73990fd",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_daemon_794198_10-28-25.py",
+    "length": 4,
+    "content": "relation_symbol(a:int,b:int)->str:\n    if a<b: return \"<\"\n    if a>b: return \">\"\n    return \"=\"",
+    "timestamp": "2025-10-28T22:48:46.205336+00:00"
+  },
+  {
+    "id": "f97aa5dd7a",
+    "name": "snippet_10",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_daemon_794198_10-28-25.py",
+    "length": 7,
+    "content": "build_version(levels:List[str])->str:\n    top,mid,bottom=levels[0],levels[len(levels)//2],levels[-1]\n    digits=[generate_digit(l) for l in [top,mid,bottom]]\n    symbols=[pick_symbol(l) for l in [top,mid,bottom]]\n    r1=relation_symbol(digits[0],digits[1])\n    r2=relation_symbol(digits[1],digits[2])\n    return f\"{symbols[0]}{digits[0]}{r1}{symbols[1]}{digits[1]}{r2}{symbols[2]}{digits[2]}\"",
+    "timestamp": "2025-10-28T22:48:46.205353+00:00"
+  },
+  {
+    "id": "325b15177b",
+    "name": "snippet_12",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_daemon_794198_10-28-25.py",
+    "length": 6,
+    "content": "timestamp()->str:\n    return datetime.datetime.utcnow().isoformat()+\"Z\"\n\n# --------------------------------------------------------------\n# ENHANCEMENT & FINALIZATION\n# --------------------------------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.205366+00:00"
+  },
+  {
+    "id": "33dae2b4c5",
+    "name": "snippet_14",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_daemon_794198_10-28-25.py",
+    "length": 5,
+    "content": "enhance_element(app:str)->str:\n    \"\"\"Simulated advanced enhancement process\"\"\"\n    random.seed(hash(app)+int(time.time()))\n    boost=random.uniform(0.05,0.2)\n    return f\"Enhanced {round(boost*100)}% toward perfection\"",
+    "timestamp": "2025-10-28T22:48:46.205380+00:00"
+  },
+  {
+    "id": "39805dea43",
+    "name": "snippet_16",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_daemon_794198_10-28-25.py",
+    "length": 8,
+    "content": "finalize(app:str,levels:List[str]):\n    version=build_version(levels)\n    manifest=WB_APPS/app/\"app_manifest.json\"\n    data={\"app\":app,\"levels\":levels,\"version\":version,\"timestamp\":timestamp(),\"status\":\"finalized\"}\n    manifest.write_text(json.dumps(data,indent=2))\n    readme=WB_APPS/app/\"README.md\"\n    readme.write_text(f\"# {app.capitalize()}\\n\\n### Version: {version}\\n_Finalized {timestamp()}_\\n\\nAuto-finalized by Savant AFD.\\n\")\n    log_event({\"event\":\"finalized\",\"app\":app,\"version\":version})",
+    "timestamp": "2025-10-28T22:48:46.205395+00:00"
+  },
+  {
+    "id": "c76dd6d69d",
+    "name": "snippet_18",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_daemon_794198_10-28-25.py",
+    "length": 7,
+    "content": "log_event(event:Dict):\n    event[\"time\"]=timestamp()\n    with LOG_PATH.open(\"a\") as f: f.write(json.dumps(event)+\"\\n\")\n\n# --------------------------------------------------------------\n# TASK ENGINE LINKAGE\n# --------------------------------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.205410+00:00"
+  },
+  {
+    "id": "97d943ccc1",
+    "name": "snippet_20",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_daemon_794198_10-28-25.py",
+    "length": 14,
+    "content": "get_ready_tasks()->List[str]:\n    \"\"\"Return task IDs or app names marked ready in task lattice\"\"\"\n    try:\n        data=json.loads(TASK_LATTICE.read_text())\n        ready=[]\n        for t in data.get(\"tasks\",[]):\n            if t.get(\"status\") in [\"ready\",\"done\",\"validated\"]:\n                ready.append(t[\"name\"])\n        return ready\n    except Exception: return []\n\n# --------------------------------------------------------------\n# MONITOR LOOP\n# --------------------------------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.205426+00:00"
+  },
+  {
+    "id": "9927d0ef65",
+    "name": "snippet_22",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_daemon_794198_10-28-25.py",
+    "length": 30,
+    "content": "monitor_cycle():\n    try:\n        apps=json.loads(ROADMAP.read_text()).get(\"apps\",[])\n    except Exception:\n        apps=[]\n    ready_from_tasks=get_ready_tasks()\n    for entry in apps:\n        app=entry[\"app\"]\n        if app not in ready_from_tasks: continue\n        levels=[\"app\",\"lattice\",\"facet\",\"shard\",\"grain\"]\n        log_event({\"event\":\"trigger\",\"app\":app,\"reason\":\"task_ready\"})\n        print(f\"\u2699\ufe0f  Auto-finalizing {app} ...\")\n        finalize(app,levels)\n\n# --------------------------------------------------------------\n# MAIN LOOP\n# --------------------------------------------------------------\nif __name__==\"__main__\":\n    print(\"\ud83d\ude80 Savant Auto-Finish Daemon (AFD) active\")\n    print(\"Watching task lattice + completion roadmap \u2026\")\n    while True:\n        try:\n            monitor_cycle()\n            time.sleep(60)  # check every minute\n        except KeyboardInterrupt:\n            print(\"\\n\ud83d\uded1 Daemon stopped manually.\")\n            break\n        except Exception as e:\n            log_event({\"event\":\"error\",\"detail\":str(e)})\n            time.sleep(60)",
+    "timestamp": "2025-10-28T22:48:46.205481+00:00"
+  },
+  {
+    "id": "9531840a69",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/master_guard_982345_10-28-25.py",
+    "length": 5,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nCentral automation engine \u2014 schedules rule enforcement,\nintegrity checks, and non-destructive backups every hour.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.206008+00:00"
+  },
+  {
+    "id": "7094b13c6d",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/master_guard_982345_10-28-25.py",
+    "length": 5,
+    "content": "subprocess, time, sys\nfrom pathlib import Path\n\nROOT = Path.home()/ \"savant\"\nLOG = ROOT/\"logs/automation.log\"",
+    "timestamp": "2025-10-28T22:48:46.206039+00:00"
+  },
+  {
+    "id": "ca919e1f66",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/master_guard_982345_10-28-25.py",
+    "length": 12,
+    "content": "run(cmd:list):\n    try:\n        subprocess.run(cmd, check=True)\n        with open(LOG,'a') as f: f.write(f\"[{time.strftime('%H:%M:%S')}] ran: {' '.join(cmd)}\\n\")\n    except subprocess.CalledProcessError as e:\n        with open(LOG,'a') as f: f.write(f\"[{time.strftime('%H:%M:%S')}] error: {e}\\n\")\n\nif __name__==\"__main__\":\n    while True:\n        run([\"python3\", str(ROOT/\"services/scripts/rule_engine/enforce_guard.py\")])\n        run([\"python3\", str(ROOT/\"services/scripts/integrity_engine/verify_integrity.py\")])\n        time.sleep(3600)  # hourly check",
+    "timestamp": "2025-10-28T22:48:46.206058+00:00"
+  },
+  {
+    "id": "5e606cd24a",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/self_diagnostic_405617_10-28-25.py",
+    "length": 4,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nsavant self_diagnostic \u2014 ensures all background services are alive.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.206606+00:00"
+  },
+  {
+    "id": "ebd20c7a71",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/self_diagnostic_405617_10-28-25.py",
+    "length": 8,
+    "content": "subprocess, time, psutil, os\nfrom pathlib import Path\nROOT = Path.home()/ \"savant\"\nLOG = ROOT/\"logs/self_diagnostic.log\"\nSERVICES = {\n    \"master_guard\": str(ROOT/\"services/scripts/automation_engine/master_guard.py\"),\n    \"realtime_watcher\": str(ROOT/\"services/scripts/integrity_engine/realtime_watcher.py\")\n}",
+    "timestamp": "2025-10-28T22:48:46.206634+00:00"
+  },
+  {
+    "id": "aa4ee9d535",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/self_diagnostic_405617_10-28-25.py",
+    "length": 5,
+    "content": "is_running(name):\n    for p in psutil.process_iter(['pid','name','cmdline']):\n        if name in ' '.join(p.info['cmdline']):\n            return True\n    return False",
+    "timestamp": "2025-10-28T22:48:46.206645+00:00"
+  },
+  {
+    "id": "d58b1588ec",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/self_diagnostic_405617_10-28-25.py",
+    "length": 10,
+    "content": "restart_service(name, path):\n    subprocess.Popen([\"python3\", path])\n    open(LOG,'a').write(f\"[{time.ctime()}] \ud83d\udd01 Restarted {name}\\n\")\n\nif __name__==\"__main__\":\n    while True:\n        for name, path in SERVICES.items():\n            if not is_running(name):\n                restart_service(name, path)\n        time.sleep(120)",
+    "timestamp": "2025-10-28T22:48:46.206661+00:00"
+  },
+  {
+    "id": "9f0f32ad69",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_queue_718116_10-28-25.py",
+    "length": 1,
+    "content": "#!/usr/bin/env python3",
+    "timestamp": "2025-10-28T22:48:46.207302+00:00"
+  },
+  {
+    "id": "8efd0773c5",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_queue_718116_10-28-25.py",
+    "length": 16,
+    "content": "json, random, datetime\nfrom pathlib import Path\nfrom typing import Dict, List\n\n# --------------------------------------------------------------\n# BASE PATHS\n# --------------------------------------------------------------\nWB_APPS = Path.home()/ \"savant/services/web/wb_apps\"\nROADMAP_PATH = Path.home()/ \"downloads/savant_completion_roadmap.json\"\nLOG_PATH = Path.home()/ \"savant/logs/auto_finish.log\"\nLOG_PATH.parent.mkdir(parents=True,exist_ok=True)\n\n# --------------------------------------------------------------\n# VERSION LOGIC (reuses Savant triad scheme)\n# --------------------------------------------------------------\nSYMBOLS={\"default\":\"\u2b22\",\"reflect\":\"\u2b21\",\"shard\":\"\ud83d\udd3b\"}",
+    "timestamp": "2025-10-28T22:48:46.207335+00:00"
+  },
+  {
+    "id": "ad9a10783a",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_queue_718116_10-28-25.py",
+    "length": 4,
+    "content": "pick_symbol(layer:str)->str:\n    if layer==\"shard\": return SYMBOLS[\"shard\"]\n    if layer in [\"refract\",\"veil\",\"echo\"]: return SYMBOLS[\"reflect\"]\n    return SYMBOLS[\"default\"]",
+    "timestamp": "2025-10-28T22:48:46.207345+00:00"
+  },
+  {
+    "id": "d1659329ce",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_queue_718116_10-28-25.py",
+    "length": 3,
+    "content": "generate_digit(layer:str)->int:\n    base={\"app\":3,\"facet\":6,\"shard\":7,\"grain\":8}.get(layer,5)\n    return min(9,max(1,base+random.choice([0,1])))  # bias upward for completion",
+    "timestamp": "2025-10-28T22:48:46.207361+00:00"
+  },
+  {
+    "id": "a9b73990fd",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_queue_718116_10-28-25.py",
+    "length": 4,
+    "content": "relation_symbol(a:int,b:int)->str:\n    if a<b: return \"<\"\n    if a>b: return \">\"\n    return \"=\"",
+    "timestamp": "2025-10-28T22:48:46.207372+00:00"
+  },
+  {
+    "id": "f97aa5dd7a",
+    "name": "snippet_10",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_queue_718116_10-28-25.py",
+    "length": 7,
+    "content": "build_version(levels:List[str])->str:\n    top,mid,bottom=levels[0],levels[len(levels)//2],levels[-1]\n    digits=[generate_digit(l) for l in [top,mid,bottom]]\n    symbols=[pick_symbol(l) for l in [top,mid,bottom]]\n    r1=relation_symbol(digits[0],digits[1])\n    r2=relation_symbol(digits[1],digits[2])\n    return f\"{symbols[0]}{digits[0]}{r1}{symbols[1]}{digits[1]}{r2}{symbols[2]}{digits[2]}\"",
+    "timestamp": "2025-10-28T22:48:46.207382+00:00"
+  },
+  {
+    "id": "9cca2848cb",
+    "name": "snippet_12",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_queue_718116_10-28-25.py",
+    "length": 6,
+    "content": "timestamp()->str:\n    return datetime.datetime.utcnow().isoformat()+\"Z\"\n\n# --------------------------------------------------------------\n# AI-ENHANCEMENT STUB (simulated for now)\n# --------------------------------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.207392+00:00"
+  },
+  {
+    "id": "066d472857",
+    "name": "snippet_14",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_queue_718116_10-28-25.py",
+    "length": 11,
+    "content": "apply_finalization(app_name:str)->str:\n    \"\"\"Pretend to call AI-enhancement engine in advanced mode.\"\"\"\n    print(f\"\u2699\ufe0f  Finalizing {app_name} (advanced enhancement)...\")\n    # this would call savant.services.scripts.enhancement_engine\n    random.seed(hash(app_name))\n    progress=random.uniform(0.1,0.3)  # simulate slight gain\n    return f\"Enhanced by {round(progress*100)}%\"\n\n# --------------------------------------------------------------\n# CORE LOGIC\n# --------------------------------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.207408+00:00"
+  },
+  {
+    "id": "bb88163ac8",
+    "name": "snippet_16",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_queue_718116_10-28-25.py",
+    "length": 7,
+    "content": "load_roadmap()->List[Dict]:\n    try:\n        data=json.loads(ROADMAP_PATH.read_text())\n        return data.get(\"apps\",[])\n    except Exception:\n        print(\"\u26a0\ufe0f  Roadmap not found or invalid.\")\n        return []",
+    "timestamp": "2025-10-28T22:48:46.207421+00:00"
+  },
+  {
+    "id": "9a426dead7",
+    "name": "snippet_18",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/automation_engine/auto_finish_queue_718116_10-28-25.py",
+    "length": 55,
+    "content": "finish_app(entry:Dict):\n    app=entry[\"app\"]\n    app_dir=WB_APPS/app\n    manifest=app_dir/\"app_manifest.json\"\n\n    # Load or create manifest\n    try: data=json.loads(manifest.read_text())\n    except Exception: data={\"app\":app,\"levels\":[\"app\",\"lattice\",\"facet\",\"shard\",\"grain\"]}\n\n    # Enhancement simulation\n    result=apply_finalization(app)\n    data[\"enhancement_log\"]=result\n\n    # Version bump\n    levels=data.get(\"levels\",[\"app\",\"grain\"])\n    new_version=build_version(levels)\n    data[\"version\"]=new_version\n    data[\"timestamp\"]=timestamp()\n\n    # Backup and write\n    backup=manifest.with_suffix(\".bak\")\n    if manifest.exists(): backup.write_text(manifest.read_text())\n    manifest.write_text(json.dumps(data,indent=2))\n\n    # Update README\n    readme=app_dir/\"README.md\"\n    readme.write_text(\n        f\"# {app.capitalize()}\\n\\n\"\n        f\"### Version: {new_version}\\n\"\n        f\"_Finalized {timestamp()}_\\n\\n\"\n        f\"{result}\\n\\n\"\n        \"This app has reached full structural completion under the Savant Fractal system.\"\n    )\n\n    log_entry={\"app\":app,\"version\":new_version,\"status\":\"finalized\",\"time\":timestamp()}\n    with LOG_PATH.open(\"a\") as f:\n        f.write(json.dumps(log_entry)+\"\\n\")\n\n    print(f\"\u2705 {app} finalized \u2192 {new_version}\")\n\n# --------------------------------------------------------------\n# MAIN EXECUTION\n# --------------------------------------------------------------\nif __name__==\"__main__\":\n    print(\"\ud83d\udd38 SAVANT AUTO-FINISH QUEUE INITIATED\\n--------------------------------\")\n    apps=load_roadmap()\n    if not apps:\n        print(\"\u26a0\ufe0f  No roadmap entries to process.\")\n        exit(0)\n\n    for entry in apps:\n        finish_app(entry)\n\n    print(\"\\n\ud83d\uddc2\ufe0f  All eligible elements processed.\")\n    print(\"\ud83d\udcd8 Log file:\",LOG_PATH)",
+    "timestamp": "2025-10-28T22:48:46.207454+00:00"
+  },
+  {
+    "id": "d383430c48",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/savant_version.html",
+    "length": 1,
+    "content": "<!DOCTYPE html><html><head><meta charset='utf-8'><title>FVT Version</title>",
+    "timestamp": "2025-10-28T22:48:46.208537+00:00"
+  },
+  {
+    "id": "4c6ce16ea7",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/savant_version.html",
+    "length": 2,
+    "content": ">body{background:#0f0f10;color:#ddd;font-family:sans-serif;text-align:center;}\n.glyph{font-size:4rem;margin:0 6px;}</style></head><body>",
+    "timestamp": "2025-10-28T22:48:46.208569+00:00"
+  },
+  {
+    "id": "72aa6cc9ea",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/savant_version.html",
+    "length": 1,
+    "content": ">Savant Version Triad</h1><div>",
+    "timestamp": "2025-10-28T22:48:46.208580+00:00"
+  },
+  {
+    "id": "5154083a1e",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/savant_version.html",
+    "length": 1,
+    "content": "class='glyph' style='color:#d4af37'>\u2b22</span>",
+    "timestamp": "2025-10-28T22:48:46.208591+00:00"
+  },
+  {
+    "id": "6f582c6af9",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/savant_version.html",
+    "length": 1,
+    "content": "class='glyph'>2</span>",
+    "timestamp": "2025-10-28T22:48:46.208600+00:00"
+  },
+  {
+    "id": "0f7ac4a987",
+    "name": "snippet_10",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/savant_version.html",
+    "length": 1,
+    "content": "class='glyph'><</span>",
+    "timestamp": "2025-10-28T22:48:46.208620+00:00"
+  },
+  {
+    "id": "fb5a30181c",
+    "name": "snippet_12",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/savant_version.html",
+    "length": 1,
+    "content": "class='glyph' style='color:#b3212d'>\ud83d\udd3b</span>",
+    "timestamp": "2025-10-28T22:48:46.208632+00:00"
+  },
+  {
+    "id": "6b7f9e21af",
+    "name": "snippet_14",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/savant_version.html",
+    "length": 1,
+    "content": "class='glyph'>6</span>",
+    "timestamp": "2025-10-28T22:48:46.208640+00:00"
+  },
+  {
+    "id": "0f7ac4a987",
+    "name": "snippet_16",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/savant_version.html",
+    "length": 1,
+    "content": "class='glyph'><</span>",
+    "timestamp": "2025-10-28T22:48:46.208649+00:00"
+  },
+  {
+    "id": "5154083a1e",
+    "name": "snippet_18",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/savant_version.html",
+    "length": 1,
+    "content": "class='glyph' style='color:#d4af37'>\u2b22</span>",
+    "timestamp": "2025-10-28T22:48:46.208659+00:00"
+  },
+  {
+    "id": "afdc5a1415",
+    "name": "snippet_20",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/savant_version.html",
+    "length": 2,
+    "content": "class='glyph'>8</span>\n</div>",
+    "timestamp": "2025-10-28T22:48:46.208668+00:00"
+  },
+  {
+    "id": "526f7b0dae",
+    "name": "snippet_22",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/savant_version.html",
+    "length": 1,
+    "content": ">First symbol = top structural tier; Second = median balance layer; Third = lowest operational tier. Digits = relative completion (1\u20139). Glyphs < = > express comparative maturity.</p>",
+    "timestamp": "2025-10-28T22:48:46.208681+00:00"
+  },
+  {
+    "id": "201363a670",
+    "name": "snippet_24",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/savant_version.html",
+    "length": 14,
+    "content": ">{\n  \"version\": \"\\u2b222<\\ud83d\\udd3b6<\\u2b228\",\n  \"levels\": [\n    \"app\",\n    \"lattice\",\n    \"facet\",\n    \"shard\",\n    \"filament\",\n    \"refract\",\n    \"grain\"\n  ],\n  \"meaning\": \"First symbol = top structural tier; Second = median balance layer; Third = lowest operational tier. Digits = relative completion (1\\u20139). Glyphs < = > express comparative maturity.\"\n}</code>\n</body></html>",
+    "timestamp": "2025-10-28T22:48:46.208695+00:00"
+  },
+  {
+    "id": "9f0f32ad69",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/svx_core_799175_10-28-25.py",
+    "length": 1,
+    "content": "#!/usr/bin/env python3",
+    "timestamp": "2025-10-28T22:48:46.209275+00:00"
+  },
+  {
+    "id": "e699f98e08",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/svx_core_799175_10-28-25.py",
+    "length": 29,
+    "content": "json, random, math\nfrom pathlib import Path\nfrom typing import List, Dict\n\n# ------------------------------------------------------------------\n# SAVANT FRACTAL VERSION TRIAD SYSTEM (FVT)\n# ------------------------------------------------------------------\n# Version pattern:  \u2b223>\ud83d\udd3b6=\u2b218\n# Each symbol = a hierarchy tier; digits = status\n# Relationship glyph (<, =, >) shows momentum between layers\n# ------------------------------------------------------------------\n\nHIERARCHY = [\n    \"savant\",\"sector\",\"vessel\",\"app\",\"lattice\",\"facet\",\n    \"shard\",\"filament\",\"refract\",\"grain\",\"pulse\",\"echo\",\"veil\"\n]\n\nSYMBOLS = {\n    \"default\":\"\u2b22\",   # structural\n    \"reflect\":\"\u2b21\",   # abstract/reflective\n    \"shard\":\"\ud83d\udd3b\"     # creative core\n}\n\n# Brand colors for HTML export\nBRAND_COLORS = {\n    \"\u2b22\":\"#d4af37\",\n    \"\u2b21\":\"#e5d28c\",\n    \"\ud83d\udd3b\":\"#b3212d\"\n}",
+    "timestamp": "2025-10-28T22:48:46.209315+00:00"
+  },
+  {
+    "id": "05f746f369",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/svx_core_799175_10-28-25.py",
+    "length": 5,
+    "content": "pick_symbol(layer:str)->str:\n    \"\"\"Return appropriate glyph for the layer\"\"\"\n    if layer==\"shard\": return SYMBOLS[\"shard\"]\n    if layer in [\"refract\",\"veil\",\"echo\"]: return SYMBOLS[\"reflect\"]\n    return SYMBOLS[\"default\"]",
+    "timestamp": "2025-10-28T22:48:46.209327+00:00"
+  },
+  {
+    "id": "053269ed28",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/svx_core_799175_10-28-25.py",
+    "length": 4,
+    "content": "generate_digit(layer:str)->int:\n    \"\"\"Generate a digit representing completion or maturity (1\u20139)\"\"\"\n    base={\"app\":3,\"facet\":6,\"shard\":7,\"grain\":8}.get(layer,5)\n    return min(9,max(1,base+random.choice([-1,0,1])))",
+    "timestamp": "2025-10-28T22:48:46.209340+00:00"
+  },
+  {
+    "id": "f0a11cc490",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/svx_core_799175_10-28-25.py",
+    "length": 5,
+    "content": "relation_symbol(a:int,b:int)->str:\n    \"\"\"Return <, =, or > based on relative maturity\"\"\"\n    if a<b: return \"<\"\n    if a>b: return \">\"\n    return \"=\"",
+    "timestamp": "2025-10-28T22:48:46.209350+00:00"
+  },
+  {
+    "id": "21de98cca0",
+    "name": "snippet_10",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/svx_core_799175_10-28-25.py",
+    "length": 4,
+    "content": "select_triad(levels:List[str])->List[str]:\n    \"\"\"Pick top, middle, bottom layers of an app\u2019s hierarchy\"\"\"\n    top,mid,bottom = levels[0], levels[len(levels)//2], levels[-1]\n    return [top,mid,bottom]",
+    "timestamp": "2025-10-28T22:48:46.209361+00:00"
+  },
+  {
+    "id": "d71f696b3a",
+    "name": "snippet_12",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/svx_core_799175_10-28-25.py",
+    "length": 8,
+    "content": "build_version(levels:List[str])->str:\n    \"\"\"Construct a complete version string\"\"\"\n    triad=select_triad(levels)\n    digits=[generate_digit(l) for l in triad]\n    symbols=[pick_symbol(l) for l in triad]\n    r1=relation_symbol(digits[0],digits[1])\n    r2=relation_symbol(digits[1],digits[2])\n    return f\"{symbols[0]}{digits[0]}{r1}{symbols[1]}{digits[1]}{r2}{symbols[2]}{digits[2]}\"",
+    "timestamp": "2025-10-28T22:48:46.209371+00:00"
+  },
+  {
+    "id": "e8a9cdf8dd",
+    "name": "snippet_14",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/svx_core_799175_10-28-25.py",
+    "length": 14,
+    "content": "describe_version(levels:List[str])->Dict[str,str]:\n    \"\"\"Generate structured metadata and FVT string\"\"\"\n    version=build_version(levels)\n    return {\n        \"version\":version,\n        \"levels\":levels,\n        \"meaning\":(\n            \"First symbol = top structural tier; \"\n            \"Second = median balance layer; \"\n            \"Third = lowest operational tier. \"\n            \"Digits = relative completion (1\u20139). \"\n            \"Glyphs < = > express comparative maturity.\"\n        )\n    }",
+    "timestamp": "2025-10-28T22:48:46.209384+00:00"
+  },
+  {
+    "id": "fa5af04663",
+    "name": "snippet_16",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/svx_core_799175_10-28-25.py",
+    "length": 23,
+    "content": "export_html(levels:List[str],path:str):\n    \"\"\"Visual display for documentation\"\"\"\n    data=describe_version(levels)\n    fvt=data[\"version\"]\n    html=[\"<!DOCTYPE html><html><head><meta charset='utf-8'><title>FVT Version</title>\"]\n    html.append(\"<style>body{background:#0f0f10;color:#ddd;font-family:sans-serif;text-align:center;}\")\n    html.append(\".glyph{font-size:4rem;margin:0 6px;}</style></head><body>\")\n    html.append(f\"<h1>Savant Version Triad</h1><div>\")\n    for ch in fvt:\n        if ch in BRAND_COLORS:\n            html.append(f\"<span class='glyph' style='color:{BRAND_COLORS[ch]}'>{ch}</span>\")\n        else:\n            html.append(f\"<span class='glyph'>{ch}</span>\")\n    html.append(\"</div>\")\n    html.append(f\"<p>{data['meaning']}</p>\")\n    html.append(f\"<code>{json.dumps(data,indent=2)}</code>\")\n    html.append(\"</body></html>\")\n    Path(path).write_text(\"\\n\".join(html))\n    return path\n\n# ------------------------------------------------------------------\n# AUTO-DETECTION + SAVE\n# ------------------------------------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.209403+00:00"
+  },
+  {
+    "id": "593295317f",
+    "name": "snippet_18",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/svx_core_799175_10-28-25.py",
+    "length": 24,
+    "content": "detect_levels(app_start:str, app_end:str)->List[str]:\n    \"\"\"Return contiguous hierarchy from start \u2192 end\"\"\"\n    i1, i2 = HIERARCHY.index(app_start), HIERARCHY.index(app_end)\n    if i1 >= i2: raise ValueError(\"Hierarchy start must precede end\")\n    levels = HIERARCHY[i1:i2+1]\n    if len(levels)%2==0: levels.pop() # enforce odd count\n    return levels\n\n# ------------------------------------------------------------------\n# MAIN EXECUTION\n# ------------------------------------------------------------------\nif __name__==\"__main__\":\n    APP_START=\"app\"\n    APP_END=\"grain\"\n    levels=detect_levels(APP_START,APP_END)\n    data=describe_version(levels)\n    out_json=Path.home()/ \"downloads/savant_version_info.json\"\n    out_html=Path(__file__).parent/\"savant_version.html\"\n    Path(out_json).write_text(json.dumps(data,indent=2))\n    export_html(levels,str(out_html))\n    print(\"\u2705 Savant Version Generated:\")\n    print(json.dumps(data,indent=2))\n    print(f\"\ud83d\udcd8 JSON \u2192 {out_json}\")\n    print(f\"\ud83c\udf10 HTML \u2192 {out_html}\")",
+    "timestamp": "2025-10-28T22:48:46.209440+00:00"
+  },
+  {
+    "id": "9f0f32ad69",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/svx_retroactive_937653_10-28-25.py",
+    "length": 1,
+    "content": "#!/usr/bin/env python3",
+    "timestamp": "2025-10-28T22:48:46.210103+00:00"
+  },
+  {
+    "id": "e80ca11427",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/svx_retroactive_937653_10-28-25.py",
+    "length": 17,
+    "content": "json, random, datetime\nfrom pathlib import Path\nfrom typing import List, Dict\n\n# --------------------------------------------------------------\n# IMPORT BASES\n# --------------------------------------------------------------\nHIERARCHY = [\n    \"savant\",\"sector\",\"vessel\",\"app\",\"lattice\",\"facet\",\n    \"shard\",\"filament\",\"refract\",\"grain\",\"pulse\",\"echo\",\"veil\"\n]\nSYMBOLS = {\"default\":\"\u2b22\",\"reflect\":\"\u2b21\",\"shard\":\"\ud83d\udd3b\"}\nBRAND_SYMBOLS = {\"\u2b22\":\"#d4af37\",\"\u2b21\":\"#e5d28c\",\"\ud83d\udd3b\":\"#b3212d\"}\n\n# --------------------------------------------------------------\n# VERSION CORE FUNCTIONS\n# --------------------------------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.210136+00:00"
+  },
+  {
+    "id": "ad9a10783a",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/svx_retroactive_937653_10-28-25.py",
+    "length": 4,
+    "content": "pick_symbol(layer:str)->str:\n    if layer==\"shard\": return SYMBOLS[\"shard\"]\n    if layer in [\"refract\",\"veil\",\"echo\"]: return SYMBOLS[\"reflect\"]\n    return SYMBOLS[\"default\"]",
+    "timestamp": "2025-10-28T22:48:46.210147+00:00"
+  },
+  {
+    "id": "f8f9e87ff3",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/svx_retroactive_937653_10-28-25.py",
+    "length": 3,
+    "content": "generate_digit(layer:str)->int:\n    base={\"app\":3,\"facet\":6,\"shard\":7,\"grain\":8}.get(layer,5)\n    return min(9,max(1,base+random.choice([-1,0,1])))",
+    "timestamp": "2025-10-28T22:48:46.210157+00:00"
+  },
+  {
+    "id": "a9b73990fd",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/svx_retroactive_937653_10-28-25.py",
+    "length": 4,
+    "content": "relation_symbol(a:int,b:int)->str:\n    if a<b: return \"<\"\n    if a>b: return \">\"\n    return \"=\"",
+    "timestamp": "2025-10-28T22:48:46.210167+00:00"
+  },
+  {
+    "id": "ade93eafb4",
+    "name": "snippet_10",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/svx_retroactive_937653_10-28-25.py",
+    "length": 3,
+    "content": "select_triad(levels:List[str])->List[str]:\n    top,mid,bottom=levels[0],levels[len(levels)//2],levels[-1]\n    return [top,mid,bottom]",
+    "timestamp": "2025-10-28T22:48:46.210176+00:00"
+  },
+  {
+    "id": "af07211304",
+    "name": "snippet_12",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/svx_retroactive_937653_10-28-25.py",
+    "length": 11,
+    "content": "build_version(levels:List[str])->str:\n    triad=select_triad(levels)\n    digits=[generate_digit(l) for l in triad]\n    symbols=[pick_symbol(l) for l in triad]\n    r1=relation_symbol(digits[0],digits[1])\n    r2=relation_symbol(digits[1],digits[2])\n    return f\"{symbols[0]}{digits[0]}{r1}{symbols[1]}{digits[1]}{r2}{symbols[2]}{digits[2]}\"\n\n# --------------------------------------------------------------\n# SUPPORT UTILITIES\n# --------------------------------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.210187+00:00"
+  },
+  {
+    "id": "1bec40243e",
+    "name": "snippet_14",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/svx_retroactive_937653_10-28-25.py",
+    "length": 5,
+    "content": "detect_levels(app_start:str, app_end:str)->List[str]:\n    i1,i2=HIERARCHY.index(app_start),HIERARCHY.index(app_end)\n    levels=HIERARCHY[i1:i2+1]\n    if len(levels)%2==0: levels.pop()  # enforce odd hierarchy\n    return levels",
+    "timestamp": "2025-10-28T22:48:46.210197+00:00"
+  },
+  {
+    "id": "c59d675f5f",
+    "name": "snippet_16",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/svx_retroactive_937653_10-28-25.py",
+    "length": 6,
+    "content": "timestamp()->str:\n    return datetime.datetime.utcnow().isoformat()+\"Z\"\n\n# --------------------------------------------------------------\n# APP VERSIONING AND LOGGING\n# --------------------------------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.210207+00:00"
+  },
+  {
+    "id": "168213cecf",
+    "name": "snippet_18",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/versioning_engine/svx_retroactive_937653_10-28-25.py",
+    "length": 48,
+    "content": "apply_version_to_app(app_name:str, levels:List[str], base_dir:Path, log:list):\n    version=build_version(levels)\n    app_dir=base_dir/app_name\n    app_dir.mkdir(parents=True,exist_ok=True)\n\n    manifest=app_dir/\"app_manifest.json\"\n    backup=app_dir/f\"app_manifest_{datetime.datetime.utcnow().strftime('%Y%m%d_%H%M%S')}.bak\"\n    if manifest.exists(): backup.write_text(manifest.read_text())\n\n    data={\"app\":app_name,\"levels\":levels,\"version\":version,\"timestamp\":timestamp()}\n    manifest.write_text(json.dumps(data,indent=2))\n\n    readme=app_dir/\"README.md\"\n    readme_text=f\"# {app_name.capitalize()}\\n\\n\" \\\n                f\"### Version: {version}\\n\" \\\n                f\"_Updated {timestamp()}_\\n\\n\" \\\n                \"This document follows the Savant Fractal Triad System (SVX).\\n\" \\\n                \"Each version encodes structural balance, functional maturity, and creative completion.\\n\"\n    readme.write_text(readme_text)\n\n    log.append({\"app\":app_name,\"version\":version})\n    print(f\"\u2705 {app_name} \u2192 {version}\")\n\n# --------------------------------------------------------------\n# MAIN EXECUTION\n# --------------------------------------------------------------\nif __name__==\"__main__\":\n    base_dir=Path.home()/ \"savant/services/web/wb_apps\"\n    download_log=Path.home()/ \"downloads/savant_project_versions.json\"\n    audit_log=Path.home()/ \"savant/logs/version_audit.log\"\n    audit_log.parent.mkdir(parents=True,exist_ok=True)\n\n    results=[]\n    apps=[p.name for p in base_dir.iterdir() if p.is_dir()]\n    if not apps:\n        print(\"\u26a0\ufe0f  No apps detected in wb_apps.\")\n        exit(0)\n\n    for app in apps:\n        levels=detect_levels(\"app\",\"grain\")\n        apply_version_to_app(app,levels,base_dir,results)\n\n    # Consolidate JSON record\n    download_log.write_text(json.dumps(results,indent=2))\n    audit_log.write_text(json.dumps({\"run\":timestamp(),\"apps\":results},indent=2))\n\n    print(\"\\n\ud83d\udcd8 Consolidated version data \u2192\",download_log)\n    print(\"\ud83e\uddfe Audit log \u2192\",audit_log)",
+    "timestamp": "2025-10-28T22:48:46.210259+00:00"
+  },
+  {
+    "id": "9f0f32ad69",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/roadmap_engine/completion_roadmap_529888_10-28-25.py",
+    "length": 1,
+    "content": "#!/usr/bin/env python3",
+    "timestamp": "2025-10-28T22:48:46.211076+00:00"
+  },
+  {
+    "id": "a632032d18",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/roadmap_engine/completion_roadmap_529888_10-28-25.py",
+    "length": 8,
+    "content": "json, re\nfrom pathlib import Path\nfrom statistics import mean\nfrom datetime import datetime\n\n# --------------------------------------------------------------\n# UTILITIES\n# --------------------------------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.211109+00:00"
+  },
+  {
+    "id": "62335754db",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/roadmap_engine/completion_roadmap_529888_10-28-25.py",
+    "length": 3,
+    "content": "extract_digits(version:str):\n    \"\"\"Pull numeric values from FVT string like \u2b224>\ud83d\udd3b7=\u2b219 \u2192 [4,7,9]\"\"\"\n    return list(map(int,re.findall(r\"\\d\",version)))",
+    "timestamp": "2025-10-28T22:48:46.211128+00:00"
+  },
+  {
+    "id": "b41e5394ac",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/roadmap_engine/completion_roadmap_529888_10-28-25.py",
+    "length": 6,
+    "content": "completion_score(version:str)->float:\n    \"\"\"Compute weighted score (middle shard more important)\"\"\"\n    nums=extract_digits(version)\n    if len(nums)!=3: return 0\n    weights=[0.3,0.5,0.2]\n    return sum(n*w for n,w in zip(nums,weights))",
+    "timestamp": "2025-10-28T22:48:46.211141+00:00"
+  },
+  {
+    "id": "9c0345b05a",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/roadmap_engine/completion_roadmap_529888_10-28-25.py",
+    "length": 39,
+    "content": "read_manifest(p:Path):\n    \"\"\"Load app manifest if exists\"\"\"\n    try: return json.loads(p.read_text())\n    except Exception: return None\n\n# --------------------------------------------------------------\n# MAIN EXECUTION\n# --------------------------------------------------------------\nif __name__==\"__main__\":\n    base_dir=Path.home()/ \"savant/services/web/wb_apps\"\n    manifests=list(base_dir.glob(\"*/app_manifest.json\"))\n    if not manifests:\n        print(\"\u26a0\ufe0f  No manifests found.\")\n        exit(0)\n\n    apps=[]\n    for m in manifests:\n        data=read_manifest(m)\n        if not data: continue\n        score=completion_score(data.get(\"version\",\"\"))\n        apps.append({\"app\":data.get(\"app\",\"unknown\"),\n                     \"version\":data.get(\"version\",\"\"),\n                     \"score\":round(score,2),\n                     \"timestamp\":data.get(\"timestamp\",\"N/A\")})\n\n    # Sort by completion descending\n    apps.sort(key=lambda x:x[\"score\"],reverse=True)\n\n    roadmap_path=Path.home()/ \"downloads/savant_completion_roadmap.json\"\n    roadmap_path.write_text(json.dumps({\n        \"generated\":datetime.utcnow().isoformat()+\"Z\",\n        \"apps\":apps\n    },indent=2))\n\n    print(\"\ud83d\udcd8 SAVANT COMPLETION ROADMAP\\n--------------------------------\")\n    for i,a in enumerate(apps,1):\n        print(f\"{i:02}. {a['app']} \u2192 {a['version']} (score {a['score']})\")\n\n    print(\"\\n\ud83d\uddc2\ufe0f  Roadmap saved to:\",roadmap_path)",
+    "timestamp": "2025-10-28T22:48:46.211196+00:00"
+  },
+  {
+    "id": "15b1672d7a",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/version_engine/version_daemon.py",
+    "length": 10,
+    "content": "os, json, time, random\nfrom datetime import datetime\nfrom pathlib import Path\n\nROOT = Path.home()/ \"savant\"\nLOG = ROOT/\"logs/version_map.log\"\nSTATE = ROOT/\"logs/version_state.json\"\n\nSYMBOLS = {\"frontend\": \"\u2666\", \"backend\": \"\u2b22\", \"system\": \"\u2b21\"}\nOPS = [\"<\", \"=\", \">\"]",
+    "timestamp": "2025-10-28T22:48:46.212125+00:00"
+  },
+  {
+    "id": "042c8c11e3",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/version_engine/version_daemon.py",
+    "length": 6,
+    "content": "gen_version():\n    front, back, sys = [round(random.uniform(1.0, 9.9),1) for _ in range(3)]\n    op1, op2 = random.choice(OPS), random.choice(OPS)\n    full = f\"{SYMBOLS['frontend']}{front}{op1}{SYMBOLS['backend']}{back}{op2}{SYMBOLS['system']}{sys}\"\n    simple = f\"{int(front*10)}{int(back*10)}{int(sys*10)}\"\n    return full, simple",
+    "timestamp": "2025-10-28T22:48:46.212160+00:00"
+  },
+  {
+    "id": "e63177cc28",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/version_engine/version_daemon.py",
+    "length": 27,
+    "content": "process_files():\n    date_tag = datetime.utcnow().strftime(\"%m-%d-%y\")\n    changes = []\n    for path,_,files in os.walk(ROOT):\n        if any(skip in path for skip in (\"node_modules\",\".next\",\"__pycache__\",\"dist\")): continue\n        for f in files:\n            if f.endswith(('.py','.ts','.tsx','.js','.mjs','.json')):\n                full,simp = gen_version()\n                name,ext=os.path.splitext(f)\n                if f\"_{simp}_\" in f: continue\n                new=f\"{name}_{simp}_{date_tag}{ext}\"\n                try:\n                    os.rename(os.path.join(path,f),os.path.join(path,new))\n                    changes.append({\"time\":datetime.utcnow().isoformat(),\"path\":str(Path(path)/new),\"version_full\":full})\n                except Exception as e:\n                    changes.append({\"error\":str(e),\"file\":f})\n    if changes:\n        LOG.write_text(json.dumps(changes,indent=2))\n        STATE.write_text(json.dumps({\"updated\":datetime.utcnow().isoformat(),\"changes\":len(changes)},indent=2))\n        print(f\"\ud83e\udde9 Version update: {len(changes)} files\")\n    else:\n        print(\"\u2714\ufe0f Versions already current\")\n\nif __name__==\"__main__\":\n    while True:\n        process_files()\n        time.sleep(3600)  # hourly",
+    "timestamp": "2025-10-28T22:48:46.212196+00:00"
+  },
+  {
+    "id": "4fe690faa2",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/version_engine/version_engine_975449_10-28-25.py",
+    "length": 3,
+    "content": "os, json, time, re\nfrom datetime import datetime\nfrom pathlib import Path",
+    "timestamp": "2025-10-28T22:48:46.212954+00:00"
+  },
+  {
+    "id": "6eaba1b73f",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/version_engine/version_engine_975449_10-28-25.py",
+    "length": 7,
+    "content": "random\n\n# --- Symbols ---------------------------------------------------\nSYMBOLS = {\"frontend\": \"\u2666\", \"backend\": \"\u2b22\", \"system\": \"\u2b21\"}\nOPS = [\"<\", \"=\", \">\"]\n\n# --- Derive version from pseudo-curvature ----------------------",
+    "timestamp": "2025-10-28T22:48:46.212985+00:00"
+  },
+  {
+    "id": "576caa40dd",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/version_engine/version_engine_975449_10-28-25.py",
+    "length": 11,
+    "content": "gen_version():\n    front = round(random.uniform(1.0, 9.9), 1)\n    back = round(random.uniform(1.0, 9.9), 1)\n    sys = round(random.uniform(1.0, 9.9), 1)\n    op1 = random.choice(OPS)\n    op2 = random.choice(OPS)\n    full = f\"{SYMBOLS['frontend']}{front}{op1}{SYMBOLS['backend']}{back}{op2}{SYMBOLS['system']}{sys}\"\n    simplified = f\"{int(front*10)}{int(back*10)}{int(sys*10)}\"\n    return full, simplified\n\n# --- Rename eligible files -------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.213005+00:00"
+  },
+  {
+    "id": "e295f719a3",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/version_engine/version_engine_975449_10-28-25.py",
+    "length": 30,
+    "content": "rename_files(root):\n    log_entries = []\n    date_tag = datetime.utcnow().strftime(\"%m-%d-%y\")\n\n    for path, _, files in os.walk(root):\n        for f in files:\n            if f.endswith(('.py', '.ts', '.tsx', '.json', '.mjs', '.js')) and \"node_modules\" not in path:\n                full, simp = gen_version()\n                name, ext = os.path.splitext(f)\n                new_name = f\"{name}_{simp}_{date_tag}{ext}\"\n                old_path = Path(path) / f\n                new_path = Path(path) / new_name\n                try:\n                    os.rename(old_path, new_path)\n                    log_entries.append({\n                        \"time\": datetime.utcnow().isoformat(),\n                        \"path\": str(new_path),\n                        \"version_full\": full,\n                        \"version_simple\": simp\n                    })\n                except Exception as e:\n                    log_entries.append({\"error\": str(e), \"file\": f})\n    return log_entries\n\n# --- Main -------------------------------------------------------\nif __name__ == \"__main__\":\n    ROOT = str(Path.home() / \"savant\")\n    logs = rename_files(ROOT)\n    Path(f\"{ROOT}/logs/version_map.log\").write_text(json.dumps(logs, indent=2))\n    print(f\"\u2705 Savant auto-versioning complete \u2014 {len(logs)} files processed.\")",
+    "timestamp": "2025-10-28T22:48:46.213043+00:00"
+  },
+  {
+    "id": "3f64d84458",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/version_engine/version_engine.py",
+    "length": 5,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nSavant Symbolic Version Engine v4.0\nIntegrates Context Ledger + Version Tracking + AI Hooks\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.213550+00:00"
+  },
+  {
+    "id": "f7474a3a7c",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/version_engine/version_engine.py",
+    "length": 12,
+    "content": "os, json, random, time\nfrom datetime import datetime\nfrom pathlib import Path\nfrom savant.services.scripts.context_engine.context_ledger import add_entry, validate_ledger\n\nROOT = Path.home()/ \"savant\"\nLOG  = ROOT/\"logs/version_updates.log\"\nVERSIONS = ROOT/\"docs/version_registry.json\"\n\nLEVELS = [\"Vessel\",\"Frame\",\"Filament\"]  # top / middle / low levels (auto-selected per app type)\nOPS = [\"<\", \"=\", \">\"]\nSAFE = {\"<\":\"_lt_\",\"=\":\"_eq_\",\">\":\"_gt_\"}",
+    "timestamp": "2025-10-28T22:48:46.213578+00:00"
+  },
+  {
+    "id": "f178625714",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/version_engine/version_engine.py",
+    "length": 1,
+    "content": "utc(): return datetime.utcnow().isoformat()",
+    "timestamp": "2025-10-28T22:48:46.213592+00:00"
+  },
+  {
+    "id": "f7e9cadc8b",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/version_engine/version_engine.py",
+    "length": 6,
+    "content": "generate_version():\n    n=[round(random.uniform(1.0,9.9),1) for _ in LEVELS]\n    ops=[random.choice(OPS),random.choice(OPS)]\n    display=f\"\ud83d\udfe0{n[0]} {ops[0]} \ud83d\udfe1{n[1]} {ops[1]} \ud83d\udd34{n[2]}\"\n    safe=f\"{LEVELS[0][0]}{n[0]}{SAFE[ops[0]]}{LEVELS[1][0]}{n[1]}{SAFE[ops[1]]}{LEVELS[2][0]}{n[2]}\"\n    return display,safe",
+    "timestamp": "2025-10-28T22:48:46.213611+00:00"
+  },
+  {
+    "id": "0afba0229e",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/version_engine/version_engine.py",
+    "length": 8,
+    "content": "versionize_file(path):\n    date=datetime.utcnow().strftime(\"%m-%d-%y\")\n    full,safe=generate_version()\n    stem,ext=os.path.splitext(path.name)\n    if any(x in stem for x in SAFE.values()): return None\n    new_name=f\"{stem}_{safe}_{date}{ext}\"\n    path.rename(path.parent/new_name)\n    return full,new_name",
+    "timestamp": "2025-10-28T22:48:46.213625+00:00"
+  },
+  {
+    "id": "7f624d56bf",
+    "name": "snippet_10",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/version_engine/version_engine.py",
+    "length": 24,
+    "content": "run_versioning():\n    ok, issues = validate_ledger()\n    if not ok:\n        print(\"\u26a0\ufe0f Context invalid, fix ledger first.\")\n        return\n    updates=[]\n    for root,_,files in os.walk(ROOT):\n        if any(skip in root for skip in (\"node_modules\",\".next\",\"__pycache__\")): continue\n        for f in files:\n            if f.endswith((\".py\",\".ts\",\".tsx\",\".mjs\")):\n                try:\n                    p=Path(root)/f\n                    result=versionize_file(p)\n                    if result:\n                        display,new_name=result\n                        updates.append({\"file\":str(p),\"version\":display})\n                        add_entry(\"version_engine\",\"update\",f\"File {new_name} versioned {display}\")\n                except Exception as e:\n                    updates.append({\"file\":f,\"error\":str(e)})\n    VERSIONS.write_text(json.dumps({\"updates\":updates,\"timestamp\":utc()},indent=2))\n    print(f\"\ud83e\udde9 Version registry updated \u2192 {VERSIONS}\")\n\nif __name__==\"__main__\":\n    run_versioning()",
+    "timestamp": "2025-10-28T22:48:46.213670+00:00"
+  },
+  {
+    "id": "af1c9c936c",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/context_engine/context_ledger.py",
+    "length": 5,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nSavant Context Ledger v3.0\nAn immutable, hierarchical, self-healing contextual memory.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.214746+00:00"
+  },
+  {
+    "id": "459f7c06dd",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/context_engine/context_ledger.py",
+    "length": 14,
+    "content": "json, time, uuid, os\nfrom datetime import datetime\nfrom pathlib import Path\n\nROOT    = Path.home()/\"savant\"\nDOCS    = ROOT/\"docs\"\nLEDGER  = DOCS/\"context_ledger.json\"\nINDEX   = DOCS/\"ledger_index.json\"\nBACKUP  = DOCS/\"context_ledger.bak\"\nLOG     = ROOT/\"logs/context_validator.log\"\n\n# --------------------------------------------------------------\n# Utility\n# --------------------------------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.214776+00:00"
+  },
+  {
+    "id": "f178625714",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/context_engine/context_ledger.py",
+    "length": 1,
+    "content": "utc(): return datetime.utcnow().isoformat()",
+    "timestamp": "2025-10-28T22:48:46.214786+00:00"
+  },
+  {
+    "id": "34d3698767",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/context_engine/context_ledger.py",
+    "length": 3,
+    "content": "read_json(path,default=None):\n    try: return json.loads(path.read_text())\n    except: return default or {}",
+    "timestamp": "2025-10-28T22:48:46.214795+00:00"
+  },
+  {
+    "id": "a84fe973be",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/context_engine/context_ledger.py",
+    "length": 7,
+    "content": "write_json(path,data):\n    path.parent.mkdir(parents=True,exist_ok=True)\n    path.write_text(json.dumps(data,indent=2,ensure_ascii=False))\n\n# --------------------------------------------------------------\n# Core functions\n# --------------------------------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.214806+00:00"
+  },
+  {
+    "id": "7043b7bcdb",
+    "name": "snippet_10",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/context_engine/context_ledger.py",
+    "length": 23,
+    "content": "add_entry(scope:str,change_type:str,description:str,status:str=\"active\",author:str=\"system\"):\n    \"\"\"Append immutable context entry\"\"\"\n    data = read_json(LEDGER,{\"history\":[],\"summary\":{}})\n    entry = {\n        \"id\": str(uuid.uuid4()),\n        \"timestamp\": utc(),\n        \"scope\": scope,\n        \"change_type\": change_type,\n        \"description\": description,\n        \"status\": status,\n        \"author\": author\n    }\n    data[\"history\"].append(entry)\n    data[\"summary\"] = {\n        \"total_entries\": len(data[\"history\"]),\n        \"active\": len([e for e in data[\"history\"] if e[\"status\"]==\"active\"]),\n        \"recent_scope\": scope,\n        \"recent_change\": change_type,\n        \"last_update\": utc()\n    }\n    if LEDGER.exists(): BACKUP.write_text(LEDGER.read_text())\n    write_json(LEDGER,data)\n    return entry",
+    "timestamp": "2025-10-28T22:48:46.214822+00:00"
+  },
+  {
+    "id": "f8705da237",
+    "name": "snippet_12",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/context_engine/context_ledger.py",
+    "length": 13,
+    "content": "build_index():\n    \"\"\"Build searchable ledger index\"\"\"\n    data = read_json(LEDGER,{\"history\":[]})\n    index = {}\n    for e in data[\"history\"]:\n        s=index.setdefault(e[\"scope\"],[])\n        s.append({\"id\":e[\"id\"],\"change\":e[\"change_type\"],\"time\":e[\"timestamp\"]})\n    write_json(INDEX,{\"generated\":utc(),\"index\":index})\n    return index\n\n# --------------------------------------------------------------\n# Validator + Doctor\n# --------------------------------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.214833+00:00"
+  },
+  {
+    "id": "fb8ccc8d52",
+    "name": "snippet_14",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/context_engine/context_ledger.py",
+    "length": 24,
+    "content": "validate_ledger():\n    \"\"\"Check coherence, mark anomalies\"\"\"\n    data=read_json(LEDGER,{\"history\":[]})\n    anomalies=[]\n    scopes=set()\n    for e in data[\"history\"]:\n        if e[\"scope\"] in scopes and e[\"status\"]==\"active\":\n            pass\n        scopes.add(e[\"scope\"])\n    # Detect duplicates or contradictions\n    seen=set()\n    for e in data[\"history\"]:\n        key=(e[\"scope\"],e[\"change_type\"])\n        if key in seen:\n            anomalies.append(f\"Duplicate context event: {key}\")\n        seen.add(key)\n    # Detect obsolete or conflicting statuses\n    for e in data[\"history\"]:\n        if \"deprecated\" in e[\"description\"].lower() and e[\"status\"]==\"active\":\n            anomalies.append(f\"Obsolete entry still active: {e['id']}\")\n    if anomalies:\n        LOG.write_text(\"\\n\".join([utc()]+anomalies))\n        return False, anomalies\n    return True, []",
+    "timestamp": "2025-10-28T22:48:46.214846+00:00"
+  },
+  {
+    "id": "d70f2885b5",
+    "name": "snippet_16",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/context_engine/context_ledger.py",
+    "length": 18,
+    "content": "context_doctor(anomalies):\n    \"\"\"Auto-repair simple contradictions\"\"\"\n    data=read_json(LEDGER)\n    fixed=0\n    for e in data[\"history\"]:\n        for a in anomalies:\n            if e[\"id\"] in a or e[\"scope\"] in a:\n                e[\"status\"]=\"deprecated\"\n                e[\"description\"]+=\" [auto-deprecated]\"\n                fixed+=1\n    if fixed:\n        write_json(LEDGER,data)\n        build_index()\n    return fixed\n\n# --------------------------------------------------------------\n# Retroactive bootstrap: populate historical context\n# --------------------------------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.214860+00:00"
+  },
+  {
+    "id": "911d746458",
+    "name": "snippet_18",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/context_engine/context_ledger.py",
+    "length": 25,
+    "content": "bootstrap_history():\n    if LEDGER.exists(): return\n    print(\"\ud83e\udeb6 Bootstrapping Savant contextual history...\")\n    history = [\n        (\"governance\",\"initialization\",\"Project rules imported and normalized.\"),\n        (\"hierarchy\",\"revision\",\"Expanded to 13-level fractal hierarchy.\"),\n        (\"hierarchy\",\"app_inheritance\",\"Apps begin at app level and inherit downward.\"),\n        (\"hierarchy\",\"symbol_update\",\"Shard level marked red hex; others gold/orange shades.\"),\n        (\"ui_template\",\"creation\",\"Savant baseline UI created (Next.js/Tailwind/Framer Motion/Three.js).\"),\n        (\"version_system\",\"implementation\",\"Triadic version system with relational operators encoded as _lt_, _eq_, _gt_.\"),\n        (\"context_system\",\"implementation\",\"Immutable ledger introduced to ensure coherence.\"),\n        (\"enhancement_engine\",\"policy_update\",\"Enhancements run only after validation and project completion.\"),\n        (\"rule_system\",\"integration\",\"All non-negotiable rules integrated and propagated.\"),\n        (\"ai_core\",\"centralization\",\"Single OpenAI key and shared AI interface established.\"),\n        (\"task_engine\",\"foundation\",\"Dynamic nested task lattice created.\"),\n        (\"automation\",\"daemon_init\",\"Realtime watcher, self-diagnostic, master_guard launched.\"),\n        (\"branding\",\"definition\",\"Savant aesthetic defined: gunmetal + gold minimal industrial precision.\")\n    ]\n    for scope,ct,desc in history: add_entry(scope,ct,desc)\n    build_index()\n    print(\"\u2705 Historical context bootstrapped\")\n\n# --------------------------------------------------------------\n# Main CLI\n# --------------------------------------------------------------",
+    "timestamp": "2025-10-28T22:48:46.214892+00:00"
+  },
+  {
+    "id": "fc44d5bc0e",
+    "name": "snippet_20",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/context_engine/context_ledger.py",
+    "length": 14,
+    "content": "main():\n    ok, issues = validate_ledger()\n    if not ok:\n        print(\"\u26a0\ufe0f Context anomalies detected:\")\n        for i in issues: print(\" -\",i)\n        fixed=context_doctor(issues)\n        print(f\"\ud83d\udd27 Auto-repaired {fixed} entries\")\n    else:\n        print(\"\u2705 Context coherence verified\")\n    build_index()\n\nif __name__==\"__main__\":\n    bootstrap_history()\n    main()",
+    "timestamp": "2025-10-28T22:48:46.214925+00:00"
+  },
+  {
+    "id": "845fa94c91",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_visualization/visualizer.py",
+    "length": 6,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nSAVANT FRACTAL VISUALIZATION ENGINE (Phase 6.0)\nInteractive 3D visualizer for fractal_core hierarchy using Plotly 3D.\nOutputs both HTML and JSON views for integration with wb_ui dashboard.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.215526+00:00"
+  },
+  {
+    "id": "e4c102f217",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_visualization/visualizer.py",
+    "length": 2,
+    "content": "json, math\nfrom pathlib import Path",
+    "timestamp": "2025-10-28T22:48:46.215549+00:00"
+  },
+  {
+    "id": "7b4af69acf",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_visualization/visualizer.py",
+    "length": 6,
+    "content": "plotly.graph_objects as go\nfrom datetime import datetime, timezone\n\nROOT = Path.home()/ \"savant\"\nDATA = ROOT/\"services\"/\"scripts\"/\"fractal_core\"/\"fractal_graph.json\"\nOUT  = ROOT/\"services\"/\"scripts\"/\"fractal_visualization\"/\"fractal_scene.html\"",
+    "timestamp": "2025-10-28T22:48:46.215560+00:00"
+  },
+  {
+    "id": "1aa2d31b0c",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_visualization/visualizer.py",
+    "length": 1,
+    "content": "utc(): return datetime.now(timezone.utc).isoformat()",
+    "timestamp": "2025-10-28T22:48:46.215569+00:00"
+  },
+  {
+    "id": "c502c50056",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_visualization/visualizer.py",
+    "length": 5,
+    "content": "flatten(node, depth=0, parent=None):\n    nodes=[]\n    nodes.append({\"id\":node[\"id\"],\"name\":node[\"name\"],\"curv\":node[\"curvature\"],\"depth\":depth,\"parent\":parent})\n    for c in node.get(\"children\",[]): nodes+=flatten(c,depth+1,node[\"id\"])\n    return nodes",
+    "timestamp": "2025-10-28T22:48:46.215580+00:00"
+  },
+  {
+    "id": "0ebcb9e802",
+    "name": "snippet_10",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_visualization/visualizer.py",
+    "length": 22,
+    "content": "visualize():\n    data=json.loads(DATA.read_text())\n    nodes=flatten(data)\n    xs=[math.cos(n[\"depth\"])*n[\"curv\"]*2 for n in nodes]\n    ys=[math.sin(n[\"depth\"])*n[\"curv\"]*2 for n in nodes]\n    zs=[n[\"depth\"]*1.2 for n in nodes]\n    text=[n[\"name\"] for n in nodes]\n\n    fig=go.Figure(data=[go.Scatter3d(\n        x=xs,y=ys,z=zs,mode=\"markers+text\",text=text,textposition=\"top center\",\n        marker=dict(size=8,color=[n[\"curv\"] for n in nodes],\n                    colorscale=\"YlOrBr\",opacity=0.9)\n    )])\n    fig.update_layout(scene=dict(bgcolor=\"#0e0e10\"),\n                      paper_bgcolor=\"#0e0e10\",\n                      font=dict(color=\"#e4c66f\"),\n                      title=\"Savant Fractal Hierarchy\")\n    OUT.write_text(fig.to_html(full_html=True,include_plotlyjs=\"cdn\"))\n    print(f\"\u2705 Fractal scene exported \u2192 {OUT}\")\n\nif __name__==\"__main__\":\n    visualize()",
+    "timestamp": "2025-10-28T22:48:46.215600+00:00"
+  },
+  {
+    "id": "960ce0260f",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_memory/memory_engine.py",
+    "length": 7,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nSAVANT CONTINUITY ENGINE (Phase 13)\nStores conversation embeddings for cross-session context memory.\n\"\"\"\nfrom openai import OpenAI\nfrom pathlib import Path",
+    "timestamp": "2025-10-28T22:48:46.216079+00:00"
+  },
+  {
+    "id": "c76c8c1b37",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_memory/memory_engine.py",
+    "length": 7,
+    "content": "json, numpy as np, os\nfrom dotenv import load_dotenv\n\nROOT=Path.home()/ \"savant\"/\"memory\"\nROOT.mkdir(parents=True,exist_ok=True)\nload_dotenv(Path.home()/\".env\")\nclient=OpenAI(api_key=os.getenv(\"OPENAI_API_KEY\"))",
+    "timestamp": "2025-10-28T22:48:46.216102+00:00"
+  },
+  {
+    "id": "f7af4ece63",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_memory/memory_engine.py",
+    "length": 3,
+    "content": "embed(text:str):\n    e=client.embeddings.create(model=\"text-embedding-3-small\",input=text)\n    return np.array(e.data[0].embedding)",
+    "timestamp": "2025-10-28T22:48:46.216112+00:00"
+  },
+  {
+    "id": "fd4b6ac0dd",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_memory/memory_engine.py",
+    "length": 4,
+    "content": "store(ref,text):\n    vec=embed(text).tolist()\n    data={\"ref\":ref,\"text\":text,\"embedding\":vec}\n    (ROOT/f\"{ref}.json\").write_text(json.dumps(data))",
+    "timestamp": "2025-10-28T22:48:46.216122+00:00"
+  },
+  {
+    "id": "2a4b34d367",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/ai_memory/memory_engine.py",
+    "length": 9,
+    "content": "recall(query):\n    q=embed(query)\n    best=None;score=-1\n    for f in ROOT.glob(\"*.json\"):\n        d=json.loads(f.read_text())\n        v=np.array(d[\"embedding\"])\n        sim=float(np.dot(q,v)/(np.linalg.norm(q)*np.linalg.norm(v)))\n        if sim>score:score,best=sim,d\n    return best[\"text\"] if best else \"No related context.\"",
+    "timestamp": "2025-10-28T22:48:46.216143+00:00"
+  },
+  {
+    "id": "843f6b8025",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_archive/archive.py",
+    "length": 5,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nSAVANT FRACTAL ARCHIVE (Phase 15)\nCreates time-versioned snapshots of fractal states and allows replay as 3-D animation.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.216761+00:00"
+  },
+  {
+    "id": "9f1ae9c2c3",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_archive/archive.py",
+    "length": 6,
+    "content": "json, time\nfrom pathlib import Path\n\nSRC=Path.home()/ \"savant\"/\"services\"/\"scripts\"/\"fractal_core\"/\"fractal_graph.json\"\nARC=Path.home()/ \"savant\"/\"archives\"\nARC.mkdir(exist_ok=True)",
+    "timestamp": "2025-10-28T22:48:46.216796+00:00"
+  },
+  {
+    "id": "4b6ab4e8db",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_archive/archive.py",
+    "length": 6,
+    "content": "snapshot():\n    if not SRC.exists(): return\n    data=json.loads(SRC.read_text())\n    stamp=time.strftime(\"%Y%m%d_%H%M%S\")\n    (ARC/f\"fractal_{stamp}.json\").write_text(json.dumps(data,indent=2))\n    print(f\"\ud83d\udce6 Snapshot saved \u2192 {ARC/f'fractal_{stamp}.json'}\")",
+    "timestamp": "2025-10-28T22:48:46.216815+00:00"
+  },
+  {
+    "id": "62be1f17d2",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal_archive/archive.py",
+    "length": 5,
+    "content": "replay():\n    files=sorted(ARC.glob(\"fractal_*.json\"))\n    for f in files:\n        print(f\"\u23ea {f.name}\")\n        time.sleep(0.5)",
+    "timestamp": "2025-10-28T22:48:46.216829+00:00"
+  },
+  {
+    "id": "f1f51dcff2",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/shard_engine/shard_compiler.py",
+    "length": 10,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nSAVANT SHARD COMPILER v1.0\n---------------------------------------------------------------\nSplits code into atomic shards and builds a re-usable snippet library.\nBrand colors: gunmetal (#1e1e21), gold (#c7a740), red (#ff3838)\n---------------------------------------------------------------\n\"\"\"\n\nfrom pathlib import Path",
+    "timestamp": "2025-10-28T22:48:46.217217+00:00"
+  },
+  {
+    "id": "5cd50eed94",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/shard_engine/shard_compiler.py",
+    "length": 13,
+    "content": "hashlib, json, re, os, datetime\n\nROOT = Path.home() / \"savant\"\nSRC  = ROOT / \"services\" / \"scripts\"\nOUT  = ROOT / \"services\" / \"scripts\" / \"shard_engine\"\nLIB  = OUT / \"shard_library.json\"\nLEDGER = ROOT / \"logs\" / \"context_ledger.log\"\n\nCOLOR = {\n    \"gunmetal\":\"#1e1e21\",\n    \"gold\":\"#c7a740\",\n    \"red\":\"#ff3838\"\n}",
+    "timestamp": "2025-10-28T22:48:46.217244+00:00"
+  },
+  {
+    "id": "f17b93bef1",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/shard_engine/shard_compiler.py",
+    "length": 2,
+    "content": "sha1(data:str)->str:\n    return hashlib.sha1(data.encode(\"utf8\")).hexdigest()[:10]",
+    "timestamp": "2025-10-28T22:48:46.217256+00:00"
+  },
+  {
+    "id": "e71f8473e3",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/shard_engine/shard_compiler.py",
+    "length": 2,
+    "content": "timestamp()->str:\n    return datetime.datetime.now(datetime.UTC).isoformat()",
+    "timestamp": "2025-10-28T22:48:46.217268+00:00"
+  },
+  {
+    "id": "f0c22906cb",
+    "name": "snippet_8",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/shard_engine/shard_compiler.py",
+    "length": 3,
+    "content": "colorize(code:str)->str:\n    \"\"\"Wraps snippet in inline HTML span for branded syntax highlighting.\"\"\"\n    return f\"<span style='color:{COLOR['gold']}'>{code}</span>\"",
+    "timestamp": "2025-10-28T22:48:46.217280+00:00"
+  },
+  {
+    "id": "f5ce475858",
+    "name": "snippet_10",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/shard_engine/shard_compiler.py",
+    "length": 18,
+    "content": "extract_snippets(text:str, file:str)->list:\n    \"\"\"Find top-level defs, classes, or component blocks as shards.\"\"\"\n    pattern = r\"(?m)^(def |class |export default |function |const |let |import |<\\w+)\"\n    parts = re.split(pattern, text)\n    shards=[]\n    for i,p in enumerate(parts):\n        c=p.strip()\n        if len(c)<20: continue\n        h=sha1(c)\n        shards.append({\n            \"id\":h,\n            \"name\":f\"snippet_{i}\",\n            \"source\":file,\n            \"length\":len(c.splitlines()),\n            \"content\":c,\n            \"timestamp\":timestamp()\n        })\n    return shards",
+    "timestamp": "2025-10-28T22:48:46.217296+00:00"
+  },
+  {
+    "id": "50b8c593d1",
+    "name": "snippet_12",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/shard_engine/shard_compiler.py",
+    "length": 9,
+    "content": "build_library():\n    library=[]\n    for path in SRC.rglob(\"*.*\"):\n        if path.suffix.lower() not in [\".py\",\".ts\",\".tsx\",\".js\",\".css\",\".html\",\".md\"]: continue\n        code=path.read_text(errors=\"ignore\")\n        snips=extract_snippets(code,str(path))\n        library+=snips\n    LIB.write_text(json.dumps(library,indent=2))\n    print(f\"\ud83d\udcd8 Library built \u2192 {LIB} ({len(library)} shards)\")",
+    "timestamp": "2025-10-28T22:48:46.217337+00:00"
+  },
+  {
+    "id": "8bbb266d26",
+    "name": "snippet_14",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/shard_engine/shard_compiler.py",
+    "length": 16,
+    "content": "insert_instances():\n    library=json.loads(LIB.read_text())\n    used=0\n    for path in SRC.rglob(\"*.*\"):\n        if path.suffix.lower() not in [\".py\",\".ts\",\".tsx\",\".js\"]: continue\n        text=path.read_text(errors=\"ignore\")\n        lines=text.splitlines()\n        if len(lines)<50: continue\n        seg=\"\\n\".join(lines[:30])\n        snip=library[used % len(library)]\n        mark_start=f\"# \ud83d\udd38 BEGIN_SNIPPET {snip['name']} [{snip['id']}]\"\n        mark_end  =\"# \ud83d\udd38 END_SNIPPET\"\n        new_text=f\"{seg}\\n{mark_start}\\n{colorize(snip['content'])}\\n{mark_end}\\n\"+\"\\n\".join(lines[30:])\n        path.write_text(new_text)\n        used+=1\n    print(f\"\ud83e\udde9 Inserted {used} shard instances.\")",
+    "timestamp": "2025-10-28T22:48:46.217364+00:00"
+  },
+  {
+    "id": "30e484014d",
+    "name": "snippet_16",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/shard_engine/shard_compiler.py",
+    "length": 9,
+    "content": "log_entry(action:str,detail:str):\n    LEDGER.parent.mkdir(parents=True,exist_ok=True)\n    with LEDGER.open(\"a\") as f:\n        f.write(json.dumps({\n            \"timestamp\":timestamp(),\n            \"action\":action,\n            \"detail\":detail,\n            \"path\":\"shard_engine/shard_compiler.py\"\n        })+\"\\n\")",
+    "timestamp": "2025-10-28T22:48:46.217378+00:00"
+  },
+  {
+    "id": "680c4d721f",
+    "name": "snippet_18",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/shard_engine/shard_compiler.py",
+    "length": 10,
+    "content": "main():\n    print(\"\ud83d\udd27 Building atomic shard library...\")\n    build_library()\n    print(\"\ud83e\udde9 Inserting shard instances into eligible scripts...\")\n    insert_instances()\n    log_entry(\"build_shard_library\",\"atomic decomposition + instance insertion complete\")\n    print(\"\u2705 Savant Shard Compiler finished.\")\n\nif __name__==\"__main__\":\n    main()",
+    "timestamp": "2025-10-28T22:48:46.217400+00:00"
+  },
+  {
+    "id": "9751342db3",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/readme_generator/readme-generator/README.md",
+    "length": 8,
+    "content": "**SAVANT : FRACTAL / savant/services/scripts/readme_generator/readme-generator**\n\nStructure is the first art.  This folder is a living node in the network.\nIts contents form the smallest gestures of design and the largest systems of reason.\nEach file here breathes through the lattice\u2014clarity through recursion.\n\n\n_Last regenerated: 2025-10-28 02:59:00_",
+    "timestamp": "2025-10-28T22:48:46.219061+00:00"
+  },
+  {
+    "id": "622cbec9eb",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/readme_generator/readme-generator/readme_generator_499870_10-28-25.py",
+    "length": 6,
+    "content": "#!/usr/bin/env python3\n\"\"\"\nSAVANT README GENERATOR \u2014 v1\nProduces 1000-word README files for Savant scripts in a toned-down,\ndarkly poetic, technically precise prose modeled on the Viscera style.\n\"\"\"",
+    "timestamp": "2025-10-28T22:48:46.219638+00:00"
+  },
+  {
+    "id": "9458b901e2",
+    "name": "snippet_2",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/readme_generator/readme-generator/readme_generator_499870_10-28-25.py",
+    "length": 8,
+    "content": "json, random, textwrap, os, time\nfrom pathlib import Path\nfrom savant.services.scripts.ai_core.ai_router import ai_route\n\nROOT  = Path.home()/ \"savant\"\nDOCS  = ROOT/ \"docs\"\nOUT   = ROOT/ \"docs/generated_readmes\"\nOUT.mkdir(parents=True, exist_ok=True)",
+    "timestamp": "2025-10-28T22:48:46.219677+00:00"
+  },
+  {
+    "id": "8ee23d40b4",
+    "name": "snippet_4",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/readme_generator/readme-generator/readme_generator_499870_10-28-25.py",
+    "length": 17,
+    "content": "describe_script(script_path:Path):\n    base = script_path.name\n    prompt = f\"\"\"\nWrite a detailed (~1000 word) technical README for a script named '{base}'.\nUse a dark, poetic, intelligent tone inspired by the author's Viscera style,\nbut remove profanity and explicit content.  The README must:\n1. Explain what every function, variable, and class does.\n2. Describe dependencies and purpose of the script within Savant.\n3. Discuss how it interacts with other modules.\n4. Include subtle metaphors of machinery, memory, decay, and design.\n5. Remain coherent, professional, and slightly lyrical.\n\"\"\"\n    result = ai_route(\"enhancement\", prompt)\n    text = f\"# {base}\\n\\n{result.strip()}\\n\"\n    out_file = OUT / f\"{base}_README.md\"\n    out_file.write_text(text)\n    print(f\"\u2705 README generated: {out_file}\")",
+    "timestamp": "2025-10-28T22:48:46.219700+00:00"
+  },
+  {
+    "id": "8bf0c18721",
+    "name": "snippet_6",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/readme_generator/readme-generator/readme_generator_499870_10-28-25.py",
+    "length": 7,
+    "content": "generate_all():\n    scripts_dir = ROOT/ \"services/scripts\"\n    for py in scripts_dir.rglob(\"*.py\"):\n        describe_script(py)\n\nif __name__==\"__main__\":\n    generate_all()",
+    "timestamp": "2025-10-28T22:48:46.219711+00:00"
+  },
+  {
+    "id": "6a4493cb0c",
+    "name": "snippet_0",
+    "source": "/data/data/com.termux/files/home/savant/services/scripts/fractal-core/__pycache__/README.md",
+    "length": 8,
+    "content": "**SAVANT : FRACTAL / savant/services/scripts/fractal-core/__pycache__**\n\nStructure is the first art.  This folder is a living node in the network.\nIts contents form the smallest gestures of design and the largest systems of reason.\nEach file here breathes through the lattice\u2014clarity through recursion.\n\n\n_Last regenerated: 2025-10-28 02:59:00_",
+    "timestamp": "2025-10-28T22:48:46.220728+00:00"
+  }
+]

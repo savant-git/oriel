@@ -1,0 +1,9 @@
+SAVANT BACKEND READY STATE — v1.0
+---------------------------------
+• realtime integrity engine (active)
+• self diagnostic (active)
+• master guard (hourly rule enforcement)
+• rule engine (verified)
+• automation engine (verified)
+• ai_core + openai key expected in ~/.env
+• enhancement + task lattice scripts: ready for UI layer

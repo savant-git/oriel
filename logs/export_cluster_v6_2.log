@@ -1,0 +1,5 @@
+[2025-10-31T08:28:42.203083+00:00] 🧠 Starting Savant Export at 2025-10-31T08:28:42.202103+00:00
+[2025-10-31T08:28:42.203858+00:00] 🧠 Collecting full chat history...
+[2025-10-31T08:28:42.212753+00:00] 📘 Combined chat log → /data/data/com.termux/files/home/savant/logs/chat_full_log.txt (4 segments)
+[2025-10-31T08:28:42.214755+00:00] 💾 JSON chat log mirror → /data/data/com.termux/files/home/savant/logs/chat_full_log.json
+[2025-10-31T08:28:42.215683+00:00] 📦 Creating archive: savant_full_export_20251031_042842.zip

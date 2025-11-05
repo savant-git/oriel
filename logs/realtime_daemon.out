@@ -1,0 +1,28 @@
+nohup: ignoring input
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/savant/services/scripts/integrity_engine/realtime_watcher.py", line 7, in <module>
+    from watchdog.observers import Observer
+ModuleNotFoundError: No module named 'watchdog'
+nohup: ignoring input
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/savant/services/scripts/integrity_engine/realtime_watcher.py", line 7, in <module>
+    from watchdog.observers import Observer
+ModuleNotFoundError: No module named 'watchdog'
+nohup: ignoring input
+nohup: ignoring input
+nohup: ignoring input
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/watchdog/observers/api.py", line 213, in run
+    self.dispatch_events(self.event_queue)
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/watchdog/observers/api.py", line 391, in dispatch_events
+    handler.dispatch(event)
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/watchdog/events.py", line 217, in dispatch
+    getattr(self, f"on_{event.event_type}")(event)
+  File "/data/data/com.termux/files/home/savant/services/scripts/integrity_engine/realtime_watcher.py", line 30, in on_deleted
+    self.restore(event.src_path)
+  File "/data/data/com.termux/files/home/savant/services/scripts/integrity_engine/realtime_watcher.py", line 39, in restore
+    LOG.write_text(f"[{time.ctime()}] ❌ No backup for {name}\n", append=True)
+TypeError: Path.write_text() got an unexpected keyword argument 'append'

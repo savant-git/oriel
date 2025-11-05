@@ -1,0 +1,11 @@
+[2025-11-01T08:25:49.923079+00:00] 🧠 Starting Savant Archive-Export v151
+[2025-11-01T08:26:01.351633+00:00] ✅ Chat formatted → /data/data/com.termux/files/home/savant/chat_logs/chat_full_current.html
+[2025-11-01T08:26:01.830260+00:00] 📦 Creating archive: /data/data/com.termux/files/home/savant/exports/savant_full_export_20251101_082601.zip
+[2025-11-01T08:26:13.829470+00:00] 📥 Copied to Downloads → /storage/emulated/0/Download/savant_full_export_20251101_082601.zip
+[2025-11-01T08:35:56.652404+00:00] 🧠 Starting Savant Archive-Export v151
+[2025-11-01T08:36:07.589363+00:00] ✅ Chat formatted → /data/data/com.termux/files/home/savant/chat_logs/chat_full_current.html
+[2025-11-01T08:36:08.027255+00:00] 📦 Creating archive: /data/data/com.termux/files/home/savant/exports/savant_full_export_20251101_083608.zip
+[2025-11-01T08:36:18.951228+00:00] 📥 Copied to Downloads → /storage/emulated/0/Download/savant_full_export_20251101_083608.zip
+[2025-11-01T08:37:50.493066+00:00] ☁️ Uploaded to s3://savant-ai-cluster/exports/savant_full_export_20251101_083608.zip
+[2025-11-01T08:37:50.653726+00:00] ⚠️ GitHub push failed: Command '['git', '-C', '/data/data/com.termux/files/home/savant', 'add', '.']' returned non-zero exit status 128.
+[2025-11-01T08:37:50.654326+00:00] ✅ Full export complete — all destinations updated.

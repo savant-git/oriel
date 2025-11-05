@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="15">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>oriel Live Dashboard</title>
+<style>
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0e0e0e;
+  color: #eee;
+  margin: 0;
+  padding: 2rem;
+}
+h1 { color: #6ab0ff; }
+.card {
+  background: #161616;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 10px #111;
+}
+.status {
+  font-size: 1.2rem;
+  color: #7cf77c;
+}
+pre {
+  background: #1c1c1c;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  max-height: 300px;
+}
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: #888;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<h1>🧠 oriel Live Dashboard</h1>
+<div id="status" class="card">Loading...</div>
+<div id="log" class="card"><pre>Fetching recent logs...</pre></div>
+<footer>Auto-refreshing every 15s · oriel Daemon Active</footer>
+
+<script>
+async function refresh() {
+  try {
+    const res = await fetch('/api/status');
+    const data = await res.json();
+    const status = data.running ? "🟢 Running" : "🔴 Idle";
+    document.getElementById('status').innerHTML = `
+      <h2>Status: ${status}</h2>
+      <p><b>CPU Load:</b> ${data.cpu}%</p>
+      <p><b>Last Cycle:</b> ${data.lastCycle ?? 'N/A'}</p>
+      <p><b>Uptime:</b> ${Math.round(data.uptime / 60)} min</p>`;
+    document.getElementById('log').innerHTML =
+      '<pre>' + (data.recent.join('\\n') || 'No recent logs') + '</pre>';
+  } catch (err) {
+    document.getElementById('status').innerHTML = '⚠️ Dashboard fetch error';
+  }
+}
+refresh();
+setInterval(refresh, 15000);
+</script>
+</body>
+</html>

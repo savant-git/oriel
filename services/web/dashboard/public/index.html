@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Savant Command Center</title>
+<style>
+body{background:#1e1e21;color:#e4c66f;font-family:Inter,sans-serif;text-align:center;margin:0;padding:0;}
+header{border-bottom:1px solid #8a742b66;padding:1rem;}
+button{background:#e4c66f;color:#1e1e21;padding:.5rem 1rem;margin:.5rem;border:none;border-radius:6px;cursor:pointer;}
+#reflexLog{width:90%;height:300px;background:#111;border:1px solid #8a742b33;margin:1rem auto;padding:1rem;overflow:auto;}
+canvas{margin-top:1rem;}
+</style>
+<script>
+async function refreshSystem(){
+  const r=await fetch('/api/system'); const d=await r.json();
+  document.getElementById('sys').textContent=`CPU ${d.cpu}% | MEM ${d.mem}% | DISK ${d.disk}%`;
+}
+async function refreshReflex(){
+  const r=await fetch('/api/reflex'); const d=await r.json();
+  document.getElementById('reflexLog').textContent=d.log||'No data.';
+}
+setInterval(refreshSystem,5000);
+setInterval(refreshReflex,15000);
+</script>
+</head>
+<body>
+<header><h1>Savant Command Center</h1><div id="sys">loading…</div></header>
+<section>
+  <div id="reflexLog">Loading reflex log…</div>
+  <button onclick="fetch('/api/control',{method:'POST',body:new URLSearchParams({target:'reflex',action:'analyze',token:'none'})})">Run Reflex</button>
+  <button onclick="fetch('/api/control',{method:'POST',body:new URLSearchParams({target:'cloud',action:'sync',token:'none'})})">Sync Cloud</button>
+</section>
+<footer style="opacity:.5;font-size:.75rem;margin:2rem;">Savant v7.0 (♦12>9 | ⬣11=7 | ⬡10<6)</footer>
+</body>
+</html>

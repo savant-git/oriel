@@ -1,0 +1,19 @@
+:root {
+  --gunmetal: #1e1e21;
+  --gunmetal-light: #2e2e32;
+  --gold: #e4c66f;
+  --gold-dark: #8a742b;
+}
+body {
+  margin: 0;
+  background: var(--gunmetal);
+  color: var(--gold);
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+h1, h2, h3 {
+  font-family: "JetBrains Mono", monospace;
+  text-shadow: 0 0 8px rgba(228,198,111,0.25);
+}
