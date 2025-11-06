@@ -3,24 +3,14 @@ node_modules/
 apps/**/node_modules/
 apps/oriel/app/dist/
 apps/oriel/app/build-compiled/
-apps/oriel/app/.webpack/
 *.map
-
-# platform build artifacts
 *.AppImage
 *.deb
 *.dmg
 *.exe
 *.msi
 
-# logs / exports / caches
+# logs / caches
 chat_logs/
-*.log
 .npm/
-.npmrc
 .cache/
-.DS_Store
-
-# editor
-.vscode/
-.idea/
